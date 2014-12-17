@@ -7,6 +7,6 @@ Gemaakt door Haroen Viaene. Geen garantie.
 2. Programmeren 1
 	* zie [Haroenv/JavaBasis](http://github.com/haroenv/JavaBasis)
 3. Elektronische Signalen 1:
-	* zie [Haroenv/...](http://github.com/haroenv/eleksign)
+	* zie [Haroenv/ElekSign](http://github.com/haroenv/eleksign)
 ##License
 TODO
