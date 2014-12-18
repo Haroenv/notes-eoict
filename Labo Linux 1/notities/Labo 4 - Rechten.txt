@@ -1,0 +1,86 @@
+labo 4: Rechten
+____
+
+Viaene Haroen
+
+#Oefening 1
+____
+*1*
+
+cp -r /etc ~/etc
+cd etc
+pwd
+ls -al
+
+____
+*2*
+
+1. Eerste letter is d
+2. Tweede letter is r, vierde x voor user, vijfde en zevende voor group, achtste en tiende voor other
+3. Als de w staat bij user, group of other
+4. Als r aan staat
+5. user is het woord dat naast het getal staat, in dit geval altijd student.
+6. de group is het woord dat daarna komt, in dit geval student
+7. De rechten van de group worden door het 5de, 6de en 7de karakter bepaald.
+8. De rechten van andere gebruikers worden gegeven door het achtste tot tiende karakter.
+
+____
+*3*
+
+1.	-rw-r--r-- 1 student student 19398 okt 15 13:32 services
+	-rw-r----- 1 student student 19398 okt 15 13:32 services
+	Andere gebruikers kunnen nu niet meer lezen in die file
+2.	-rwxrwx-wx 1 student student 19398 okt 15 13:32 services
+	Iedereen kan nu schrijven en executen, enkel andere kunnen niet meer lezen, de rest wel nog.
+3.	-rwxrw--wx 1 student student 19398 okt 15 13:32 services
+	De groep waar student deel van uit maakt (die ook student heet), kan nu niet meer executen. De eigenaar van het bestand (student) kan dit wel nog.
+
+____
+*4*
+
+1.	mkdir brieven; mkdir spelen; mkdir metalen; mkdir nonsens
+2.	echo > ./brieven/brief1; echo > ./spelen/leo; echo > ./metalen/goud
+
+____
+____
+#Oefening 2
+
+1. cd metalen; ls -l
+	-rw-r--r--: het is een file, leesbaar door iedereen, en enkel door de eigenaar beschrijfbaar.
+2. chmod g-r: controle: -rw----r--, juist.
+3. chmod u+x: het bestandje goud krijgt nu een groene kleur.
+4.	drwxr-xr-x: wil zeggen dat de eigenaar (ik) alle rechten heeft.
+	chmod u-r spelen
+	De inhoud van de directory is niet meer zichtbaar, ls -l spelen geeft als uitvoer: ls: kan de map spelen niet openen: Toegang geweigerd
+	Het bestand leo is nog openbaar dankzij bijv. pico /spelen/leo
+5. chmod u+r spelen
+
+____
+____
+#Oefening 3
+1. chmod u-w spelen; echo > ./spelen/poging
+	bash: ./spelen/poging: Toegang geweigerd
+	Je hebt inderdaad onvoldoende rechten om dit bestand te maken.
+2.  pico ./spelen/leo
+	na het wijzigen van dit bestand, kan het zonder problemen opgeslagen worden.
+3.	rm ./spelen/leo
+	rm: kan ‘./spelen/leo’ niet verwijderen: Toegang geweigerd
+	er zijn ook hiervoor te weinig rechten
+4.	x voor een directory wil zeggen dat je er bestanden in kan uitvoeren en lezen. Dit wil zeggen dat we met de volgende command een dir aanmaken die niet navigeerbaar of schrijfbaar is, maar dat de bestanden die er in zitten wel lees- en schrijfbaar zijn
+	mkdir -m u-rw,u+x test
+	We maken eventjes de dir terug lees- en schrijfbaar zodat er een paar bestanden in kunnen met
+	chmod u+rw test; echo > foo; echo > bar
+	Hierna wordt de permissie terug zoals eerder gezet:
+	chmod u-rw test
+	Nu kunnen de bestandjes foo en bar geopend en veranderd worden.
+5.	chown: veranderen van de eigenaar van ‘resolv.conf’: Bewerking niet toegestaan
+	chown is enkel als root toegestaan (superuser), en student is geen superuser.
+
+____
+____
+#Oefening 4
+
+1. touch test1.txt; vi test1.txt
+2. vul de tekst in
+3. <esc>:w<enter>
+4. <esc>dd
