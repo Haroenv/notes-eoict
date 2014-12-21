@@ -129,7 +129,7 @@ Haroen Viaene
 
 ####1
 
-`cp -r /etc ~/etc`
+`cp -r /etc ~/etc
 `cd etc`
 `pwd`
 `ls -al`
