@@ -204,78 +204,77 @@ Haroen Viaene
 vi .exrc
 
 voeg toe: 
-    syntax on
-    set number
+    * syntax on
+    * set number
 
 ###Oefeningen
 
 vi eerste.sh
-````
-    #!/bin/bash
-    pwd
-    date
-````
+```sh
+#!/bin/bash
+pwd
+date
+```
 
 vi tweede.sh
 
-````
-  1 #!/bin/bash
-  2 # geeft de meegegeven argumenten op het scherm mbv een for-lus
-  4 for i in $@
-  5 do
-  6    echo $i
-  7 done
-````
+```
+#!/bin/bash
+# geeft de meegegeven argumenten op het scherm mbv een for-lus
+for i in $@
+do
+  echo $i
+done
+```
 
 vi derde.sh
 
-````
-  1 #!/bin/bash
-  2 for i in $@
-  3 do
-  4         echo "Je zal nu $i verwijderen. j/n"
-  5         read ja
-  6         if [ $ja = "j" ]; then
-  7            *      rm $i
-  8            *      echo "$i verwijderd"
-  9         else
- 10            *      echo "$i niet verwijderd"
- 11         fi
- 12 done
-````
+```
+#!/bin/bash
+for i in $@
+do
+  echo "Je zal nu $i verwijderen. j/n"
+    read ja
+      if [ $ja = "j" ]; then
+        rm $i
+        echo "$i verwijderd"
+      else
+        echo "$i niet verwijderd"
+      fi
+done
+```
 
 vi vierde.sh
 
-````
-  1 #!/bin/bash
-  3 for i in $#
-  4 do
-  5         chmod 755 $i
-  6         chown jan $i
-  7 done
-````
+```
+#!/bin/bash
+for i in $#
+do
+  chmod 755 $i
+  chown jan $i
+done
+```
 
 vi getal.sh
 
-````
-  1 #!/bin/bash
-  2 #print een getal als het tussen 0 en 9 ligt. Is het iets anders wordt het
-  3 #script beëindigd.
-  4 clear
-  5 i=1
-  6 while [ $i -eq 1 ]
-  7 do
-  8         echo "geef een getal in."
-  9         read getal
- 10         if [ $getal -le 9 ]&&[ $getal -ge 0 ]
- 11         then
- 12            *      echo "Je getal $getal is tussen 0 en 9"
- 13         else
- 14            *      expr $i + 1
- 15            *      exit
- 16         fi
- 17 done 
-````
+```
+#!/bin/bash
+#print een getal als het tussen 0 en 9 ligt. Is het iets anders wordt het script beëindigd.
+clear
+i=1
+while [ $i -eq 1 ]
+do
+  echo "geef een getal in."
+  read getal
+  if [ $getal -le 9 ]&&[ $getal -ge 0 ]
+  then
+    echo "Je getal $getal is tussen 0 en 9"
+  else
+    expr $i + 1
+    exit
+  fi
+done 
+```
 
 ##Labo 6: Gebruikersaccounts
 
