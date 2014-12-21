@@ -1279,7 +1279,7 @@ pwd
 date
 </code></pre></p>
 <p>vi tweede.sh</p>
-<pre><code>#!/bin/bash
+<pre><code class="sh">#!/bin/bash
 # geeft de meegegeven argumenten op het scherm mbv een for-lus
 for i in $@
 do
@@ -1288,7 +1288,7 @@ done
 </code></pre>
 
 <p>vi derde.sh</p>
-<pre><code>#!/bin/bash
+<pre><code class="sh">#!/bin/bash
 for i in $@
 do
   echo &quot;Je zal nu $i verwijderen. j/n&quot;
@@ -1303,7 +1303,7 @@ done
 </code></pre>
 
 <p>vi vierde.sh</p>
-<pre><code>#!/bin/bash
+<pre><code class="sh">#!/bin/bash
 for i in $#
 do
   chmod 755 $i
@@ -1312,7 +1312,7 @@ done
 </code></pre>
 
 <p>vi getal.sh</p>
-<pre><code>#!/bin/bash
+<pre><code class="sh">#!/bin/bash
 #print een getal als het tussen 0 en 9 ligt. Is het iets anders wordt het script beëindigd.
 clear
 i=1

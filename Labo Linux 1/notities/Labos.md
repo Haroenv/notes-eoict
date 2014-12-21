@@ -210,15 +210,15 @@ voeg toe:
 ###Oefeningen
 
 vi eerste.sh
-```sh
+````sh
 #!/bin/bash
 pwd
 date
-```
+````
 
 vi tweede.sh
 
-```
+```sh
 #!/bin/bash
 # geeft de meegegeven argumenten op het scherm mbv een for-lus
 for i in $@
@@ -229,7 +229,7 @@ done
 
 vi derde.sh
 
-```
+```sh
 #!/bin/bash
 for i in $@
 do
@@ -246,7 +246,7 @@ done
 
 vi vierde.sh
 
-```
+```sh
 #!/bin/bash
 for i in $#
 do
@@ -257,7 +257,7 @@ done
 
 vi getal.sh
 
-```
+```sh
 #!/bin/bash
 #print een getal als het tussen 0 en 9 ligt. Is het iets anders wordt het script beëindigd.
 clear
