@@ -4,7 +4,7 @@ Gemaakt door Haroen Viaene. Geen garantie.
 ##Vakken
 1. Systeembeheer 1:
 	* [Labo Linux 1](Labo%20Linux%201/notities)
-	* Labo Windows 1
+	* [Labo Windows 1](Labo%20Windows)
 2. Programmeren 1
 	* zie [Haroenv/JavaBasis](http://github.com/haroenv/JavaBasis)
 3. Elektronische Signalen 1:
