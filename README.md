@@ -12,6 +12,8 @@ Gemaakt door Haroen Viaene. Geen garantie.
 	* "samenvatting": zie [Haroenv/ElekSign](http://github.com/haroenv/eleksign)
 4. Computerarchitectuur
 	*  [Paper](Computerarchitectuur)
+5. ETC
+	* [.tex-template Odisee](ETC/template)
 
 ##License
 
