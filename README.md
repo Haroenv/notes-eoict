@@ -10,6 +10,8 @@ Gemaakt door Haroen Viaene. Geen garantie.
 3. Elektronische Signalen 1:
 	* [circuit-diagrams](Elektronische%20Signalen%201/schema's)
 	* "samenvatting": zie [Haroenv/ElekSign](http://github.com/haroenv/eleksign)
+4. Computerarchitectuur
+	*  [Paper](Computerarchitectuur)
 
 ##License
 
