@@ -1,4 +1,4 @@
-##Hoofdstuk 7: __NTFS-rechten__
+##Hoofdstuk 7: NTFS-rechten
 ###7.1 Rechten op mappen en bestanden
 4. SYSTEM, student en Administrators (Administrator)
 5. cd Documents, dan icacls Labo7
