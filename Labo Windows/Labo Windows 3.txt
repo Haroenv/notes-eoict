@@ -1,18 +1,13 @@
-LABO WINDOWS - Haroen Viaene
+#Labo 3: Powershell
 
-Labo 3
-
-___
-
-
-# Basisopdrachten
+## Basisopdrachten
 
 1. Get-ChildItem -File | sort length -Descending
 2. Get-ChildItem | ForEach-Object{Write-Host $_.mode}
 3. Get-Command Set-* | Write-Host
 4. Get-Command Set-* | ForEach{ if( $_.CommandType -eq "Cmdlet") {Write-Host $_.name} }
 
-# Korte scripts
+## Korte scripts
 
 1.
 Clear-Host

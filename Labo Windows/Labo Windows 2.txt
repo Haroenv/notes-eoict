@@ -1,12 +1,10 @@
-LABO WINDOWS
-
-Les 2
+#Labo 2
 
 Blijkbaar was het niet nodig om alle bestanden van de vorige les te verwijderen. Gelukkig kon deze info nog terug zonder problemen uit de prullenmand gehaald worden.
 
 Nu de computer juist opgestart is, wordt er aan de opdracht van les 2 begonnen. Om aan deze opdracht te beginnen wordt cmd.exe opgestart door windows-r cmd.exe te gebruiken binnen de virtuele machine.
 
-*Basiscommando's*
+##1.Basiscommando's
 
 1. De virtuele machine wordt opgestart.
 2. dankzij het commando "cd c:\" raak je in de c-schijf

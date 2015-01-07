@@ -2,7 +2,7 @@ LABO WINDOWS
 
 Les 1
 
-*Aanmaak virtuele schijf*
+##Aanmaak virtuele schijf
 
 Nieuwe vdi gemaakt voor windows 7. Deze staat opgeslagen in  C:\Virtual	Machines\Virtuele Machines Studenten\1ICT\Haroen Viaene\7\.
 
@@ -12,7 +12,7 @@ Het .vmdk-bestand is slechts 2 KB omdat de feitenlijke schijf opgedeeld is in 13
 
 // Werd opnieuw geplaatst zonder de partities hierna. Hierdoor zijn die 13 partities verwijderd en is het .vmdk-bestand nu 3264 KB.
 
-*Windows 7*
+##Windows 7
 
 Hierna wordt het OS geïnstalleerd vanuit een ISO-bestand dat in \ISO\ stond. Dit is een Windows 7 64-bit versie. Die iso werd in de settings verwezen als een nieuwe CD-drive
 
@@ -50,24 +50,18 @@ Het verschil tussen home, work en public is dat je bij public geen andere comput
 
 //source: http://windows.microsoft.com/en-us/windows/choosing-network-location#1TC=windows-7
 
-*Windows Server*
+##Windows Server
 
 Windows Server werd analoog geïnstalleerd. Er werd echter gestopt voor de effectieve installatie ervan. Nu heb ik echter gekozen om bij de setup al te kiezen voor de iso van Windows Server 2012 op te starten bij installatie. Hierdoor start de computer direct op in de installatie.
 
 Door "boot into BIOS" te kiezen kan je de opstartvolgorde wijzigen in de tab "boot" en dan met de plus-en min-knoppen verplaats je de volgorde.
 
-*Netwerkinstellingen*
+##Netwerkinstellingen
 
 Je kan kiezen tussen Bridged, NAT, Host-Only en Custom. Als je Bridged kiest, is er een speciale netwerkkaart enkel voor de VM, bij Bridged neem je het IP-adres en netwerk van de Host over (standaard). Als je voor Host-Only kiest, krijg je een netwerk met enkel de Host.
 
-*Schone lei*
+##Schone lei
 
 Hierna zijn alle bestanden van VMWare verwijderd die deze les gemaakt zijn, behalve de .vmdk die gekopieerd was naar C:\Virtual	Machines\Virtuele Machines Studenten\1ICT\Haroen Viaene\
 
 In de volgende les wordt die vmdk geopend.
-
-Les 2
-
-Blijkbaar was het niet nodig om alle bestanden van de vorige les te verwijderen. Gelukkig kon deze info nog terug zonder problemen uit de prullenmand gehaald worden.
-
-Nu de computer juist opgestart is, wordt er aan de opdracht van les 2 begonnen. 
