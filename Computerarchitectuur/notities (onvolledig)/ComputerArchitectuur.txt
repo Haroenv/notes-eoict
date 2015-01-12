@@ -1,0 +1,386 @@
+ComputerArchitectuur
+
+# Informatie
+
+22 september 2014
+
+2 sp staan op labo
+2 sp staan op multiple-choice examen op computer
+
+lesmateriaal online
+	github.com/roelvs/syll-comparch
+	roelvs.github.io/syll-comparch
+	"karma"
+		verbeteringen
+
+# De PSU
+
+zie schemaPSU.png
+
+rectifier (gelijkrichter) en filter
+	zorgt voor absolute waarde via diodebrug
+	deze wordt gefilterd via capacitors 
+
+invertor
+	zet 50 Hz om naar 20 kHz door chopper
+	signaal wordt zeer snel aan en uit gezet zodat hogere frequentie komt
+	hierdoor kan de transfo kleiner zijn
+	generatie van een blokgolf
+	20 kHz omdat je het niet kan horen
+
+transformator
+	brengt de spanning van 230 V naar de gewenste spanning
+	is kleiner dankzij hoge frequentie
+
+gelijkrichter en filter
+	zetten blokgolf terug om in DC
+	wordt ook nog eens gefilterd
+
+chopper controller
+	controle van de outputspanning
+	zo nodig nog opnieuw door de chopper (invertor)
+
+
+# De processor
+
+29 september 2014
+
+
+PSU
+	klein
+	intern hoge frequentie
+	230 V AC - 12 V DC
+	chopper/inverter
+		zorgt voor hogere frequentie
+
+wordt meer info over gegeven in 2e jaar: µprocessoren (processorarchitectuur).
+
+Moore's law
+	transistoren
+		elektronische schakelaars. Zonder bewegende delen wordt geschakeld.
+	elk jaar verdubbeling van aantal transistoren
+
+klokfrequentie
+	blijft steken rond 3 à 4 GHz
+	oververhitting is limiterende factor
+	rond jaar 2000 gestopt
+	overclocking
+		zelf aanpasbaar
+		extra ventilators/betere koeling
+	daardoor is kloksnelheid niet meer de belangrijkste feature van een processor
+	dynamische kloksnelheid
+		gebruikt hogere kloksnelheid enkel als nodig
+		Turbo Boost (of Cool'n'quiet)
+		ivf load (cpu throttling)
+
+Verschillende reeksen
+	nieuw concept (nu bijvoorbeeld Haswell)
+	jaar nadien "tock", zelfde als jaar ervoor maar kleiner (nu Broadwell)
+	nieuwe functionaliteit elke twee jaar
+
+voorbeeld: ARM
+	energiebesparing
+	8 mini-cores (non-symmetrisch)
+	grotere en kleinere cores
+
+real mode vs protected mode
+	protected mode is de nieuwere versie (niet meer die van 1980)
+		extra features:
+			multitasking
+			virtueel geheugen (enkel RAM)
+
+32 bit vs 64 bit
+	in de processor wordt dus op dat aantal bits gewerkt
+	in een operatie kan je registers van 2^64 getallen groot gebruiken
+	vooral handig bij berekeningen (vb photoshop, premiere...)
+	tegenwoordig altijd 64 bit
+
+uitbreiding instructieset
+	SSE
+	MMX
+	VT-x, VT-d (virtualisatie)
+
+toevoeging op processor zelf
+	FPU (voor floats)
+	GPU (voor grafische dingen)
+	geheugencontroller
+	minder chips nodig en minder plaats nodig
+		energiewinst
+		minder kabel, dus performantiewinst
+
+parallellisme
+	opsplitsen in deeltaken
+	bottlenecks
+	meer "banden" (pipelines/cores/processors)
+	bubbles
+		wanneer er gewacht wordt op de uitkomst
+	superscalair
+		meerdere operaties tijdens dezelfde clock
+		vb: meer floating-point operators in AMD (vroeger)
+	hyperthreading
+		processor doet zich voor als verschillende processoren (soms dus ook ontdubbeld)
+	multicore -processing -computers
+	chip zelf is opgedeeld in verschillende zones
+		GPU
+		aantal cores
+		geheugen-controller
+		cache (meer over: volgende week)
+			drie verschillende soorten: L1, L2, L3 (duur -> goedkoop, snel -> traag)
+			instructiecache is niet zo gefragmenteerd als datacache
+		...
+
+Risc vs Cisc
+	smartphones (ARM) vs x86
+	minder soorten instructies vs veel instructies
+	minder vs meer energie en grootte
+
+Von Neumann vs Harvard-architectuur
+	data en instructies wel vs niet gescheiden
+
+# Het geheugen
+
+Von Neumann-bottleneck
+	data en instructies zitten in zelfde geheugen
+	kan niet tegelijk in processor binnenhalen
+	duurt iets langer bij opstarten
+
+Geheugenpiramide
+	registers
+	hoe hoger, hoe sneller
+	hoe hoger, hoe duurder
+	hoe hoger, hoe kleiner
+
+Statisch geheugen
+	vb in cache vd processor
+	flip-flop schakeling
+	snel, duur
+	neemt meer plaats in
+	altijd spanning nodig
+		verliest waarde bij stroomuitval
+	vb: ram-geheugen binnen cache
+	zie schema
+	blokje DQCLK
+		D-Latch
+		als je op de klok 1 hebt, wordt hetgene vanop D doorgezonden naar Q, als klok 0 is, dan is het het originele signaal
+	bij iets schrijven
+		SELECT: 1
+		READ: 1
+			daardoor: bovenste &: 1, onderste &: 0 (inverter)
+			wachten tot clock wordt aangebracht (wordt 1)
+			DATA die geschreven wordt gaat naar D (is er al altijd)
+				als 1 is: data (vb 0 of 1)
+				data gaat door naar Q (hierin wordt het opgeslagen)
+
+
+Dynamisch gegeugen
+	vb: RAM
+	goedkoper, trager
+	altijd spanning nodig
+		verliest waarde bij stroomuitval
+	bij schrijven wordt condensator opgeladen, en dan gaat data door naar data-output
+	let op: condensator ontlaadt na 8-32 ms
+		wordt constant opnieuw opgeslagen daarom 
+	Refresh
+		lading wordt elke 8-10 ms opnieuw opgeslagen
+
+Betrouwbaarheid
+	pariteitsbit
+		extra bit die de som van alle bits geeft
+		als er twee problemen zijn, geldt het systeem niet meer
+
+Hoe ziet het er uit?
+	vroeger en in kleine behuizingen op een IC
+	nu in bepaalde latjes
+		met bepaalde soort inkeping etc.
+			DDR/DDR2 liggen dicht bij elkaar, maar toch verschillend
+		DIMM: is omdraaibaar
+
+Logische structuur
+	"zeeslag" kolom en rij
+		eerst rij, dan kolom
+		A: Adres
+		RAS/CAS: ofwel rijen ofwel kolommen
+		Data: wat er mee gebeurt
+		R/W: lezen/schrijven
+		Juiste rij wordt gekopieërd naar een buffer
+			kolompin (CAS) wordt op 1 gezet en dan actie wordt uitgelezen
+			hierna wordt buffer teruggekopieërd
+	zie ook timing-diagram
+
+Spatiaal localiteitsprincipe
+	als iets gebruikt wordt, moeten de volgende dingen die gebruikt worden dat die dicht in de buurt staat.
+	vb:
+		bestandjes openen (begin vh bestand en dan andere stukken ervan)
+		bestanden id zelfde map/reeks etc.
+
+Tijdsgebonden localiteitsprincipe
+	data wordt snel hergebruikt
+	vb:
+		dingen worden opnieuw gelezen
+		als je een programma opent, dan zal je het wss opnieuw openen
+		autoherstel
+		loops
+
+FP-DRAM
+	kiest eerst rij, dan erna de kolom aflopen
+	4 leescycli
+	vb: bandbreedte is:
+		(4 bytes/transfer * 4 transfers/burst * 66 Mcycli/s)/(14 cycli/burst) = 75 MB/s (of 73 MiBps)
+			14 = 5+3+3+3
+			4*8(bytes) = 32 bit
+	oef: (4 * 4 * 33)/(5+2+2+2+2) = 48 MB/s (gegeven: zie slides)
+
+EDO-RAM
+	volgende kolommen worden al aangelegd voor het gevraagd werd
+	werkt in printers, meestal vervangd door SD-RAM
+	sneller rijen en kolommen aanleggen
+	berekening zelfde als FP-DRAM
+
+SD-RAM
+	geeft hele rijen en kolommen (sneller en wordt toch meestal na elkaar gebruikt: lokaliteitsprincipes)
+	vb: (8 * 4 * 133)/7 = 608 MB/s
+
+	EXAMENVRAAG over CPU's
+		juist antwoord: A: branch prediction units zorgen er voor dat de pipelines constant gevuld zitten (lost de bubbles op)
+
+DDR-SDRAM
+	double data rate
+	_|-|_|-|_
+	data wordt bij zowel stijgende als dalende kloktijd uitgelezen
+	intern worden chips parallel gezet zodat de snelheid verdubbelt
+	DDR-400 is hetzelde als PC3200
+	bytes vs bits
+	interessante link: anandtech.com/show/3851/everything-you-always-wanted-to-ask-about-SDRAM-but-were-afraid-to-ask
+
+DDR2
+	nog eens verdubbeld
+
+DDR3
+	kloksnelheden veranderen
+
+DDR4
+	recent: geheugenbanken worden 3D
+
+interleaving
+	verschillende combinaties
+	snelheid
+	plaats
+
+dual channel
+	twee in parallel
+
+oefeningen:
+
+	SDRAM efficiënter dan EDO-RAM?
+		2. SD-RAM werkt met bursts
+	welk type geheugen?
+		EDO-RAM
+	met pariteitscontrole controleer je
+		een bitfout detecteren
+	DDR2 800 werkt intern op 
+		200 MHz
+	welke bandbreedte haalt een systeem met 64 bit / 200 MHz / 5-1-1-1 klokcycli / SDRAM
+		(8*4*200)/8= 800 MB/s
+	wat is geen snelheidsoptimalisatie voor RAM
+		Bursting
+		Dual Channel
+		Interleaving
+		~ECC~
+	Bandbreedte wordt beperkt door
+		de breedte van de databus
+
+# het geheugen-cache
+
+cache zit op zelfde stukje silicium als CPU
+
+localiteitsprincipes
+
+tijden die je moet weten (ongeveer)
+	L1 cache
+		0.5 ns
+	misse cache (Branch mispredict)
+		5 ns
+	L2 cache
+		0.7 ns
+	als je naar ram moet (Main Memory reference)
+		100 ns
+	je moet naar harde schijf (disk seek)
+		10 000 000 ns 
+
+cache als geheugen 
+		!!!! wat wil dit zeggen?
+
+cache hitrate
+	hoe veel van de dingen die opgezocht worden in de cache zitten
+
+opgave
+	1000 instructies
+	200 daarvan geheugenaanroepen
+	1 instr = 1 clockcycle
+	Cache hitrate = 90%
+	miss penalty = 20 cycli
+	Cache hit = 1 cycle
+
+	tijd: 1000 + 200 (0,9*1 + 0,1 * 20) = 1580
+
+fully-associative cache
+	kan overal terechtkomen.
+	set-associative met 1 set
+
+Direct mapped cache
+	bepaald soort lijn komt in een bepaald stuk vd cache terecht
+	set-associative met 1 cacheline per set
+
+set-associative cache
+	tussen de twee
+
+oefening: grootte van tags
+	1MB cache geheugen, 16 way set, 64 byte cacheline, 36 bit grootte adresbus
+	hoeveel bit is nodig voor de tags?
+		1 MB = 1024 KB = 104876 byte
+		# lijnen in een cache = byte / 64 byte cacheline
+		# sets = lijnen in een cache / 16 way set
+
+# HDD
+
+HDD is typisch het traagste
+	op NMBS en het Odisee-netwerk na
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

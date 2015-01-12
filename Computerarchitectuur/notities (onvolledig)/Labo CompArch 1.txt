@@ -1,0 +1,64 @@
+**********LABO 1*********************
+
+** 1.AANMAAK VM **
+
+1.2. "Operating system not found". OS werd nog niet ge�nstalleerd.
+1.3. ~320kB groot, geheugen voor virtuele hdd is dynamisch gealloceerd.
+
+// in VMware nieuwe CD drive toevoegen om ISO achteraf te mounten op de virtuele machine
+
+** 2.INSTALLATIE WINDOWS **
+
+2.4a Belgian (Comma) wordt vooral gebruikt door Franstaligen, er zijn een aantal kleine
+verschillen in de numerieke rij en bij de >< toetsen rechtsonder. Belgian(Period) is gebruikelijk
+in Vlaanderen.
+
+2.4b 1GHz 32/64bit processor, 1GB RAM(32bit) of 2GB RAM(64bit), 16GB(32bit) of 20GB(64bit) vrije HDD plaats
+DirectX9 graphics met WDDM1 driver
+
+2.4c Applicaties uit de virtuele machine worden rechstreeks gedisplayed op het host-systeem.
+
+2.4d Hardware Compatibiliteitslijst. lijst met compatibele systemen/componenten voor Windows
+
+2.4e FAT16 is beter voor kleinere groottes van disks (260MB-2GB). FAT32 is beter voor grotere virtuele disks (512MB-32GB) later tot 2TB.
+
+
+2.4f New Technology File System, ontwikkeld door Microsoft.
+
+2.4g FAT32 voor floppy disks, NTFS is niet beperkt tot 2TB zoals FAT32.
+
+2.6 Op Home networks worden homegroup en file sharing ingeschakeld, andere gebruikers kunnen uw pc 
+zien op het netwerk (network discovery).
+
+Work networks zijn homegroups uitgeschakeld + network discovery.
+
+Public networks is uw pc niet zichtbaar op het netwerk.
+
+**3 BOOT SEQUENCE **
+
+2. Virtual machine start direct windows 7 op. Harddisk staat in BIOS als default startmedium ingesteld.
+3. CD drive eerst in volgorde zetten in BIOS, op startup wordt optie gegeven van CD op te starten.
+
+
+**4 NETWERKINSTELLINGEN **
+
+Bridged:        Direct geconnecteerd op fysisch netwerk, met eigen IP-adres.
+
+NAT:            Geconnecteerd op fysisch netwerk onder IP van de host.
+
+Host-only:      Privaat netwerk met enkel de virtuele machine en de host-machine. Wordt geconnecteerd met 
+                behulp van een virtuele ethernetadapter die zichtbaar is voor de host.
+
+Custom:         Kiezen uit een lijst van voorgemaakte virtuele netwerken
+                waarvan de instellingen kunnen gewijzigd worden, bevat ook vorige opties.
+        
+LAN segments:   Gelijkaardig aan host-only maar zonder DHCP-server(auto verdeling IP-adressen).
+                Vooral voor compatibiliteit oudere versies VMware.
+
+
+
+
+
+
+
+
