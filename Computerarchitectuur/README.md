@@ -4,5 +4,5 @@ Vak wordt gegeven door Roel Vansteenbergen. Cursus is te vinden op http://roelvs
 
 # Inhoud
 
-1) paper over GPGPU (19/20)
-2) aantal notities die onvolledig zijn
+1. paper over GPGPU (19/20)
+2. aantal notities die onvolledig zijn
