@@ -1,0 +1,41 @@
+\documentclass[11pt]{article}
+\usepackage[pdftex]{graphicx}
+\usepackage[dutch]{babel}
+\usepackage{amsthm, amsmath, enumitem, fullpage, helvet, color}
+\usepackage[parfill]{parskip}
+\let\originalitem\item
+\renewcommand{\item}{\originalitem[]}
+\renewcommand*{\familydefault}{\sfdefault}
+\renewcommand{\d}{\textrm{d}\,}
+\usepackage{mathtools}
+
+
+\usepackage[active,tightpage]{preview}
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\title{Formules Computerarchitectuur}
+\author{Haroen Viaene}
+\date{19 januari 2015}
+
+
+\begin{document}
+\begin{preview}
+
+\selectlanguage{dutch}
+
+\maketitle
+
+\tableofcontents
+
+\Newpage
+
+\section{Inleiding}
+
+\begin{itemize}
+\item $P = U * I$ (vermogen = spanning * stroom)
+\item $Q = I * t$ (capaciteit = stroom * t)
+\end{itemize}
+
+\end{preview}
+\end{document}
