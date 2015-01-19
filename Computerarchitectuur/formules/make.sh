@@ -8,14 +8,13 @@ latexmk -c
 
 rm formules.dvi
 
-if [ -n $i ]
+if [ "$1" ]
 then
-	echo "no i yet"
-	echo "Message for the commit"
-	read commitmessage
+	echo "Commit message already defined"
+	commitmessage=$1
 else
-	echo "i already defined"
-	$commitmessage = $i
+	echo "Enter commit message"
+	read commitmessage
 fi
 
 git commit -am "$commitmessage"
