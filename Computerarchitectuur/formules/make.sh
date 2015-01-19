@@ -2,7 +2,9 @@
 
 latexmk
 
-latexmk -c -pdf
+latexmk -pdf
+
+latexmk -c
 
 #rm formules.dvi
 echo "Message for the commit"
