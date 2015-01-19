@@ -1180,7 +1180,10 @@ body .markdown-body
 <h2 id="labo-4-rechten"><a name="user-content-labo-4-rechten" href="#labo-4-rechten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>labo 4: Rechten</h2>
 <h3 id="oefening-1_2"><a name="user-content-oefening-1_2" href="#oefening-1_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 1</h3>
 <h4 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1</h4>
-<p><code>cp -r /etc ~/etc</code>cd etc<code></code>pwd<code></code>ls -al`</p>
+<p><code>cp -r /etc ~/etc</code></p>
+<p><code>cd etc</code></p>
+<p><code>pwd</code></p>
+<p><code>ls -al</code></p>
 <h4 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2</h4>
 <ol>
 <li>Eerste letter is d</li>
@@ -1269,68 +1272,69 @@ body .markdown-body
 <h2 id="labo-5-shell-scripts"><a name="user-content-labo-5-shell-scripts" href="#labo-5-shell-scripts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Labo 5: Shell scripts</h2>
 <h3 id="werken-met-vi"><a name="user-content-werken-met-vi" href="#werken-met-vi" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Werken met vi</h3>
 <p>vi .exrc</p>
-<p>voeg toe: <br />
-    * syntax on<br />
-    * set number</p>
+<p>voeg toe: </p>
+<ul>
+<li>syntax on</li>
+<li>set number</li>
+</ul>
 <h3 id="oefeningen"><a name="user-content-oefeningen" href="#oefeningen" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefeningen</h3>
 <p>vi eerste.sh<br />
-````sh</p>
-<h1 id="binbash"><a name="user-content-binbash" href="#binbash" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>!/bin/bash</h1>
-<p>pwd<br />
-date<br />
-```</p>
+<pre><code class="sh">#!/bin/bash
+pwd
+date
+</code></pre></p>
 <p>vi tweede.sh</p>
-<p>```sh</p>
-<h1 id="binbash_1"><a name="user-content-binbash_1" href="#binbash_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>!/bin/bash</h1>
-<h1 id="geeft-de-meegegeven-argumenten-op-het-scherm-mbv-een-for-lus"><a name="user-content-geeft-de-meegegeven-argumenten-op-het-scherm-mbv-een-for-lus" href="#geeft-de-meegegeven-argumenten-op-het-scherm-mbv-een-for-lus" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>geeft de meegegeven argumenten op het scherm mbv een for-lus</h1>
-<p>for i in $@<br />
-do<br />
-  echo $i<br />
-done<br />
-```</p>
+<pre><code class="sh">#!/bin/bash
+# geeft de meegegeven argumenten op het scherm mbv een for-lus
+for i in $@
+do
+  echo $i
+done
+</code></pre>
+
 <p>vi derde.sh</p>
-<p>```sh</p>
-<h1 id="binbash_2"><a name="user-content-binbash_2" href="#binbash_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>!/bin/bash</h1>
-<p>for i in $@<br />
-do<br />
-  echo &ldquo;Je zal nu $i verwijderen. j/n&rdquo;<br />
-    read ja<br />
-      if [ $ja = &ldquo;j&rdquo; ]; then<br />
-        rm $i<br />
-        echo &ldquo;$i verwijderd&rdquo;<br />
-      else<br />
-        echo &ldquo;$i niet verwijderd&rdquo;<br />
-      fi<br />
-done<br />
-```</p>
+<pre><code class="sh">#!/bin/bash
+for i in $@
+do
+  echo &quot;Je zal nu $i verwijderen. j/n&quot;
+    read ja
+      if [ $ja = &quot;j&quot; ]; then
+        rm $i
+        echo &quot;$i verwijderd&quot;
+      else
+        echo &quot;$i niet verwijderd&quot;
+      fi
+done
+</code></pre>
+
 <p>vi vierde.sh</p>
-<p>```sh</p>
-<h1 id="binbash_3"><a name="user-content-binbash_3" href="#binbash_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>!/bin/bash</h1>
-<p>for i in $#<br />
-do<br />
-  chmod 755 $i<br />
-  chown jan $i<br />
-done<br />
-```</p>
+<pre><code class="sh">#!/bin/bash
+for i in $#
+do
+  chmod 755 $i
+  chown jan $i
+done
+</code></pre>
+
 <p>vi getal.sh</p>
-<p>```sh</p>
-<h1 id="binbash_4"><a name="user-content-binbash_4" href="#binbash_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>!/bin/bash</h1>
-<h1 id="print-een-getal-als-het-tussen-0-en-9-ligt-is-het-iets-anders-wordt-het-script-beeindigd"><a name="user-content-print-een-getal-als-het-tussen-0-en-9-ligt-is-het-iets-anders-wordt-het-script-beeindigd" href="#print-een-getal-als-het-tussen-0-en-9-ligt-is-het-iets-anders-wordt-het-script-beeindigd" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>print een getal als het tussen 0 en 9 ligt. Is het iets anders wordt het script beëindigd.</h1>
-<p>clear<br />
-i=1<br />
-while [ $i -eq 1 ]<br />
-do<br />
-  echo &ldquo;geef een getal in.&rdquo;<br />
-  read getal<br />
-  if [ $getal -le 9 ]&amp;&amp;[ $getal -ge 0 ]<br />
-  then<br />
-    echo &ldquo;Je getal $getal is tussen 0 en 9&rdquo;<br />
-  else<br />
-    expr $i + 1<br />
-    exit<br />
-  fi<br />
-done <br />
-```</p>
+<pre><code class="sh">#!/bin/bash
+#print een getal als het tussen 0 en 9 ligt. Is het iets anders wordt het script beëindigd.
+clear
+i=1
+while [ $i -eq 1 ]
+do
+  echo &quot;geef een getal in.&quot;
+  read getal
+  if [ $getal -le 9 ]&amp;&amp;[ $getal -ge 0 ]
+  then
+    echo &quot;Je getal $getal is tussen 0 en 9&quot;
+  else
+    expr $i + 1
+    exit
+  fi
+done 
+</code></pre>
+
 <h2 id="labo-6-gebruikersaccounts"><a name="user-content-labo-6-gebruikersaccounts" href="#labo-6-gebruikersaccounts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Labo 6: Gebruikersaccounts</h2>
 <h3 id="gebruikers"><a name="user-content-gebruikers" href="#gebruikers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gebruikers</h3>
 <ol>

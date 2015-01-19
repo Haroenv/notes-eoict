@@ -130,8 +130,11 @@ Haroen Viaene
 ####1
 
 `cp -r /etc ~/etc`
+
 `cd etc`
+
 `pwd`
+
 `ls -al`
 
 ####2
@@ -204,13 +207,14 @@ Haroen Viaene
 vi .exrc
 
 voeg toe: 
-    * syntax on
-    * set number
+
+* syntax on
+* set number
 
 ###Oefeningen
 
 vi eerste.sh
-````sh
+```sh
 #!/bin/bash
 pwd
 date

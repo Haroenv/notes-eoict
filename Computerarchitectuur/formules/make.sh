@@ -6,9 +6,15 @@ latexmk -pdf
 
 latexmk -c
 
-#rm formules.dvi
-echo "Message for the commit"
-read commitmessage
+rm formules.dvi
+
+if [$i == ""]
+then
+	echo "Message for the commit"
+	read commitmessage
+else
+	commitmessage = $i
+fi
 
 git commit -am "$commitmessage"
 
