@@ -11,7 +11,8 @@ Gemaakt door Haroen Viaene. Geen garantie.
 	* [circuit-diagrams](Elektronische%20Signalen%201/schema's)
 	* "samenvatting": zie [Haroenv/ElekSign](http://github.com/haroenv/eleksign)
 4. Computerarchitectuur
-	*  [Paper](Computerarchitectuur)
+	* [Paper](Computerarchitectuur/paper)
+	* [formularium](Computerarchitectuur/formularium)
 5. ETC
 	* [.tex-template Odisee](ETC/template)
 
