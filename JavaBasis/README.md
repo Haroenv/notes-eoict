@@ -12,4 +12,4 @@ nee, totdat we elk een deeltje toevoegen.
 
 #TODO
 
-1, rest van 4, 5
+rest van 4, 5
