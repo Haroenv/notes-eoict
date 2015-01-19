@@ -7,7 +7,7 @@ Gemaakt door Haroen Viaene. Geen garantie.
 	* [Labo Windows 1](Labo%20Windows)
 2. Programmeren 1
 	* zie [Haroenv/JavaBasis](http://github.com/haroenv/JavaBasis) (sorry, Odisee policy)
-	*[oplossingen vraagjes einde hoofdstukken](JavaBasis)
+	* [oplossingen vraagjes einde hoofdstukken](JavaBasis)
 3. Elektronische Signalen 1:
 	* [circuit-diagrams](Elektronische%20Signalen%201/schema's)
 	* "samenvatting": zie [Haroenv/ElekSign](http://github.com/haroenv/eleksign)
