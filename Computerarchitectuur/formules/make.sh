@@ -1,6 +1,6 @@
 #!/bin/bash
 
-latexmk -c -pdf formules.tex
+latexmk -c -pdf
 
 #rm formules.dvi
 echo "Message for the commit"
