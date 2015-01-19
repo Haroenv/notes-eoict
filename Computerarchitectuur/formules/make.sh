@@ -1,5 +1,7 @@
 #!/bin/bash
 
+latexmk
+
 latexmk -c -pdf
 
 #rm formules.dvi
