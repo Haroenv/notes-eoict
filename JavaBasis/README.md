@@ -12,7 +12,15 @@ nee, totdat we elk een deeltje toevoegen.
 
 #TODO
 
-rest van 4, 5
+[x] 2
+
+[x] 3
+
+[x] 4
+
+[x] 5 (aanvullingen nodig)
+
+[x] 6
 
 #Thanks
 
