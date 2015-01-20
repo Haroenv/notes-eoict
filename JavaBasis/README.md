@@ -24,4 +24,4 @@ nee, totdat we elk een deeltje toevoegen.
 
 #Thanks
 
-Tijl Reynhout, Wietse Vluymans, Andreas Backx, Elias Meire, Yannick Vermeiren, Seppe Snoeck, Quinten Verniers, Mike Lauwers, Haroen Viaene.
+Tijl Reynhout, Wietse Vluymans, Andreas Backx, Elias Meire, Yannick Vermeiren, Seppe Snoeck, Quinten Verniers, Mike Lauwers, Louis Devreese, Haroen Viaene.
