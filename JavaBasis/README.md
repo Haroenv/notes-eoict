@@ -16,4 +16,4 @@ rest van 4, 5
 
 #Thanks
 
-Tijl Reynhout, Wietse Vluymans, Andreas Backx, Elias Meire, Yannick Vermeiren, Seppe Snoeck, Quinten Verniers, Mike Lauwers
+Tijl Reynhout, Wietse Vluymans, Andreas Backx, Elias Meire, Yannick Vermeiren, Seppe Snoeck, Quinten Verniers, Mike Lauwers, Haroen Viaene.
