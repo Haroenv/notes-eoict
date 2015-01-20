@@ -12,7 +12,7 @@ nee, totdat we elk een deeltje toevoegen.
 
 #TODO
 
-[*] 2
+- [x] 2
 
 [x] 3
 
