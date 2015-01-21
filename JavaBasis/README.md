@@ -1,6 +1,6 @@
 #Wat?
 
-Antwoorden op de vragen per hoofdstuk die in het vak Java Basis zitten.
+Antwoorden op de vragen per hoofdstuk die in het vak programmeren 1 (Java Basis) zitten.
 
 #Stijl
 
