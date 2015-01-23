@@ -19,4 +19,9 @@ fi
 
 git commit -am "$commitmessage"
 
-git push
+if [ "$2" ]
+then 
+	echo "Not pushed"
+else
+	git push
+fi
