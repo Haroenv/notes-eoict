@@ -54,6 +54,17 @@
 	\item DIMM: twee kanten werken apart, SIMM: onderling verbonden (omkeerbaar)
 	\item statisch: flipflop (cache), dynamisch condensator (destructief, herladen) (RAM)
 	\item $\frac{\frac{bytes}{transfer}\cdot \frac{transfers}{burst}\frac{cycli}{sec}}{\frac{cycli}{burst}}$ vb: $\frac{8 (=64 bit) \frac{bytes}{transfer}\cdot 4 (=1+1+1+1) \frac{transfers}{burst} 60 MHz \frac{cycli}{sec}}{14 (=5+3+3+3) \frac{cycli}{burst}}$
+	\item FP-DRAM (fast pace): schrijft de paar volgende lijnen ook
+	\item EDO-RAM (extended data out): data blijft staan op de uitgang terwijl nieuwe al klaargezet wordt
+	\item SD-RAM (Synchronous DRAM): volgende kolommen worden sowieso gelezen op de snelheid van de klok
+	\item DDR (Double Data Rate): hogere kloksnelheid, idem voor DDR2,3,4
+	\item optimalisatie
+	\begin{itemize}
+		\item Interleaving: wissel af tussen twee banken om hersteltijd te vermijden
+		\item Dual channel: gebruik twee banken tegelijk
+		\item Buffered: slaat alle data op op een cache
+		\item is van toepassing op alle systemen
+	\end{itemize}
 \end{itemize}
 
 \end{preview}
