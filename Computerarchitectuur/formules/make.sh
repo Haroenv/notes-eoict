@@ -1,10 +1,18 @@
 #!/bin/bash
 
+echo "Latexmk"
+
 latexmk
+
+echo "forcing pdf"
 
 latexmk -pdf
 
+echo "clean"
+
 latexmk -c
+
+echo "rm .dvi"
 
 rm formules.dvi
 
