@@ -160,24 +160,24 @@ Haroen Viaene
 
 ####4
 
-1. mkdir brieven; mkdir spelen; mkdir metalen; mkdir nonsens
-2. echo > ./brieven/brief1; echo > ./spelen/leo; echo > ./metalen/goud
+1. `mkdir brieven; mkdir spelen; mkdir metalen; mkdir nonsens`
+2. `echo > ./brieven/brief1; echo > ./spelen/leo; echo > ./metalen/goud`
 
 ###Oefening 2
 
-1. cd metalen; ls -l
+1. `cd metalen; ls -l`
     * -rw-r--r--: het is een file, leesbaar door iedereen, en enkel door de eigenaar beschrijfbaar.
-2. chmod g-r: controle: -rw----r--, juist.
-3. chmod u+x: het bestandje goud krijgt nu een groene kleur.
-4. drwxr-xr-x: wil zeggen dat de eigenaar (ik) alle rechten heeft.
-    * chmod u-r spelen
-    * De inhoud van de directory is niet meer zichtbaar, ls -l spelen geeft als uitvoer: ls: kan de map spelen niet openen: Toegang geweigerd
-    * Het bestand leo is nog openbaar dankzij bijv. pico /spelen/leo
-5. chmod u+r spelen
+2. `chmod g-r`: controle: -rw----r--, juist.
+3. `chmod u+x`: het bestandje goud krijgt nu een groene kleur.
+4. `drwxr-xr-x`: wil zeggen dat de eigenaar (ik) alle rechten heeft.
+    * `chmod u-r spelen`
+    * De inhoud van de directory is niet meer zichtbaar, `ls -l` spelen geeft als uitvoer: `ls: kan de map spelen niet openen: Toegang geweigerd`
+    * Het bestand leo is nog openbaar dankzij bijv. `pico /spelen/leo`
+5. `chmod u+r spelen`
 
 ###Oefening 3
-1. chmod u-w spelen; echo > ./spelen/poging
-    * bash: ./spelen/poging: Toegang geweigerd
+1. `chmod u-w spelen; echo > ./spelen/poging`
+    * `bash: ./spelen/poging: Toegang geweigerd`
     * Je hebt inderdaad onvoldoende rechten om dit bestand te maken.
 2. pico ./spelen/leo
     * na het wijzigen van dit bestand, kan het zonder problemen opgeslagen worden.

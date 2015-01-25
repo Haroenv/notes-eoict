@@ -1019,44 +1019,44 @@ body .markdown-body
 <h2 id="labo-2-basisopdrachten-1"><a name="user-content-labo-2-basisopdrachten-1" href="#labo-2-basisopdrachten-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Labo 2: BASISOPDRACHTEN 1</h2>
 <h3 id="oefening-1"><a name="user-content-oefening-1" href="#oefening-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>oefening 1</h3>
 <ol>
-<li>date: geeft de datum<ul>
+<li><code>date</code>: geeft de datum<ul>
 <li>wo sep 24 14:29:09 CEST 2014</li>
 </ul>
 </li>
-<li>pwd: geeft de directory die actief is<ul>
+<li><code>pwd</code>: geeft de directory die actief is<ul>
 <li>/home/student</li>
 </ul>
 </li>
-<li>ls: geeft een lijst van alle items in die directory<ul>
+<li><code>ls</code>: geeft een lijst van alle items in die directory<ul>
 <li>-a: toont ook onzichtbare bestanden</li>
 <li>-al: idem+l: long-listing format</li>
 <li>-R: toont alle subdirectories recursief (toont ook de bestanden in de subdirectories)</li>
 </ul>
 </li>
-<li>cat .bashrc: drukt invoer uit in uitvoer<ul>
+<li><code>cat .bashrc</code>: drukt invoer uit in uitvoer<ul>
 <li>toont de inhoud van het bestand .bashrc (een config-bestand)</li>
 </ul>
 </li>
-<li>mkdir werk: maakt een map werk aan in student (de huidige directory)</li>
-<li>cd werk: navigeer naar de subdirectory /werk/</li>
-<li>cd ..: navigeer naar de onderliggende (sub-)directory</li>
-<li>rm: verwijder bestanden<ul>
-<li>-r: en hun submappen ook<ul>
-<li>werk: de map werk in de huidige directory wordt verwijderd</li>
+<li><code>mkdir werk</code>: maakt een map werk aan in student (de huidige directory)</li>
+<li><code>cd werk</code>: navigeer naar de subdirectory /werk/</li>
+<li><code>cd ..</code>: navigeer naar de onderliggende (sub-)directory</li>
+<li><code>rm</code>: verwijder bestanden<ul>
+<li><code>-r</code>: en hun submappen ook (recursief)<ul>
+<li><code>werk</code>: de map werk in de huidige directory wordt verwijderd</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>cp: kopiëren van een bron naar een bestemming<ul>
-<li>.bashrc test.txt: .bashrc wordt naar een bestand test.txt gekopieerd, in de huidige directory</li>
+<li><code>cp</code>: kopiëren van een bron naar een bestemming<ul>
+<li><code>.bashrc test.txt</code>: .bashrc wordt naar een bestand test.txt gekopieerd, in de huidige directory</li>
 </ul>
 </li>
-<li>mv test.txt test1.txt: hernoem test.txt naar test1.txt</li>
-<li>wc test1.txt: geeft het aantal regels, woorden en bytes (110, 475, 3392 respectievelijk) en de naam van het bestand.<ul>
-<li>-l: geeft het aantal regels</li>
+<li><code>mv test.txt test1.txt</code>: hernoem test.txt naar test1.txt</li>
+<li><code>wc test1.txt</code>: geeft het aantal regels, woorden en bytes (110, 475, 3392 respectievelijk) en de naam van het bestand.<ul>
+<li><code>-l</code>: geeft het aantal regels</li>
 </ul>
 </li>
-<li>rm test1.txt: test1.txt wordt verwijderd.</li>
+<li><code>rm test1.txt</code>: test1.txt wordt verwijderd.</li>
 </ol>
 <h3 id="oefening-2"><a name="user-content-oefening-2" href="#oefening-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>oefening 2</h3>
 <ol>
@@ -1067,115 +1067,115 @@ body .markdown-body
 </ul>
 </li>
 <li>
-<p>met het commando &ldquo;cal october 1995&rdquo; werd bevestigd dat ik op een maandag geboren ben.</p>
+<p>met het commando <code>cal october 1995</code> werd bevestigd dat ik op een maandag geboren ben.</p>
 </li>
 <li>
-<p>Dit doe je door het commando &ldquo;cd /etc&rdquo;</p>
+<p>Dit doe je door het commando <code>cd /etc</code></p>
 </li>
 <li>
-<p>ls *</p>
+<p><code>ls *</code></p>
 </li>
 <li>
-<p>ls ????</p>
+<p><code>ls ????</code></p>
 </li>
 </ol>
 <h3 id="oefening-3"><a name="user-content-oefening-3" href="#oefening-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>oefening 3</h3>
 <ol>
 <li>
-<p>ls: geeft informatie over de bestanden in de huidige directory<br />
-        * -a: toon ook de bestanden die verborgen zijn (beginnen met .)<br />
-        * -b: toont newlines als \n etc&hellip;<br />
-        * -B: negeert bestanden die eindigen in ~ (meestal backups)<br />
-        * -l: gebruik het lange formaat voor de bestanden</p>
+<p><code>ls</code>: geeft informatie over de bestanden in de huidige directory<br />
+        * <code>-a</code>: toon ook de bestanden die verborgen zijn (beginnen met .)<br />
+        * <code>-b</code>: toont newlines als \n etc&hellip;<br />
+        * <code>-B</code>: negeert bestanden die eindigen in ~ (meestal backups)<br />
+        * <code>-l</code>: gebruik het lange formaat voor de bestanden</p>
 <ul>
-<li>cp: kopiëren van bestanden naar een ander bestand.<ul>
-<li>-b: maak een backup van de destination-bestanden</li>
-<li>-f: als het destination-bestand niet bereikt kan worden, wordt het verwijderd en opnieuw gemaakt</li>
-<li>-n: overschrijf geen bestanden</li>
-<li>-i: prompt wel of niet te overschrijven</li>
+<li><code>cp</code>: kopiëren van bestanden naar een ander bestand.<ul>
+<li><code>-b</code>: maak een backup van de destination-bestanden</li>
+<li><code>-f</code>: als het destination-bestand niet bereikt kan worden, wordt het verwijderd en opnieuw gemaakt</li>
+<li><code>-n</code>: overschrijf geen bestanden</li>
+<li><code>-i</code>: prompt wel of niet te overschrijven</li>
 </ul>
 </li>
-<li>rm: verwijder een bepaald bestand of directory<ul>
-<li>-i: prompt elk van de verwijderingen</li>
-<li>-I: vraag maar één keer voor meer dan 3 bestanden</li>
-<li>-v: leg uit welke bestanden verwijderd worden</li>
-<li>-r: ook subdirectories worden verwijderd</li>
+<li><code>rm</code>: verwijder een bepaald bestand of directory<ul>
+<li><code>-i</code>: prompt elk van de verwijderingen</li>
+<li><code>-I</code>: vraag maar één keer voor meer dan 3 bestanden</li>
+<li><code>-v</code>: leg uit welke bestanden verwijderd worden</li>
+<li><code>-r</code>: ook subdirectories worden verwijderd</li>
 </ul>
 </li>
-<li>man: toont handleidingen voor commando&rsquo;s<ul>
-<li>-d: debug, toon als er fouten voorkomen</li>
-<li>-f: korte beschrijving</li>
-<li>-w: toon waar de handleiding zich bevindt</li>
-<li>-L: verander de taal</li>
+<li><code>man</code>: toont handleidingen voor commando&rsquo;s<ul>
+<li><code>-d</code>: debug, toon als er fouten voorkomen</li>
+<li><code>-f</code>: korte beschrijving</li>
+<li><code>-w</code>: toon waar de handleiding zich bevindt</li>
+<li><code>-L</code>: verander de taal</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>whoami: toont de actieve gebruiker (student)</p>
+<p><code>whoami</code>: toont de actieve gebruiker (student)</p>
 <ul>
-<li>who: toont alle actieve schermen (terminals en spaces)</li>
+<li><code>who</code>: toont alle actieve schermen (terminals en spaces)</li>
 </ul>
 </li>
 </ol>
-<p>3.more: toont alles wat op één scherm past, scroll naar beneden met enter<br />
-    * less: toont alles op verschillende spaties, je moet op &ldquo;q&rdquo; drukken om een ander commando te doen.</p>
+<p>3.<code>more</code>: toont alles wat op één scherm past, scroll naar beneden met enter<br />
+    * <code>less</code>: toont alles op verschillende spaties, je moet op &ldquo;q&rdquo; drukken om een ander commando te doen.</p>
 <ol>
 <li>
-<p>gebruik voor de eerste vijf regels van dat bestand &ldquo;head -n 5 bash.bashrc&rdquo; en voor de laatste vijf &ldquo;tail -n 5 bash.bashrc&rdquo;. De optie -f zorgt ervoor dat als het bestand wijzigt dat het scherm ook wijzigt.</p>
+<p>gebruik voor de eerste vijf regels van dat bestand <code>head -n 5 bash.bashrc</code> en voor de laatste vijf <code>tail -n 5 bash.bashrc</code>. De optie <code>-f</code> zorgt ervoor dat als het bestand wijzigt dat het scherm ook wijzigt.</p>
 </li>
 <li>
-<p>mkdir dummy; cd dummy; echo &gt; 1.txt; echo &gt; 2.txt; echo &gt; 3.txt; echo &gt; 4.txt; cd ..; rm -r dummy</p>
+<p><code>mkdir dummy; cd dummy; echo &gt; 1.txt; echo &gt; 2.txt; echo &gt; 3.txt; echo &gt; 4.txt; cd ..; rm -r dummy</code></p>
 </li>
 </ol>
 <h3 id="oefening-4"><a name="user-content-oefening-4" href="#oefening-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>oefening 4</h3>
 <ol>
-<li>echo &gt; 1.txt; echo &gt; 2.txt; echo &gt; 3.txt; cat *.txt</li>
-<li>ctrl-u verwijdert de input die nu gegeven wordt (voor de cursor)</li>
-<li>tijdens sleep kan je geen commando&rsquo;s invoeren. ctrl-c onderbreekt de slaap</li>
-<li>ctrl-h verwijdert het teken voor de cursor</li>
-<li>tab autocomplete je input cat .X&rdquo;TAB&rdquo; geeft cat .X, want er is geen bestand dat .X&hellip; heet. </li>
+<li><code>echo &gt; 1.txt; echo &gt; 2.txt; echo &gt; 3.txt; cat *.txt</code></li>
+<li><kbd>ctrl</kbd><kbd>u</kbd> verwijdert de input die nu gegeven wordt (voor de cursor)</li>
+<li>tijdens sleep kan je geen commando&rsquo;s invoeren. <kbd>ctrl</kbd><kbd>c</kbd> onderbreekt de slaap</li>
+<li><kbd>ctrl</kbd><kbd>h</kbd> verwijdert het teken voor de cursor</li>
+<li>tab autocomplete je input cat <code>.X</code><kbd>tab</kbd> geeft <code>cat .X</code>, want er is geen bestand dat <code>.X...</code> heet. </li>
 </ol>
 <h2 id="labo-3-basisopdrachten-2"><a name="user-content-labo-3-basisopdrachten-2" href="#labo-3-basisopdrachten-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>labo 3: Basisopdrachten 2</h2>
 <h3 id="oefening-1_1"><a name="user-content-oefening-1_1" href="#oefening-1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 1</h3>
 <ol>
-<li>ls -a</li>
+<li><code>ls -a</code></li>
 <li>de terminal. Ja, door op een bestand te schrijven met &gt;</li>
-<li>ls -a &gt; lijst.txt</li>
-<li>vim lijst.txt</li>
-<li>cp lijst.txt oudelijst.txt</li>
-<li>ls -a -r &gt; lijst.txt</li>
-<li>cat -b lijst.txt oudelijst.txt &gt; samengesteld.txt</li>
+<li><code>ls -a &gt; lijst.txt</code></li>
+<li><code>vim lijst.txt</code></li>
+<li><code>cp lijst.txt oudelijst.txt</code></li>
+<li><code>ls -a -r &gt; lijst.txt</code></li>
+<li><code>cat -b lijst.txt oudelijst.txt &gt; samengesteld.txt</code></li>
 </ol>
 <h3 id="oefening-2_1"><a name="user-content-oefening-2_1" href="#oefening-2_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 2</h3>
 <ol>
-<li>pico samengesteld.txt</li>
-<li>cat lijst.txt onbestaand.txt geeft omdat onbestaand.txt niet bestaat:<ul>
+<li><code>pico samengesteld.txt</code></li>
+<li><code>cat lijst.txt onbestaand.txt</code> geeft omdat <code>onbestaand.txt</code> niet bestaat:<ul>
 <li>de inhoud van lijst, end dan:</li>
-<li>cat: onbestaand: Bestand of map bestaat niet</li>
+<li><code>cat: onbestaand: Bestand of map bestaat niet</code></li>
 </ul>
 </li>
-<li>cat lijst.txt onbestaand.txt &gt; /dev/null</li>
-<li>cat lijst.txt onbestaand.txt &amp;&gt; alles.txt</li>
-<li>nano alles.txt</li>
-<li>rm alles.txt</li>
+<li><code>cat lijst.txt onbestaand.txt &gt; /dev/null</code></li>
+<li><code>cat lijst.txt onbestaand.txt &amp;&gt; alles.txt</code></li>
+<li><code>nano alles.txt</code></li>
+<li><code>rm alles.txt</code></li>
 </ol>
 <h3 id="oefening-3_1"><a name="user-content-oefening-3_1" href="#oefening-3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 3</h3>
 <ol>
-<li>find / -name hosts</li>
-<li>find *.rot -delete</li>
-<li>find -name &lsquo;<em>a</em>&lsquo; -o -name -&lsquo;<em>z</em>&lsquo;</li>
+<li><code>find / -name hosts</code></li>
+<li><code>find *.rot -delete</code></li>
+<li><code>find -name '*a*' -o -name -'*z*'</code></li>
 </ol>
 <h3 id="oefening-4_1"><a name="user-content-oefening-4_1" href="#oefening-4_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 4</h3>
 <ol>
-<li>less /etc/hosts | grep localhost</li>
+<li><code>less /etc/hosts | grep localhost</code></li>
 <li><code>cat &gt; boek.txt
     David 09 3331375
     Rachel 02 5454643
     Emily 09 4543535
     Daniel 03 7897897
-    Monic 014 678667
-    (CTRL-D)</code></li>
+    Monic 014 678667</code><br />
+    <kbd>ctrl</kbd><kbd>d</kbd></li>
 </ol>
 <h2 id="labo-4-rechten"><a name="user-content-labo-4-rechten" href="#labo-4-rechten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>labo 4: Rechten</h2>
 <h3 id="oefening-1_2"><a name="user-content-oefening-1_2" href="#oefening-1_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 1</h3>
@@ -1213,29 +1213,29 @@ body .markdown-body
 </ol>
 <h4 id="4"><a name="user-content-4" href="#4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4</h4>
 <ol>
-<li>mkdir brieven; mkdir spelen; mkdir metalen; mkdir nonsens</li>
-<li>echo &gt; ./brieven/brief1; echo &gt; ./spelen/leo; echo &gt; ./metalen/goud</li>
+<li><code>mkdir brieven; mkdir spelen; mkdir metalen; mkdir nonsens</code></li>
+<li><code>echo &gt; ./brieven/brief1; echo &gt; ./spelen/leo; echo &gt; ./metalen/goud</code></li>
 </ol>
 <h3 id="oefening-2_2"><a name="user-content-oefening-2_2" href="#oefening-2_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 2</h3>
 <ol>
-<li>cd metalen; ls -l<ul>
+<li><code>cd metalen; ls -l</code><ul>
 <li>-rw-r&ndash;r&ndash;: het is een file, leesbaar door iedereen, en enkel door de eigenaar beschrijfbaar.</li>
 </ul>
 </li>
-<li>chmod g-r: controle: -rw----r&ndash;, juist.</li>
-<li>chmod u+x: het bestandje goud krijgt nu een groene kleur.</li>
-<li>drwxr-xr-x: wil zeggen dat de eigenaar (ik) alle rechten heeft.<ul>
-<li>chmod u-r spelen</li>
-<li>De inhoud van de directory is niet meer zichtbaar, ls -l spelen geeft als uitvoer: ls: kan de map spelen niet openen: Toegang geweigerd</li>
-<li>Het bestand leo is nog openbaar dankzij bijv. pico /spelen/leo</li>
+<li><code>chmod g-r</code>: controle: -rw----r&ndash;, juist.</li>
+<li><code>chmod u+x</code>: het bestandje goud krijgt nu een groene kleur.</li>
+<li><code>drwxr-xr-x</code>: wil zeggen dat de eigenaar (ik) alle rechten heeft.<ul>
+<li><code>chmod u-r spelen</code></li>
+<li>De inhoud van de directory is niet meer zichtbaar, <code>ls -l</code> spelen geeft als uitvoer: <code>ls: kan de map spelen niet openen: Toegang geweigerd</code></li>
+<li>Het bestand leo is nog openbaar dankzij bijv. <code>pico /spelen/leo</code></li>
 </ul>
 </li>
-<li>chmod u+r spelen</li>
+<li><code>chmod u+r spelen</code></li>
 </ol>
 <h3 id="oefening-3_2"><a name="user-content-oefening-3_2" href="#oefening-3_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 3</h3>
 <ol>
-<li>chmod u-w spelen; echo &gt; ./spelen/poging<ul>
-<li>bash: ./spelen/poging: Toegang geweigerd</li>
+<li><code>chmod u-w spelen; echo &gt; ./spelen/poging</code><ul>
+<li><code>bash: ./spelen/poging: Toegang geweigerd</code></li>
 <li>Je hebt inderdaad onvoldoende rechten om dit bestand te maken.</li>
 </ul>
 </li>
