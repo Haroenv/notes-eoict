@@ -1170,14 +1170,15 @@ body .markdown-body
 <ol>
 <li><code>less /etc/hosts | grep localhost</code></li>
 <li>
-<p><pre><code>cat &gt; boek.txt
+<pre><code>cat &gt; boek.txt
 David 09 3331375
 Rachel 02 5454643
 Emily 09 4543535
 Daniel 03 7897897
 Monic 014 678667
-</code></pre><br />
-<kbd>ctrl</kbd><kbd>d</kbd></p>
+</code></pre>
+
+<p><kbd>ctrl</kbd><kbd>d</kbd></p>
 </li>
 </ol>
 <h2 id="labo-4-rechten"><a name="user-content-labo-4-rechten" href="#labo-4-rechten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>labo 4: Rechten</h2>
@@ -1297,18 +1298,28 @@ done
 </code></pre>
 
 <p><code>vi derde.sh</code></p>
-<pre><code class="sh">#!/bin/bash
+<p><pre><code class="sh">#!/bin/bash
 for i in $@
 do
   echo &quot;Je zal nu $i verwijderen. j/n&quot;
     read ja
-      if [ $ja = &quot;j&quot; ]; then
+      if [[ $ja = &quot;j&quot; ]]; then
         rm $i
         echo &quot;$i verwijderd&quot;
       else
         echo &quot;$i niet verwijderd&quot;
       fi
 done
+</code></pre><br />
+alternatieve oplossing door Nicolas Henrotte</p>
+<pre><code class="sh">#!/bin/bash
+echo &quot;Het bestand $1 verwijderen?&quot;
+read jaofnee
+case $jaofnee in
+    ja | Ja | JA) rm $1
+    echo &quot;Bestand $1 verwijderd.&quot;;;
+    nee | Nee | NEE) echo &quot;Bestand $1 niet verwijderd.&quot;;;
+esac
 </code></pre>
 
 <p><code>vi vierde.sh</code></p>

@@ -116,6 +116,7 @@ Haroen Viaene
 
 1. `less /etc/hosts | grep localhost`
 2. 
+
 	```
 	cat > boek.txt
     David 09 3331375
@@ -124,6 +125,7 @@ Haroen Viaene
     Daniel 03 7897897
     Monic 014 678667
     ```
+
     <kbd>ctrl</kbd><kbd>d</kbd>
 
 ##labo 4: Rechten
@@ -243,7 +245,7 @@ for i in $@
 do
   echo "Je zal nu $i verwijderen. j/n"
     read ja
-      if [ $ja = "j" ]; then
+      if [[ $ja = "j" ]]; then
         rm $i
         echo "$i verwijderd"
       else
@@ -251,6 +253,19 @@ do
       fi
 done
 ```
+alternatieve oplossing door Nicolas Henrotte
+
+```sh
+#!/bin/bash
+echo "Het bestand $1 verwijderen?"
+read jaofnee
+case $jaofnee in
+	ja | Ja | JA) rm $1
+	echo "Bestand $1 verwijderd.";;
+	nee | Nee | NEE) echo "Bestand $1 niet verwijderd.";;
+esac
+```
+
 
 `vi vierde.sh`
 
