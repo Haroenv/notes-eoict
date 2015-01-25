@@ -1316,9 +1316,13 @@ alternatieve oplossing door Nicolas Henrotte</p>
 echo &quot;Het bestand $1 verwijderen?&quot;
 read jaofnee
 case $jaofnee in
-    ja | Ja | JA) rm $1
-    echo &quot;Bestand $1 verwijderd.&quot;;;
-    nee | Nee | NEE) echo &quot;Bestand $1 niet verwijderd.&quot;;;
+ja | Ja | JA) 
+    rm $1
+    echo &quot;Bestand $1 verwijderd.&quot;
+    ;;
+nee | Nee | NEE)
+    echo &quot;Bestand $1 niet verwijderd.&quot;
+    ;;
 esac
 </code></pre>
 

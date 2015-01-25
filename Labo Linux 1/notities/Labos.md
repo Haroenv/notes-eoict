@@ -260,9 +260,13 @@ alternatieve oplossing door Nicolas Henrotte
 echo "Het bestand $1 verwijderen?"
 read jaofnee
 case $jaofnee in
-	ja | Ja | JA) rm $1
-	echo "Bestand $1 verwijderd.";;
-	nee | Nee | NEE) echo "Bestand $1 niet verwijderd.";;
+ja | Ja | JA) 
+	rm $1
+	echo "Bestand $1 verwijderd."
+	;;
+nee | Nee | NEE)
+	echo "Bestand $1 niet verwijderd."
+	;;
 esac
 ```
 
