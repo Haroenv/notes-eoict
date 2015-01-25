@@ -71,57 +71,57 @@ Haroen Viaene
 3.`more`: toont alles wat op één scherm past, scroll naar beneden met enter
     * `less`: toont alles op verschillende spaties, je moet op "q" drukken om een ander commando te doen.
 
-4. gebruik voor de eerste vijf regels van dat bestand `head -n 5 bash.bashrc` en voor de laatste vijf `tail -n 5 bash.bashrc`. De optie -f zorgt ervoor dat als het bestand wijzigt dat het scherm ook wijzigt.
+4. gebruik voor de eerste vijf regels van dat bestand `head -n 5 bash.bashrc` en voor de laatste vijf `tail -n 5 bash.bashrc`. De optie `-f` zorgt ervoor dat als het bestand wijzigt dat het scherm ook wijzigt.
 
-5. mkdir dummy; cd dummy; echo > 1.txt; echo > 2.txt; echo > 3.txt; echo > 4.txt; cd ..; rm -r dummy
+5. `mkdir dummy; cd dummy; echo > 1.txt; echo > 2.txt; echo > 3.txt; echo > 4.txt; cd ..; rm -r dummy`
 
 ###oefening 4
 
-1. echo > 1.txt; echo > 2.txt; echo > 3.txt; cat *.txt
-2. ctrl-u verwijdert de input die nu gegeven wordt (voor de cursor)
-3. tijdens sleep kan je geen commando's invoeren. ctrl-c onderbreekt de slaap
-4. ctrl-h verwijdert het teken voor de cursor
-5. tab autocomplete je input cat .X"TAB" geeft cat .X, want er is geen bestand dat .X... heet. 
+1. `echo > 1.txt; echo > 2.txt; echo > 3.txt; cat *.txt`
+2. <kbd>ctrl</kbd><kbd>u</kbd> verwijdert de input die nu gegeven wordt (voor de cursor)
+3. tijdens sleep kan je geen commando's invoeren. <kbd>ctrl</kbd><kbd>c</kbd> onderbreekt de slaap
+4. <kbd>ctrl</kbd><kbd>h</kbd> verwijdert het teken voor de cursor
+5. tab autocomplete je input cat `.X`<kbd>tab</kbd> geeft `cat .X`, want er is geen bestand dat `.X...` heet. 
 
 ##labo 3: Basisopdrachten 2
 
 ###Oefening 1
 
-1. ls -a
+1. `ls -a`
 2. de terminal. Ja, door op een bestand te schrijven met >
-3. ls -a > lijst.txt
-4. vim lijst.txt
-5. cp lijst.txt oudelijst.txt
-6. ls -a -r > lijst.txt
-7. cat -b lijst.txt oudelijst.txt > samengesteld.txt
+3. `ls -a > lijst.txt`
+4. `vim lijst.txt`
+5. `cp lijst.txt oudelijst.txt`
+6. `ls -a -r > lijst.txt`
+7. `cat -b lijst.txt oudelijst.txt > samengesteld.txt`
 
 ###Oefening 2
 
-1. pico samengesteld.txt
-2. cat lijst.txt onbestaand.txt geeft omdat onbestaand.txt niet bestaat:
+1. `pico samengesteld.txt`
+2. `cat lijst.txt onbestaand.txt` geeft omdat `onbestaand.txt` niet bestaat:
     * de inhoud van lijst, end dan:
-    * cat: onbestaand: Bestand of map bestaat niet
-3. cat lijst.txt onbestaand.txt > /dev/null
-4. cat lijst.txt onbestaand.txt &> alles.txt
-5. nano alles.txt
-6. rm alles.txt
+    * `cat: onbestaand: Bestand of map bestaat niet`
+3. `cat lijst.txt onbestaand.txt > /dev/null`
+4. `cat lijst.txt onbestaand.txt &> alles.txt`
+5. `nano alles.txt`
+6. `rm alles.txt`
 
 ###Oefening 3
 
-1. find / -name hosts
-2. find *.rot -delete
-3. find -name '*a*' -o -name -'*z*'
+1. `find / -name hosts`
+2. `find *.rot -delete`
+3. `find -name '*a*' -o -name -'*z*'`
 
 ###Oefening 4
 
-1. less /etc/hosts | grep localhost
+1. `less /etc/hosts | grep localhost`
 2. `cat > boek.txt
     David 09 3331375
     Rachel 02 5454643
     Emily 09 4543535
     Daniel 03 7897897
-    Monic 014 678667
-    (CTRL-D)`
+    Monic 014 678667`
+    <kbd>ctrl</kbd><kbd>d</kbd>
 
 ##labo 4: Rechten
 
