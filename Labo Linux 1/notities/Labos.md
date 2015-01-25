@@ -344,6 +344,7 @@ done
     * de input wordt verwijderd uit `/etc/passwd`
 6. de shadow-entry blijft bestaan. 
 
+
 ###Groepen
 
 1. `addgroup gebruikers1; addgroup gebruikers2; addgroup gebruikers3` (dit wordt resp. 1003, 1004 en 1005)
@@ -355,3 +356,7 @@ done
 7. `chgrp gebruikers2 test1`
 8. `su piet; vi test1` test1 kan niet geopend worden.
 9. `su karel` karel heeft volledige rechten.
+
+###Nutcracker
+
+`nutcracker-1.9/nutcracker` `/etc/shadow /sbin/nutcracker-1.9/words`
