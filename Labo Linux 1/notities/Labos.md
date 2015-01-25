@@ -23,55 +23,55 @@ Haroen Viaene
     * `-r`: en hun submappen ook (recursief)
         * `werk`: de map werk in de huidige directory wordt verwijderd
 9. `cp`: kopiëren van een bron naar een bestemming
-    * .bashrc test.txt: .bashrc wordt naar een bestand test.txt gekopieerd, in de huidige directory
-10. mv test.txt test1.txt: hernoem test.txt naar test1.txt
-11. wc test1.txt: geeft het aantal regels, woorden en bytes (110, 475, 3392 respectievelijk) en de naam van het bestand.
-    * -l: geeft het aantal regels
-12. rm test1.txt: test1.txt wordt verwijderd.
+    * `.bashrc test.txt`: .bashrc wordt naar een bestand test.txt gekopieerd, in de huidige directory
+10. `mv test.txt test1.txt`: hernoem test.txt naar test1.txt
+11. `wc test1.txt`: geeft het aantal regels, woorden en bytes (110, 475, 3392 respectievelijk) en de naam van het bestand.
+    * `-l`: geeft het aantal regels
+12. `rm test1.txt`: test1.txt wordt verwijderd.
 
 ###oefening 2
 
 1. dit kopieert de inhoud van .bashrc naar het nieuwe bestand testfile. Daarna opent het de inhoud van testfile.
     * Dit geeft uitgebreide informatie over testfile (-rw-r--r-- 1 student student 3392 okt  1 14:00 testfile), waarna het verwijderd wordt zodat erna diezelfde informatie niet meer verkrijgbaar is.
 
-2. met het commando "cal october 1995" werd bevestigd dat ik op een maandag geboren ben.
+2. met het commando `cal october 1995` werd bevestigd dat ik op een maandag geboren ben.
 
-3. Dit doe je door het commando "cd /etc"
+3. Dit doe je door het commando `cd /etc`
 
-4. ls *
+4. `ls *`
 
-5. ls ????
+5. `ls ????`
 
 ###oefening 3
 
-1. ls: geeft informatie over de bestanden in de huidige directory
-        * -a: toon ook de bestanden die verborgen zijn (beginnen met .)
-        * -b: toont newlines als \n etc...
-        * -B: negeert bestanden die eindigen in ~ (meestal backups)
-        * -l: gebruik het lange formaat voor de bestanden
-    * cp: kopiëren van bestanden naar een ander bestand.
-        * -b: maak een backup van de destination-bestanden
-        * -f: als het destination-bestand niet bereikt kan worden, wordt het verwijderd en opnieuw gemaakt
-        * -n: overschrijf geen bestanden
-        * -i: prompt wel of niet te overschrijven
-    * rm: verwijder een bepaald bestand of directory
-        * -i: prompt elk van de verwijderingen
-        * -I: vraag maar één keer voor meer dan 3 bestanden
-        * -v: leg uit welke bestanden verwijderd worden
-        * -r: ook subdirectories worden verwijderd
-    * man: toont handleidingen voor commando's
-        * -d: debug, toon als er fouten voorkomen
-        * -f: korte beschrijving
-        * -w: toon waar de handleiding zich bevindt
-        * -L: verander de taal
+1. `ls`: geeft informatie over de bestanden in de huidige directory
+        * `-a`: toon ook de bestanden die verborgen zijn (beginnen met .)
+        * `-b`: toont newlines als \n etc...
+        * `-B`: negeert bestanden die eindigen in ~ (meestal backups)
+        * `-l`: gebruik het lange formaat voor de bestanden
+    * `cp`: kopiëren van bestanden naar een ander bestand.
+        * `-b`: maak een backup van de destination-bestanden
+        * `-f`: als het destination-bestand niet bereikt kan worden, wordt het verwijderd en opnieuw gemaakt
+        * `-n`: overschrijf geen bestanden
+        * `-i`: prompt wel of niet te overschrijven
+    * `rm`: verwijder een bepaald bestand of directory
+        * `-i`: prompt elk van de verwijderingen
+        * `-I`: vraag maar één keer voor meer dan 3 bestanden
+        * `-v`: leg uit welke bestanden verwijderd worden
+        * `-r`: ook subdirectories worden verwijderd
+    * `man`: toont handleidingen voor commando's
+        * `-d`: debug, toon als er fouten voorkomen
+        * `-f`: korte beschrijving
+        * `-w`: toon waar de handleiding zich bevindt
+        * `-L`: verander de taal
 
-2. whoami: toont de actieve gebruiker (student)
-    * who: toont alle actieve schermen (terminals en spaces)
+2. `whoami`: toont de actieve gebruiker (student)
+    * `who`: toont alle actieve schermen (terminals en spaces)
 
-3.more: toont alles wat op één scherm past, scroll naar beneden met enter
-    * less: toont alles op verschillende spaties, je moet op "q" drukken om een ander commando te doen.
+3.`more`: toont alles wat op één scherm past, scroll naar beneden met enter
+    * `less`: toont alles op verschillende spaties, je moet op "q" drukken om een ander commando te doen.
 
-4. gebruik voor de eerste vijf regels van dat bestand "head -n 5 bash.bashrc" en voor de laatste vijf "tail -n 5 bash.bashrc". De optie -f zorgt ervoor dat als het bestand wijzigt dat het scherm ook wijzigt.
+4. gebruik voor de eerste vijf regels van dat bestand `head -n 5 bash.bashrc` en voor de laatste vijf `tail -n 5 bash.bashrc`. De optie -f zorgt ervoor dat als het bestand wijzigt dat het scherm ook wijzigt.
 
 5. mkdir dummy; cd dummy; echo > 1.txt; echo > 2.txt; echo > 3.txt; echo > 4.txt; cd ..; rm -r dummy
 
