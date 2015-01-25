@@ -1169,13 +1169,16 @@ body .markdown-body
 <h3 id="oefening-4_1"><a name="user-content-oefening-4_1" href="#oefening-4_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 4</h3>
 <ol>
 <li><code>less /etc/hosts | grep localhost</code></li>
-<li><code>cat &gt; boek.txt
-    David 09 3331375
-    Rachel 02 5454643
-    Emily 09 4543535
-    Daniel 03 7897897
-    Monic 014 678667</code><br />
-    <kbd>ctrl</kbd><kbd>d</kbd></li>
+<li>
+<p><pre><code>cat &gt; boek.txt
+David 09 3331375
+Rachel 02 5454643
+Emily 09 4543535
+Daniel 03 7897897
+Monic 014 678667
+</code></pre><br />
+<kbd>ctrl</kbd><kbd>d</kbd></p>
+</li>
 </ol>
 <h2 id="labo-4-rechten"><a name="user-content-labo-4-rechten" href="#labo-4-rechten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>labo 4: Rechten</h2>
 <h3 id="oefening-1_2"><a name="user-content-oefening-1_2" href="#oefening-1_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 1</h3>
@@ -1239,34 +1242,34 @@ body .markdown-body
 <li>Je hebt inderdaad onvoldoende rechten om dit bestand te maken.</li>
 </ul>
 </li>
-<li>pico ./spelen/leo<ul>
+<li><code>pico ./spelen/leo</code><ul>
 <li>na het wijzigen van dit bestand, kan het zonder problemen opgeslagen worden.</li>
 </ul>
 </li>
-<li>rm ./spelen/leo<ul>
-<li>rm: kan ‘./spelen/leo’ niet verwijderen: Toegang geweigerd</li>
+<li><code>rm ./spelen/leo</code><ul>
+<li><code>rm</code>: kan <code>./spelen/leo</code> niet verwijderen: Toegang geweigerd</li>
 <li>er zijn ook hiervoor te weinig rechten</li>
 </ul>
 </li>
 <li>x voor een directory wil zeggen dat je er bestanden in kan uitvoeren en lezen. Dit wil zeggen dat we met de volgende command een dir aanmaken die niet navigeerbaar of schrijfbaar is, maar dat de bestanden die er in zitten wel lees- en schrijfbaar zijn<ul>
-<li>mkdir -m u-rw,u+x test</li>
+<li><code>mkdir -m u-rw,u+x test</code></li>
 <li>We maken eventjes de dir terug lees- en schrijfbaar zodat er een paar bestanden in kunnen met</li>
-<li>chmod u+rw test; echo &gt; foo; echo &gt; bar</li>
+<li><code>chmod u+rw test; echo &gt; foo; echo &gt; bar</code></li>
 <li>Hierna wordt de permissie terug zoals eerder gezet:</li>
-<li>chmod u-rw test</li>
+<li><code>chmod u-rw test</code></li>
 <li>Nu kunnen de bestandjes foo en bar geopend en veranderd worden.</li>
 </ul>
 </li>
-<li>chown: veranderen van de eigenaar van ‘resolv.conf’: Bewerking niet toegestaan<ul>
-<li>chown is enkel als root toegestaan (superuser), en student is geen superuser.</li>
+<li><code>chown</code>: veranderen van de eigenaar van ‘resolv.conf’: Bewerking niet toegestaan<ul>
+<li><code>chown</code> is enkel als root toegestaan (superuser), en student is geen superuser.</li>
 </ul>
 </li>
 </ol>
 <h3 id="oefening-4_2"><a name="user-content-oefening-4_2" href="#oefening-4_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefening 4</h3>
 <ol>
-<li>touch test1.txt; vi test1.txt</li>
+<li><code>touch test1.txt; vi test1.txt</code></li>
 <li>vul de tekst in</li>
-<li><kbd>esc</kbd>:w<kbd>enter</kbd></li>
+<li><kbd>esc</kbd><kbd>:</kbd><kbd>:</kbd><kbd>enter</kbd></li>
 <li><kbd>esc</kbd>dd</li>
 </ol>
 <h2 id="labo-5-shell-scripts"><a name="user-content-labo-5-shell-scripts" href="#labo-5-shell-scripts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Labo 5: Shell scripts</h2>

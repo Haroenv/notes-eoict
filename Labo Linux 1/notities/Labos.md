@@ -115,12 +115,15 @@ Haroen Viaene
 ###Oefening 4
 
 1. `less /etc/hosts | grep localhost`
-2. `cat > boek.txt
+2. 
+	```
+	cat > boek.txt
     David 09 3331375
     Rachel 02 5454643
     Emily 09 4543535
     Daniel 03 7897897
-    Monic 014 678667`
+    Monic 014 678667
+    ```
     <kbd>ctrl</kbd><kbd>d</kbd>
 
 ##labo 4: Rechten
@@ -179,26 +182,26 @@ Haroen Viaene
 1. `chmod u-w spelen; echo > ./spelen/poging`
     * `bash: ./spelen/poging: Toegang geweigerd`
     * Je hebt inderdaad onvoldoende rechten om dit bestand te maken.
-2. pico ./spelen/leo
+2. `pico ./spelen/leo`
     * na het wijzigen van dit bestand, kan het zonder problemen opgeslagen worden.
-3. rm ./spelen/leo
-    * rm: kan ‘./spelen/leo’ niet verwijderen: Toegang geweigerd
+3. `rm ./spelen/leo`
+    * `rm`: kan `./spelen/leo` niet verwijderen: Toegang geweigerd
     * er zijn ook hiervoor te weinig rechten
 4. x voor een directory wil zeggen dat je er bestanden in kan uitvoeren en lezen. Dit wil zeggen dat we met de volgende command een dir aanmaken die niet navigeerbaar of schrijfbaar is, maar dat de bestanden die er in zitten wel lees- en schrijfbaar zijn
-    * mkdir -m u-rw,u+x test
+    * `mkdir -m u-rw,u+x test`
     * We maken eventjes de dir terug lees- en schrijfbaar zodat er een paar bestanden in kunnen met
-    * chmod u+rw test; echo > foo; echo > bar
+    * `chmod u+rw test; echo > foo; echo > bar`
     * Hierna wordt de permissie terug zoals eerder gezet:
-    * chmod u-rw test
+    * `chmod u-rw test`
     * Nu kunnen de bestandjes foo en bar geopend en veranderd worden.
-5. chown: veranderen van de eigenaar van ‘resolv.conf’: Bewerking niet toegestaan
-    * chown is enkel als root toegestaan (superuser), en student is geen superuser.
+5. `chown`: veranderen van de eigenaar van ‘resolv.conf’: Bewerking niet toegestaan
+    * `chown` is enkel als root toegestaan (superuser), en student is geen superuser.
 
 ###Oefening 4
 
-1. touch test1.txt; vi test1.txt
+1. `touch test1.txt; vi test1.txt`
 2. vul de tekst in
-3. <kbd>esc</kbd>:w<kbd>enter</kbd>
+3. <kbd>esc</kbd><kbd>:</kbd><kbd>:</kbd><kbd>enter</kbd>
 4. <kbd>esc</kbd>dd
 
 ##Labo 5: Shell scripts
