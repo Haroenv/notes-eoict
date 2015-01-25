@@ -216,14 +216,15 @@ voeg toe:
 
 ###Oefeningen
 
-vi eerste.sh
+`vi eerste.sh`
+
 ```sh
 #!/bin/bash
 pwd
 date
 ```
 
-vi tweede.sh
+`vi tweede.sh`
 
 ```sh
 #!/bin/bash
@@ -234,7 +235,7 @@ do
 done
 ```
 
-vi derde.sh
+`vi derde.sh`
 
 ```sh
 #!/bin/bash
@@ -251,7 +252,7 @@ do
 done
 ```
 
-vi vierde.sh
+`vi vierde.sh`
 
 ```sh
 #!/bin/bash
@@ -262,7 +263,7 @@ do
 done
 ```
 
-vi getal.sh
+`vi getal.sh`
 
 ```sh
 #!/bin/bash
@@ -288,50 +289,50 @@ done
 ###Gebruikers
 
 1. toevoegen van een account
-    * via /etc/passwd aan te passen
-        * vi /etc/passwd
-        * Test::600:600:test:/home/test:/bin/bash
-    * door adduser testerig
+    * via `/etc/passwd` aan te passen
+        * `vi /etc/passwd`
+        * `Test::600:600:test:/home/test:/bin/bash`
+    * door `adduser testerig`
         * vul volledige naam etc in
         * er wordt ook voor kamernummer, telefoonnummer etc. gevraagd, dit kan leeg gelaten worden.
-    * door useradd testNogMeer
+    * door `useradd testNogMeer`
         * er kunnen opties meegegeven worden om een wachtwoord, volledige naam etc. in te vullen.
-    * admintool
+    * `admintool`
 2. Bij het automatisch aanmaken van een bestand:
-    * in het shadow-bestand zit een input voor 
-        * testerig
-            * wachtwoord ge\"encrypteerd
+    * in het `shadow`-bestand zit een input voor 
+        * `testerig`
+            * wachtwoord geëncrypteerd
             * met 0/99999 voor lifetime
             * en 7 dagen voor waarschuwing
-        * testNogMeer
-            * ! als wachtwoord (kan dus niet inloggen, om dit aan te passen: passwd testNogMeer, dan nieuw wachtwoord)
-            * 0:99999:7 voor beveiliging
-    * in het passwd-bestand zit een input voor
-        * testerig
-            * group en user zijn 1001
+        * `testNogMeer`
+            * `!` als wachtwoord (kan dus niet inloggen, om dit aan te passen: passwd testNogMeer, dan nieuw wachtwoord)
+            * `0:99999:7` voor beveiliging
+    * in het `passwd`-bestand zit een input voor
+        * `testerig`
+            * group en user zijn `1001`
             * volledige naam
-            * /home/testerig
-            * /bin/bash
-        * testNogMeer
-            * 1002:1002
+            * `/home/testerig`
+            * `/bin/bash`
+        * `testNogMeer`
+            * `1002:1002`
             * geen volledige naam
 3. 
-4. Wordt aangepast in /etc/passwd/ (hij heeft nu een c-shell ipv bash)
-    * apt-get install csh
-    * su - piet
-    * %
-5. pas /etc/passwd aan, of userdel, rmuser ...
-    * de input wordt verwijderd uit /etc/passwd
+4. Wordt aangepast in `/etc/passwd/` (hij heeft nu een c-shell ipv bash)
+    * `apt-get install csh`
+    * `su - piet`
+    * `%`
+5. pas `/etc/passwd aan`, of `userdel`, `rmuser` ...
+    * de input wordt verwijderd uit `/etc/passwd`
 6. de shadow-entry blijft bestaan. 
 
 ###Groepen
 
-1. addgroup gebruikers1; addgroup gebruikers2; addgroup gebruikers3 (dit wordt resp. 1003, 1004 en 1005)
-2. groupdel gebruikers3
-3. adduser piet en adduser karel
-4. vi passwd, het getalletje bij group bij beide veranderen naar 1003
-5. usermod -G gebruikers2 karel of toevoegen aan /etc/group
-6. su karel; touch test1; chmod 750 test1
-7. chgrp gebruikers2 test1
-8. su piet; vi test1; test1 niet geopend worden.
-9. su karel; karel heeft volledige rechten.
+1. `addgroup gebruikers1; addgroup gebruikers2; addgroup gebruikers3` (dit wordt resp. 1003, 1004 en 1005)
+2. `groupdel gebruikers3`
+3. `adduser piet en adduser karel`
+4. `vi passwd` het getalletje bij group bij beide veranderen naar `1003`
+5. `usermod -G gebruikers2 karel` of toevoegen aan `/etc/group`
+6. `su karel; touch test1; chmod 750 test1`
+7. `chgrp gebruikers2 test1`
+8. `su piet; vi test1` test1 kan niet geopend worden.
+9. `su karel` karel heeft volledige rechten.

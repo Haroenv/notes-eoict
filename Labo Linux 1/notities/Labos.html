@@ -1281,12 +1281,13 @@ Monic 014 678667
 <li>set number</li>
 </ul>
 <h3 id="oefeningen"><a name="user-content-oefeningen" href="#oefeningen" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Oefeningen</h3>
-<p>vi eerste.sh<br />
+<p><code>vi eerste.sh</code></p>
 <pre><code class="sh">#!/bin/bash
 pwd
 date
-</code></pre></p>
-<p>vi tweede.sh</p>
+</code></pre>
+
+<p><code>vi tweede.sh</code></p>
 <pre><code class="sh">#!/bin/bash
 # geeft de meegegeven argumenten op het scherm mbv een for-lus
 for i in $@
@@ -1295,7 +1296,7 @@ do
 done
 </code></pre>
 
-<p>vi derde.sh</p>
+<p><code>vi derde.sh</code></p>
 <pre><code class="sh">#!/bin/bash
 for i in $@
 do
@@ -1310,7 +1311,7 @@ do
 done
 </code></pre>
 
-<p>vi vierde.sh</p>
+<p><code>vi vierde.sh</code></p>
 <pre><code class="sh">#!/bin/bash
 for i in $#
 do
@@ -1319,7 +1320,7 @@ do
 done
 </code></pre>
 
-<p>vi getal.sh</p>
+<p><code>vi getal.sh</code></p>
 <pre><code class="sh">#!/bin/bash
 #print een getal als het tussen 0 en 9 ligt. Is het iets anders wordt het script beëindigd.
 clear
@@ -1342,48 +1343,48 @@ done
 <h3 id="gebruikers"><a name="user-content-gebruikers" href="#gebruikers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gebruikers</h3>
 <ol>
 <li>toevoegen van een account<ul>
-<li>via /etc/passwd aan te passen<ul>
-<li>vi /etc/passwd</li>
-<li>Test::600:600:test:/home/test:/bin/bash</li>
+<li>via <code>/etc/passwd</code> aan te passen<ul>
+<li><code>vi /etc/passwd</code></li>
+<li><code>Test::600:600:test:/home/test:/bin/bash</code></li>
 </ul>
 </li>
-<li>door adduser testerig<ul>
+<li>door <code>adduser testerig</code><ul>
 <li>vul volledige naam etc in</li>
 <li>er wordt ook voor kamernummer, telefoonnummer etc. gevraagd, dit kan leeg gelaten worden.</li>
 </ul>
 </li>
-<li>door useradd testNogMeer<ul>
+<li>door <code>useradd testNogMeer</code><ul>
 <li>er kunnen opties meegegeven worden om een wachtwoord, volledige naam etc. in te vullen.</li>
 </ul>
 </li>
-<li>admintool</li>
+<li><code>admintool</code></li>
 </ul>
 </li>
 <li>Bij het automatisch aanmaken van een bestand:<ul>
-<li>in het shadow-bestand zit een input voor <ul>
-<li>testerig<ul>
-<li>wachtwoord ge"encrypteerd</li>
+<li>in het <code>shadow</code>-bestand zit een input voor <ul>
+<li><code>testerig</code><ul>
+<li>wachtwoord geëncrypteerd</li>
 <li>met 0/99999 voor lifetime</li>
 <li>en 7 dagen voor waarschuwing</li>
 </ul>
 </li>
-<li>testNogMeer<ul>
-<li>! als wachtwoord (kan dus niet inloggen, om dit aan te passen: passwd testNogMeer, dan nieuw wachtwoord)</li>
-<li>0:99999:7 voor beveiliging</li>
+<li><code>testNogMeer</code><ul>
+<li><code>!</code> als wachtwoord (kan dus niet inloggen, om dit aan te passen: passwd testNogMeer, dan nieuw wachtwoord)</li>
+<li><code>0:99999:7</code> voor beveiliging</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>in het passwd-bestand zit een input voor<ul>
-<li>testerig<ul>
-<li>group en user zijn 1001</li>
+<li>in het <code>passwd</code>-bestand zit een input voor<ul>
+<li><code>testerig</code><ul>
+<li>group en user zijn <code>1001</code></li>
 <li>volledige naam</li>
-<li>/home/testerig</li>
-<li>/bin/bash</li>
+<li><code>/home/testerig</code></li>
+<li><code>/bin/bash</code></li>
 </ul>
 </li>
-<li>testNogMeer<ul>
-<li>1002:1002</li>
+<li><code>testNogMeer</code><ul>
+<li><code>1002:1002</code></li>
 <li>geen volledige naam</li>
 </ul>
 </li>
@@ -1392,27 +1393,27 @@ done
 </ul>
 </li>
 <li></li>
-<li>Wordt aangepast in /etc/passwd/ (hij heeft nu een c-shell ipv bash)<ul>
-<li>apt-get install csh</li>
-<li>su - piet</li>
-<li>%</li>
+<li>Wordt aangepast in <code>/etc/passwd/</code> (hij heeft nu een c-shell ipv bash)<ul>
+<li><code>apt-get install csh</code></li>
+<li><code>su - piet</code></li>
+<li><code>%</code></li>
 </ul>
 </li>
-<li>pas /etc/passwd aan, of userdel, rmuser &hellip;<ul>
-<li>de input wordt verwijderd uit /etc/passwd</li>
+<li>pas <code>/etc/passwd aan</code>, of <code>userdel</code>, <code>rmuser</code> &hellip;<ul>
+<li>de input wordt verwijderd uit <code>/etc/passwd</code></li>
 </ul>
 </li>
 <li>de shadow-entry blijft bestaan. </li>
 </ol>
 <h3 id="groepen"><a name="user-content-groepen" href="#groepen" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Groepen</h3>
 <ol>
-<li>addgroup gebruikers1; addgroup gebruikers2; addgroup gebruikers3 (dit wordt resp. 1003, 1004 en 1005)</li>
-<li>groupdel gebruikers3</li>
-<li>adduser piet en adduser karel</li>
-<li>vi passwd, het getalletje bij group bij beide veranderen naar 1003</li>
-<li>usermod -G gebruikers2 karel of toevoegen aan /etc/group</li>
-<li>su karel; touch test1; chmod 750 test1</li>
-<li>chgrp gebruikers2 test1</li>
-<li>su piet; vi test1; test1 niet geopend worden.</li>
-<li>su karel; karel heeft volledige rechten.</li>
+<li><code>addgroup gebruikers1; addgroup gebruikers2; addgroup gebruikers3</code> (dit wordt resp. 1003, 1004 en 1005)</li>
+<li><code>groupdel gebruikers3</code></li>
+<li><code>adduser piet en adduser karel</code></li>
+<li><code>vi passwd</code> het getalletje bij group bij beide veranderen naar <code>1003</code></li>
+<li><code>usermod -G gebruikers2 karel</code> of toevoegen aan <code>/etc/group</code></li>
+<li><code>su karel; touch test1; chmod 750 test1</code></li>
+<li><code>chgrp gebruikers2 test1</code></li>
+<li><code>su piet; vi test1</code> test1 kan niet geopend worden.</li>
+<li><code>su karel</code> karel heeft volledige rechten.</li>
 </ol></article></body></html>
