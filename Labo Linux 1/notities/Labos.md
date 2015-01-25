@@ -6,23 +6,23 @@ Haroen Viaene
 
 ###oefening 1
 
-1. date: geeft de datum
+1. `date`: geeft de datum
     * wo sep 24 14:29:09 CEST 2014
-2. pwd: geeft de directory die actief is
+2. `pwd`: geeft de directory die actief is
     * /home/student
-3. ls: geeft een lijst van alle items in die directory
+3. `ls`: geeft een lijst van alle items in die directory
     * -a: toont ook onzichtbare bestanden
     * -al: idem+l: long-listing format
     * -R: toont alle subdirectories recursief (toont ook de bestanden in de subdirectories)
-4. cat .bashrc: drukt invoer uit in uitvoer
+4. `cat .bashrc`: drukt invoer uit in uitvoer
     * toont de inhoud van het bestand .bashrc (een config-bestand)
-5. mkdir werk: maakt een map werk aan in student (de huidige directory)
-6. cd werk: navigeer naar de subdirectory /werk/
-7. cd ..: navigeer naar de onderliggende (sub-)directory
-8. rm: verwijder bestanden
-    * -r: en hun submappen ook
-        * werk: de map werk in de huidige directory wordt verwijderd
-9. cp: kopiëren van een bron naar een bestemming
+5. `mkdir werk`: maakt een map werk aan in student (de huidige directory)
+6. `cd werk`: navigeer naar de subdirectory /werk/
+7. `cd ..`: navigeer naar de onderliggende (sub-)directory
+8. `rm`: verwijder bestanden
+    * `-r`: en hun submappen ook (recursief)
+        * `werk`: de map werk in de huidige directory wordt verwijderd
+9. `cp`: kopiëren van een bron naar een bestemming
     * .bashrc test.txt: .bashrc wordt naar een bestand test.txt gekopieerd, in de huidige directory
 10. mv test.txt test1.txt: hernoem test.txt naar test1.txt
 11. wc test1.txt: geeft het aantal regels, woorden en bytes (110, 475, 3392 respectievelijk) en de naam van het bestand.
