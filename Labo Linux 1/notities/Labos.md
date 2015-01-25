@@ -115,7 +115,7 @@ Haroen Viaene
 ###Oefening 4
 
 1. `less /etc/hosts | grep localhost`
-2. 
+2. :
 
 	```
 	cat > boek.txt
