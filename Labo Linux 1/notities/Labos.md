@@ -45,6 +45,7 @@ Haroen Viaene
 ###oefening 3
 
 1. `ls`: geeft informatie over de bestanden in de huidige directory
+
         * `-a`: toon ook de bestanden die verborgen zijn (beginnen met .)
         * `-b`: toont newlines als \n etc...
         * `-B`: negeert bestanden die eindigen in ~ (meestal backups)
