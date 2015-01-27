@@ -70,7 +70,7 @@ Haroen Viaene
 2. `whoami`: toont de actieve gebruiker (student)
     * `who`: toont alle actieve schermen (terminals en spaces)
 
-3.`more`: toont alles wat op één scherm past, scroll naar beneden met enter
+3. `more`: toont alles wat op één scherm past, scroll naar beneden met enter
     * `less`: toont alles op verschillende spaties, je moet op "q" drukken om een ander commando te doen.
 
 4. gebruik voor de eerste vijf regels van dat bestand `head -n 5 bash.bashrc` en voor de laatste vijf `tail -n 5 bash.bashrc`. De optie `-f` zorgt ervoor dat als het bestand wijzigt dat het scherm ook wijzigt.
