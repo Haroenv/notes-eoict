@@ -276,7 +276,7 @@ esac
 
 ```sh
 #!/bin/bash
-for i in $#
+for i in $@
 do
   chmod 755 $i
   chown jan $i
