@@ -1,10 +1,10 @@
-#Labo Linux 1
+# Labo Linux 1
 
 Haroen Viaene
 
-##Labo 2: BASISOPDRACHTEN 1
+## Labo 2: BASISOPDRACHTEN 1
 
-###oefening 1
+### Oefening 1
 
 1. `date`: geeft de datum
     * wo sep 24 14:29:09 CEST 2014
@@ -29,7 +29,7 @@ Haroen Viaene
     * `-l`: geeft het aantal regels
 12. `rm test1.txt`: test1.txt wordt verwijderd.
 
-###oefening 2
+### Oefening 2
 
 1. dit kopieert de inhoud van .bashrc naar het nieuwe bestand testfile. Daarna opent het de inhoud van testfile.
     * Dit geeft uitgebreide informatie over testfile (-rw-r--r-- 1 student student 3392 okt  1 14:00 testfile), waarna het verwijderd wordt zodat erna diezelfde informatie niet meer verkrijgbaar is.
@@ -42,7 +42,7 @@ Haroen Viaene
 
 5. `ls ????`
 
-###oefening 3
+### Oefening 3
 
 1. :
     * `ls`: geeft informatie over de bestanden in de huidige directory
@@ -77,7 +77,7 @@ Haroen Viaene
 
 5. `mkdir dummy; cd dummy; echo > 1.txt; echo > 2.txt; echo > 3.txt; echo > 4.txt; cd ..; rm -r dummy`
 
-###oefening 4
+### Oefening 4
 
 1. `echo > 1.txt; echo > 2.txt; echo > 3.txt; cat *.txt`
 2. <kbd>ctrl</kbd><kbd>u</kbd> verwijdert de input die nu gegeven wordt (voor de cursor)
@@ -85,9 +85,9 @@ Haroen Viaene
 4. <kbd>ctrl</kbd><kbd>h</kbd> verwijdert het teken voor de cursor
 5. tab autocomplete je input cat `.X`<kbd>tab</kbd> geeft `cat .X`, want er is geen bestand dat `.X...` heet. 
 
-##labo 3: Basisopdrachten 2
+## Labo 3: Basisopdrachten 2
 
-###Oefening 1
+### Oefening 1
 
 1. `ls -a`
 2. de terminal. Ja, door op een bestand te schrijven met >
@@ -97,7 +97,7 @@ Haroen Viaene
 6. `ls -a -r > lijst.txt`
 7. `cat -b lijst.txt oudelijst.txt > samengesteld.txt`
 
-###Oefening 2
+### Oefening 2
 
 1. `pico samengesteld.txt`
 2. `cat lijst.txt onbestaand.txt` geeft omdat `onbestaand.txt` niet bestaat:
@@ -108,13 +108,13 @@ Haroen Viaene
 5. `nano alles.txt`
 6. `rm alles.txt`
 
-###Oefening 3
+### Oefening 3
 
 1. `find / -name hosts`
 2. `find *.rot -delete`
 3. `find -name '*a*' -o -name -'*z*'`
 
-###Oefening 4
+### Oefening 4
 
 1. `less /etc/hosts | grep localhost`
 2. :
@@ -130,11 +130,11 @@ Haroen Viaene
 
     <kbd>ctrl</kbd><kbd>d</kbd>
 
-##labo 4: Rechten
+## Labo 4: Rechten
 
-###Oefening 1
+### Oefening 1
 
-####1
+#### 1
 
 `cp -r /etc ~/etc`
 
@@ -144,7 +144,7 @@ Haroen Viaene
 
 `ls -al`
 
-####2
+#### 2
 
 1. Eerste letter is d
 2. Tweede letter is r, vierde x voor user, vijfde en zevende voor group, achtste en tiende voor other
@@ -155,7 +155,7 @@ Haroen Viaene
 7. De rechten van de group worden door het 5de, 6de en 7de karakter bepaald.
 8. De rechten van andere gebruikers worden gegeven door het achtste tot tiende karakter.
 
-####3
+#### 3
 
 1. -rw-r--r-- 1 student student 19398 okt 15 13:32 services
     * -rw-r----- 1 student student 19398 okt 15 13:32 services
@@ -165,12 +165,12 @@ Haroen Viaene
 3. -rwxrw--wx 1 student student 19398 okt 15 13:32 services
     * De groep waar student deel van uit maakt (die ook student heet), kan nu niet meer executen. De eigenaar van het bestand (student) kan dit wel nog.
 
-####4
+#### 4
 
 1. `mkdir brieven; mkdir spelen; mkdir metalen; mkdir nonsens`
 2. `echo > ./brieven/brief1; echo > ./spelen/leo; echo > ./metalen/goud`
 
-###Oefening 2
+### Oefening 2
 
 1. `cd metalen; ls -l`
     * -rw-r--r--: het is een file, leesbaar door iedereen, en enkel door de eigenaar beschrijfbaar.
@@ -182,7 +182,7 @@ Haroen Viaene
     * Het bestand leo is nog openbaar dankzij bijv. `pico /spelen/leo`
 5. `chmod u+r spelen`
 
-###Oefening 3
+### Oefening 3
 1. `chmod u-w spelen; echo > ./spelen/poging`
     * `bash: ./spelen/poging: Toegang geweigerd`
     * Je hebt inderdaad onvoldoende rechten om dit bestand te maken.
@@ -201,15 +201,15 @@ Haroen Viaene
 5. `chown`: veranderen van de eigenaar van ‘resolv.conf’: Bewerking niet toegestaan
     * `chown` is enkel als root toegestaan (superuser), en student is geen superuser.
 
-###Oefening 4
+### Oefening 4
 
 1. `touch test1.txt; vi test1.txt`
 2. vul de tekst in
 3. <kbd>esc</kbd><kbd>:</kbd><kbd>:</kbd><kbd>enter</kbd>
 4. <kbd>esc</kbd>dd
 
-##Labo 5: Shell scripts
-###Werken met vi
+## Labo 5: Shell scripts
+### Werken met vi
 
 vi .exrc
 
@@ -218,7 +218,7 @@ voeg toe:
 * syntax on
 * set number
 
-###Oefeningen
+### Oefeningen
 
 `vi eerste.sh`
 
@@ -272,7 +272,6 @@ nee | Nee | NEE)
 esac
 ```
 
-
 `vi vierde.sh`
 
 ```sh
@@ -305,9 +304,9 @@ do
 done 
 ```
 
-##Labo 6: Gebruikersaccounts
+## Labo 6: Gebruikersaccounts
 
-###Gebruikers
+### Gebruikers
 
 1. toevoegen van een account
     * via `/etc/passwd` aan te passen
@@ -347,7 +346,7 @@ done
 6. de shadow-entry blijft bestaan. 
 
 
-###Groepen
+### Groepen
 
 1. `addgroup gebruikers1; addgroup gebruikers2; addgroup gebruikers3` (dit wordt resp. 1003, 1004 en 1005)
 2. `groupdel gebruikers3`
@@ -359,6 +358,6 @@ done
 8. `su piet; vi test1` test1 kan niet geopend worden.
 9. `su karel` karel heeft volledige rechten.
 
-###Nutcracker
+### Nutcracker
 
 `nutcracker-1.9/nutcracker` `/etc/shadow /sbin/nutcracker-1.9/words`
