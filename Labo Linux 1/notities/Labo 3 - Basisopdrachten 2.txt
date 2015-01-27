@@ -39,3 +39,14 @@ Emily 09 4543535
 Daniel 03 7897897
 Monic 014 678667
 (CTRL-D)
+
+	grep 'a' boek.txt
+	grep ^D boek.txt
+	grep 75$ boek.txt
+	grep " 09 " boek.txt
+	grep -v " 09 " boek.txt
+
+3. 	cp /etc/bash.bashrc ~
+	grep ^[e-m] bash.bashrc
+	grep "if" bash.bashrc | grep "then"
+	grep -i "term" bash.bashrc
