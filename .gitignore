@@ -9,6 +9,12 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 
-# Compiled pdf #
-################
+# LaTeX generated files #
+#########################
+*.toc
+*.synctex.gz
+*.log
+*.aux
+*.fdb_latexmk
 *.pdf
+*.dvi
