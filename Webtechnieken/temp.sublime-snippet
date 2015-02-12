@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> $1 </title>
+	<meta charset="utf-8" />
+	<script src="js/scripts.js"></script>
+	<link rel="stylesheet" src="css/styles.css">
+</head>
+<body>
+$0
+</body>
+</html>]]></content>
+	<tabTrigger>temp</tabTrigger>
+	<scope>text.html</scope>
+</snippet>
