@@ -8,4 +8,4 @@ Om fouten te vermijden en niet te hoeven copy-pasten van die ene slide, is het b
 
 `OSX: ~/Library/Application Support/Sublime Text 3/Packages/User`
 
-`Windows: %APPDATA%\Sublime Text 3/Packages/User`
+`Windows: %APPDATA%\Sublime Text 3\Packages\User`
