@@ -1,11 +1,13 @@
 <snippet>
 	<content><![CDATA[<!DOCTYPE html>
+<!--
+	$1
+	@author $2
+ -->
 <html lang="en">
 <head>
-	<title> $1 </title>
+	<title> $3 </title>
 	<meta charset="utf-8" />
-	<script src="js/scripts.js"></script>
-	<link rel="stylesheet" src="css/styles.css">
 </head>
 <body>
 $0
