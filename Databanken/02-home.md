@@ -3,6 +3,24 @@
 
 Haroen Viaene
 
+```SQL
+mysql -u haroen -p < garage.sql
+mysql -u haroen -p
+SHOW databases;
+use garage;
+show tables;
++------------------+
+| Tables_in_garage |
++------------------+
+| autoinfo         |
+| autos            |
+| autos_has_opties |
+| autos_opties     |
+| opties           |
+| verkopers        |
++------------------+
+```
+
 1. Geef van elke verkochte auto, de verkoper die de auto verkocht heeft, samen met het bouwjaar, het merk en het model van de verkochte auto. Sorteer het resultaat eerst op bouwjaar, en daarna op de naam van de verkoper.
 
 ```SQL
