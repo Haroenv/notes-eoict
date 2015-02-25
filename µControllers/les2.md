@@ -83,4 +83,8 @@ movlw 0x30			# wreg = 0x30
 subwf getal1,w		# wreg = 0xA0 - 0x30 = 0x70
 ```
 
+### Vermenigvuldiging
+
+`mullw` = vermenigvuldigt iets met wreg, hoogste byte in `PRODH`, laagste in `PRODL`
+
 ## Logische instructies
