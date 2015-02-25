@@ -8,4 +8,4 @@ Alle templates zijn in `.tex` gemaakt.
 
 #License
 
-CC-BY-NY (overgeerfd van de repo)
+CC-BY-NY (overgeërfd van de repo)
