@@ -87,4 +87,12 @@ subwf getal1,w		# wreg = 0xA0 - 0x30 = 0x70
 
 `mullw` = vermenigvuldigt iets met wreg, hoogste byte in `PRODH`, laagste in `PRODL`
 
+```asm
+movlw 0x62		# wreg = 0x62
+mullw 0x02		# PRODH = 0x00, PRODL = 0xC4
+mullw 0x02		# PRODH = 0x00, PRODL = 0xC4
+movf PRODL,w	# wreg = 0xC4
+mullw 0x02		# PRODH = 0x01, PRODL = 0x88
+```
+
 ## Logische instructies
