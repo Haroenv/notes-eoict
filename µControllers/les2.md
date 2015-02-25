@@ -66,4 +66,12 @@ N: als het resultaat negatief is
 
 `subwf` = wreg = eersteArgument - wreg
 
+```asm
+movlw 0x23			# wreg = 0x23
+addlw 0x3F			# wreg = 0x23 + 0x3F = 0x62
+movwf getal1		# getal1 = 0x62
+movlw 0x12			# wreg = 0x23
+subwf getal1,w		# wreg = 0x62 - 0x23 = 0x3F
+```
+
 ## Logische instructies
