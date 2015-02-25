@@ -1,16 +1,16 @@
-#µControllers - Les 1
+# µControllers - Les 1
 11 februari 2015
 
 Computertechnologie 2
 
-##Info
+## Info
 Schriftelijk examen, gesloten boek.
 
 ASCII-tabel en zo krijg je.
 
 theorie en krote oefeningen.
 
-##Inleiding
+## Inleiding
 instructies zijn getallen optellen, geheugen veranderen etc.
 
 eerste generatie: machinetaal (onleesbaar)
@@ -21,7 +21,7 @@ derde generatie: higher level (1 operatie wordt verschillende in machinetaal)
 
 Labo's: assembler.
 
-##Geschiedenis
+## Geschiedenis
 
 abacus
 
@@ -41,7 +41,7 @@ daarna vooral veel meer transistors op een CPU (wet van Moore)
 
 10 µm technologie wil zeggen dat de baantjes in de CPU zo groot zijn
 
-###MIPS
+### MIPS
 
 snelheid kan aangeduid worden met kloksnelheid (10MHz '80 ==> 2 à 3 GHz nu, werkt niet meer sneller door warmte etc.)
 
@@ -63,26 +63,26 @@ voorbeeldje:
 3 GHz / 500 klokpulsen/s = 6 MIPS
 ```
 
-###Datavoorstellingen
+### Datavoorstellingen
 
-####Bit
+#### Bit
 0-1
 aangeduid met B
 vroeger: 0V = 0, 5V = 1 (nu ligt het aan 1.3V)
-vb: getal xyz.abc = x*2^2 + y*2^1 + z*2^0 + a*2^-1 + b*2^-2 + c*2^-3
+vb: getal `xyz.abc = x*2^2 + y*2^1 + z*2^0 + a*2^-1 + b*2^-2 + c*2^-3`
 
-####Decimaal
+#### Decimaal
 0-9
 aangeduid met D
-vb: getal xyz.abc = x*10^2 + y*10^1 + z*10^0 + a*10^-1 + b*10^-2 + c*10^-3
+vb: getal `xyz.abc = x*10^2 + y*10^1 + z*10^0 + a*10^-1 + b*10^-2 + c*10^-3`
 
-###Hexadecimaal
+### Hexadecimaal
 0-F
 4 bits is een nibble, F mogelijke waarden, byte is 2 nibbles, word is twee bytes
 aangeduid met 0x
-vb: getal xyz.abc = x*16^2 + y*16^1 + z*16^0 + a*16^-1 + b*16^-2 + c*16^-3
+vb: getal `xyz.abc = x*16^2 + y*16^1 + z*16^0 + a*16^-1 + b*16^-2 + c*16^-3`
 
-###ASCII
+### ASCII
 extended: voor localisatie
 
 getallen zitten op 0x30 = 0
@@ -91,7 +91,7 @@ hoofdletters zitten op 0x41 = a
 
 kleine letters zitten op 0x61 = A
 
-#Unicode
+# Unicode
 accenten en zo, later ook chinees etc.
 
 meer plaats dan ASCII
