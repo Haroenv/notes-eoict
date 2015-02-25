@@ -25,6 +25,8 @@ verschillende soorten verplaatsen en kopieren
 
 `movwf` = *mov* (kopieer) *w*reg naar *f*ilesystem
 
+### Wat is er juist?
+
 `movlf D'5',getal` literal kan niet rechtstreeks naar filesystem
 
 `movff getal1,LATD` juist
@@ -32,6 +34,8 @@ verschillende soorten verplaatsen en kopieren
 `movwl D'5'` je kan het niet direct naar een constante opslaan
 
 `movf getal2` movf verwacht 2 argumenten
+
+### Voorbeeld
 
 ```asm
 movlw D'12'			# 12d = 0x0C zit nu in wreg
@@ -66,6 +70,8 @@ N: als het resultaat negatief is
 
 `subwf` = wreg = eersteArgument - wreg
 
+### Voorbeelden
+
 ```asm
 movlw 0x23			# wreg = 0x23
 addlw 0x3F			# wreg = 0x23 + 0x3F = 0x62
@@ -87,6 +93,9 @@ subwf getal1,w		# wreg = 0xA0 - 0x30 = 0x70
 
 `mullw` = vermenigvuldigt iets met wreg, hoogste byte in `PRODH`, laagste in `PRODL`
 
+
+#### Voorbeeld
+
 ```asm
 movlw 0x62		# wreg = 0x62
 mullw 0x02		# PRODH = 0x00, PRODL = 0xC4
@@ -96,3 +105,24 @@ mullw 0x02		# PRODH = 0x01, PRODL = 0x88
 ```
 
 ## Logische instructies
+
+### AND
+
+`andlw` = bit per bit wordt er AND uitgevoerd
+
+### IOR
+
+`iorlw` = voert bit per bit OR uit
+
+### XOR
+
+`xorlw` = voert bit per bit XOR uit
+
+### Voorbeeld
+
+```asm
+movlw 0x35		# wreg = 0011 0101
+xorlw 0x0F		# wreg = 0000 1111 XOR 0011 0101 = 0011 1010 = 0x3A
+iorlw 0xF0		# wreg = 0011 1010 OR 1111 0000 = 1111 1010 = 0xFA
+andlw 0x0F		# wreg = 1111 1010 AND 0000 1111 = 0000 1010 = 0x0A
+```
