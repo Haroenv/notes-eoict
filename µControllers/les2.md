@@ -33,13 +33,13 @@ verschillende soorten verplaatsen en kopieren
 
 `movf getal2` movf verwacht 2 argumenten
 
-```assembly
-movlw D'12'			# 12 decimaal zit nu in wreg
-movwf getal1		# getal1 in filesystem is nu 12
-movlw H'12'			# 18 zit nu in wreg
-movwf getal2		# getal2 zit nu in filesystem met waarde 18
-clrf getal2			# getal2 bestaat niet meer
-movf getal2,W		# niets wordt gekopieerd
+```assembler
+movlw D'12'			# 12d = 0x0C zit nu in wreg
+movwf getal1		# getal1 in filesystem is nu 12d = 0x0C
+movlw H'12'			# 18d = 0x12 zit nu in wreg
+movwf getal2		# getal2 zit nu in filesystem met waarde 18d = 0x12
+clrf getal2			# getal2 = 0d = 0x00
+movf getal2,W		# wreg is 0d = 0x00
 ```
 
 ## Wiskundige instructies
