@@ -33,7 +33,7 @@ verschillende soorten verplaatsen en kopieren
 
 `movf getal2` movf verwacht 2 argumenten
 
-```assembler
+```asm
 movlw D'12'			# 12d = 0x0C zit nu in wreg
 movwf getal1		# getal1 in filesystem is nu 12d = 0x0C
 movlw H'12'			# 18d = 0x12 zit nu in wreg
@@ -43,6 +43,8 @@ movf getal2,W		# wreg is 0d = 0x00
 ```
 
 ## Wiskundige instructies
+
+### Optelling
 
 `addlw` = *add* (tel op) een literal (constante) bij *w*reg
 
@@ -57,5 +59,11 @@ C: als een optelling groter is dan 1 byte
 Z: als een bewerking uitkomst 0 heeft
 
 N: als het resultaat negatief is
+
+### Aftrekking
+
+`sublw` = wreg = literal - wreg
+
+`subwf` = wreg = eersteArgument - wreg
 
 ## Logische instructies
