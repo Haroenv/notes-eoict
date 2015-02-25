@@ -15,7 +15,7 @@ Assembler is niet cross-platform (zelfs afhankelijk van processor tot processor)
 
 Assembler kan hardwarematig aan alle geheugenplaatsen
 
-# instructios
+# Instructies
 
 ## Data verplaatsen
 
@@ -43,5 +43,19 @@ movf getal2,W		# wreg is 0d = 0x00
 ```
 
 ## Wiskundige instructies
+
+`addlw` = *add* (tel op) een literal (constante) bij *w*reg
+
+`addwf` = *add* iets uit *w*reg naar *f*ilesystem
+
+als optelling te groot wordt, is er een *C*arry flag die bijhoudt zoals bij manuele optelling
+
+### Flags
+
+C: als een optelling groter is dan 1 byte
+
+Z: als een bewerking uitkomst 0 heeft
+
+N: als het resultaat negatief is
 
 ## Logische instructies
