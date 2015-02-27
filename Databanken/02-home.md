@@ -58,7 +58,6 @@ select * from autos;
 	```SQL
 	SELECT COUNT(DISTINCT merk) AS 'Aantal merken'
 	FROM autoinfo;
-	SELECT;
 	```
 
 4. Geef de totale verkoopprijs van de auto met chassisnr 1234.
