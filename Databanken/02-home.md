@@ -42,7 +42,7 @@ SELECT verkopers.naam, autoinfo.bouwjaar, autoinfo.merk, autoinfo.model FROM aut
 2. Geef per verkoper het aantal auto’s hij/zij verkocht heeft. Sorteer op het aantal verkochte wagens.
 
 ```SQL
-SELECT;
+SELECT count(naam) from autos ;
 ```
 
 3. Hoeveel verschillende merken zijn er verkocht?
