@@ -56,6 +56,8 @@ ORDER BY COUNT(chassisNR) DESC;
 3. Hoeveel verschillende merken zijn er verkocht?
 
 ```SQL
+SELECT COUNT(DISTINCT merk) AS 'Aantal merken'
+FROM autoinfo;
 SELECT;
 ```
 
