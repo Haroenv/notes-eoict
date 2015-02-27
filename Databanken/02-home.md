@@ -36,9 +36,9 @@ select * from autos;
 1. Geef van elke verkochte auto, de verkoper die de auto verkocht heeft, samen met het bouwjaar, het merk en het model van de verkochte auto. Sorteer het resultaat eerst op bouwjaar, en daarna op de naam van de verkoper.
 
 ```SQL
-SELECT naam,bouwjaar,merk,model
-FROM autos
-INNER JOIN autoinfo ON autoinfo.id = autos.autoinfo_id
+SELECT naam,bouwjaar,merk,model 
+FROM autos 
+INNER JOIN autoinfo ON autoinfo.id = autos.autoinfo_id 
 INNER JOIN verkopers ON verkopers.id = autos.verkopers_id
 ORDER BY bouwjaar,naam ASC;
 ```
@@ -46,9 +46,11 @@ ORDER BY bouwjaar,naam ASC;
 2. Geef per verkoper het aantal auto’s hij/zij verkocht heeft. Sorteer op het aantal verkochte wagens.
 
 ```SQL
-SELECT count(naam) from autos
-INNER JOIN verkopers ON verkopers.id = autos.verkopers_id
-ORDER BY naam ASC;
+SELECT COUNT(chassisNR),naam
+FROM verkopers
+INNER JOIN autos ON autos.verkopers_id = verkopers.id
+GROUP BY verkopers_id
+ORDER BY COUNT(chassisNR) DESC;
 ```
 
 3. Hoeveel verschillende merken zijn er verkocht?
