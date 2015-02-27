@@ -36,7 +36,7 @@ select * from autos;
 1. Geef van elke verkochte auto, de verkoper die de auto verkocht heeft, samen met het bouwjaar, het merk en het model van de verkochte auto. Sorteer het resultaat eerst op bouwjaar, en daarna op de naam van de verkoper.
 
 ```SQL
-SELECT verkopers.naam, autoinfo.bouwjaar, autoinfo.merk, autoinfo.model FROM autos ORDER BY autoinfo.bouwjaar, verkopers.naam DESC;
+SELECT verkopers.naam, autoinfo.bouwjaar, autoinfo.merk, autoinfo.model FROM autos, autoinfo ORDER BY autoinfo.bouwjaar, verkopers.naam DESC;
 ```
 
 2. Geef per verkoper het aantal auto’s hij/zij verkocht heeft. Sorteer op het aantal verkochte wagens.
