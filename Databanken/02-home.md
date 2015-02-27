@@ -55,11 +55,11 @@ ORDER BY COUNT(chassisNR) DESC;
 
 3. Hoeveel verschillende merken zijn er verkocht?
 
-```SQL
-SELECT COUNT(DISTINCT merk) AS 'Aantal merken'
-FROM autoinfo;
-SELECT;
-```
+	```SQL
+	SELECT COUNT(DISTINCT merk) AS 'Aantal merken'
+	FROM autoinfo;
+	SELECT;
+	```
 
 4. Geef de totale verkoopprijs van de auto met chassisnr 1234.
 
