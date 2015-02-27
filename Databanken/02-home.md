@@ -68,7 +68,6 @@ select * from autos;
 	INNER JOIN autoinfo ON autoinfo.id = autos.autoinfo_id
 	INNER JOIN autos_opties ON autos_opties.chassisNR = autos.chassisNR
 	WHERE autos.chassisNR = 1234;
-	SELECT;
 	```
 
 5. Geef de auto (merk, model, chassisnr, verkoopprijs) die het duurst is. Hou ook rekening met de opties.
