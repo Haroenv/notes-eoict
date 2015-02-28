@@ -14,6 +14,13 @@ Gemaakt door Haroen Viaene. Geen garantie.
 4. Computerarchitectuur
 	* [Paper](Computerarchitectuur/paper)
 	* [formularium](Computerarchitectuur/formularium)
+5. [Digitale Technieken]("Digitale Technieken 1")
+6. [µControllers](µControllers)
+7. [Databanken](Databanken)
+	* voorbereidingen
+	* labo
+8. [Webtechnieken](Webtechnieken)
+	* handige extra's
 5. ETC
 	* [.tex-template Odisee](ETC/template)
 
