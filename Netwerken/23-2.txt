@@ -1,6 +1,0 @@
-Cisco 23/2/2015
-
-IOS-versie 15.1(4)M2
-512 MB RAM
-3 Gigabit Ethernet interfaces
-CISCO2911/K9 platform (revision 1.0) with 450560K/73728K bytes of memory.
