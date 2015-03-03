@@ -29,6 +29,14 @@ Haroen Viaene
 
 3. Welke klanten hebben nog geen bestellingen gedaan? Schrijf op 2 manieren, d.w.z. met subquery en zonder subquery.
 
+	met subquery:
+
+	```SQL
+
+	```
+
+	zonder subquery:
+
 	```SQL
 
 	```
