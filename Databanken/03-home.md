@@ -10,8 +10,7 @@ Haroen Viaene
 	```SQL
 	SELECT COUNT(artikelen.artikel_id)
 	FROM artikelen
-	WHERE
-	(
+	WHERE (
 	    SELECT COUNT(bestellingen.artikel_id)
 	    FROM bestellingen
 	);
@@ -34,7 +33,9 @@ Haroen Viaene
 	```SQL
 	SELECT naam, vnaam
 	FROM artikelen
-
+	WHERE (
+	    SELECT
+	);
 	```
 
 	zonder subquery:
