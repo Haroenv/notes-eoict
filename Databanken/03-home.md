@@ -28,6 +28,8 @@ Haroen Viaene
 
 3. Welke klanten hebben nog geen bestellingen gedaan? Schrijf op 2 manieren, d.w.z. met subquery en zonder subquery.
 
+	to finish:
+
 	met subquery:
 
 	```SQL
@@ -41,7 +43,8 @@ Haroen Viaene
 	zonder subquery:
 
 	```SQL
-
+	SELECT naam, voornaam
+	FROM klanten;
 	```
 
 	alle klanten die iets besteld hebben:
