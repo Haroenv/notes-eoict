@@ -59,5 +59,10 @@ Haroen Viaene
 4. Geef de top-3 van gemeenten berekend volgens aantal bestellingen door klanten uit die gemeente.
 
 	```SQL
-
+	SELECT gemeente, COUNT(gemeente) AS klanten
+	FROM bestellingen
+	INNER JOIN klanten on klanten.klant_id = bestellingen.klant_id
+	GROUP BY gemeente
+	ORDER BY COUNT(gemeente) DESC
+	LIMIT 3;
 	```
