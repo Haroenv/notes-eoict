@@ -32,6 +32,8 @@ Haroen Viaene
 	met subquery:
 
 	```SQL
+	SELECT naam, vnaam
+	FROM artikelen
 
 	```
 
@@ -39,6 +41,19 @@ Haroen Viaene
 
 	```SQL
 
+	```
+
+	alle klanten die iets besteld hebben:
+
+	```SQL
+	select * FROM klanten
+	INNER JOIN bestellingen on klanten.klant_id = bestellingen.klant_id;
+	```
+
+	alle klanten:
+
+	```SQL
+	SELECT * FROM klanten;
 	```
 
 4. Geef de top-3 van gemeenten berekend volgens aantal bestellingen door klanten uit die gemeente.
