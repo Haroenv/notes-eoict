@@ -6,7 +6,13 @@ Haroen Viaene
 1. Hoeveel artikelen zijn nooit besteld? Maak hiervoor gebruik van subqueries.
 
 	```SQL
-
+	SELECT COUNT(artikelen.artikel_id)
+	FROM artikelen
+	WHERE
+	(
+		SELECT COUNT(bestellingen.artikel_id)
+		FROM bestellingen
+	)
 	```
 
 2. Wat is de totale waarde van de bestellingen die geplaatst zijn in de maand januari?
