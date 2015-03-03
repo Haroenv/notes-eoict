@@ -21,8 +21,8 @@ Haroen Viaene
 	```SQL
 	SELECT SUM(prijs)
 	FROM artikelen
-	INNER JOIN items ON items.artikel_id=artikelen.artikel_id
-	INNER JOIN bestellingen ON bestellingen.bestelling_id=items.bestelling_id
+	INNER JOIN items ON items.artikel_id = artikelen.artikel_id
+	INNER JOIN bestellingen ON bestellingen.bestelling_id = items.bestelling_id
 	WHERE MONTH(datum) = 1;
 	```
 
@@ -47,8 +47,8 @@ Haroen Viaene
 	alle klanten die iets besteld hebben:
 
 	```SQL
-	select * FROM klanten
-	INNER JOIN bestellingen on klanten.klant_id = bestellingen.klant_id;
+	SELECT * FROM klanten
+	INNER JOIN bestellingen ON klanten.klant_id = bestellingen.klant_id;
 	```
 
 	alle klanten:
