@@ -1,4 +1,5 @@
 \documentclass[11pt, a4paper]{article}
+%\usepackage{tikz-timing}
 \usepackage[dutch, english]{babel}
 \usepackage{graphicx}
 \usepackage[linkcolor=black,urlcolor=blue,citecolor=black]{hyperref}
@@ -70,13 +71,13 @@ volgend jaar wordt oefeningen en theorie samengevoegd.
 
 Analoog wil zeggen dat het continu, vloeiend is.
 
-Voorbeeld: analoge thermometer, draaispoelmeter (stroomsterkte), weeghaak...
+Voorbeeld: analoge thermometer, draaispoelmeter (stroomsterkte), weeghaak\dots
 
 \subsubsection{digitale weergave}
 
 sprongsgewijs, discontinu.
 
-secondewijzer, verbreken van een contact...
+secondewijzer, verbreken van een contact\dots
 
 \subsubsection{digitale schakelingen}
 
@@ -84,7 +85,7 @@ Digitale schakelingen maken gebruik van logische poorten.
 
 een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is hoog, 1 is laag), maar wordt niet gebruikt.
 
-\subsection{...}
+\subsection{\dots}
 
 \subsection{Karnaud-kaart}
 
@@ -108,7 +109,7 @@ een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is 
 
 haakje voor NOT
 
-%%$$\amp = AND$$
+$$\& = AND$$
 
 $$\le1 = OR$$
 
@@ -124,19 +125,22 @@ IEC = =1
 
 waarheidstabel:
 
-\begin{verbatim}
-ABC Y
-000 0
-001 1
-010 1
-011 0
-100 1
-101 0
-110 0
-111 0 (in de praktijk: 1 (door te gebruiken van 2 XOR-poorten met 2 ingangen))
-\end{verbatim}
+\begin{tabular}{c c c || r}
+A & B & C & Y \\
+\hline
+0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 0 \\
+\end{tabular}
 
-Karnaud-kaart
+(in de praktijk: 1 (door te gebruiken van 2 XOR-poorten met 2 ingangen))
+
+Karnaug-kaart
 
 \begin{verbatim}
         BC
@@ -157,7 +161,20 @@ C = ____----
 Y = _--_-___
 \end{verbatim}
 
-$$Y=AB+\overline{(AB)(+)C}$$
+%\texttiming{HLHLHLHLHLHL}
+
+% \begin{tikztimingtable}
+%   Coarse Pulse                          & 3L 16H 6L \\
+%   Coarse Pulse - Delayed 1              & 4L 16H 5L \\
+%   Coarse Pulse - Delayed 2              & 5L 16H 4L \\
+%   Coarse Pulse - Delayed 3              & 6L 16H 3L \\
+%   \\ % Gives vertical space
+%   Final Pulse Set                       & 3L 16H 6L \\
+%   Final Pulse $\overline{\mbox{Reset}}$ & 6L 16H 3L \\
+%   Final Pulse                           & 3L 19H 3L \\
+% \end{tikztimingtable}
+
+$$Y=AB+\overline{(AB) \oplus C}$$
 
 \begin{verbatim}
 A ----
@@ -181,9 +198,10 @@ A B X MINTERM
 0 1 1 \overline{A}.B
 1 0 1 A.\overline{B}
 1 1 0 A.B
-
-X = A.\overline{B} + \overline{A}.B = A (+) B
 \end{verbatim}
+
+$$X = A.\overline{B} + \overline{A}.B = A  \oplus  B$$
+
 
 \subsection{Product of Sums}
 
@@ -193,11 +211,12 @@ A B X MAXTERM
 0 1 1 A+\overline{B}
 1 0 1 \overline{A}+B
 1 1 0 \overline{A}+\overline{B}
-
-X = A+\overline{B} \cdot \overline{A}+B
-
-X = \Product{M\overline{0,3}}
 \end{verbatim}
+
+$$X = A+\overline{B} \cdot \overline{A}+B $$
+
+%%$$X = {M \prod{\overline{(0,3)}} $$
+
 
 \subsection{Implementatie van logische functies}
 
