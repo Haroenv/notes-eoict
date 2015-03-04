@@ -1,14 +1,14 @@
 \documentclass[11pt, a4paper]{article}
-%\usepackage{tikz-timing}
+\usepackage{tikz, tikz-timing, verbatim}
+\usepackage[american]{circuitikz}
+\usetikzlibrary{positioning}
 \usepackage[dutch, english]{babel}
-\usepackage{graphicx}
 \usepackage[linkcolor=black,urlcolor=blue,citecolor=black]{hyperref}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[usenames,dvipsnames]{pstricks}
 \usepackage[parfill]{parskip}
 \hypersetup{colorlinks=true}
-\usepackage{epsfig, amsmath, epic, eepic, float, subfig, amsfonts, color, amsthm, textcomp, microtype}
-\usepackage[all]{xy}
+\usepackage{epsfig, amsmath, epic, eepic, float, subfig, amsfonts, color, amsthm, textcomp, microtype, graphicx}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \begin{document}
@@ -89,6 +89,15 @@ een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is 
 
 \subsection{Karnaugh-kaart}
 
+\begin{tabular}{c c | c | c | c | c |}
+  \_ & \_ & \_ & BC & \_ & \_\\
+  \_ & \_ & 00 & 01 & 11 & 10 \\
+   \hline
+   \_ & 0 &  0 & 1 & 1 & 0 \\
+   \hline
+   \_ & 1 &  1 & 0 & 0 & 1 \\
+   \hline
+\end{tabular}
 
 \begin{verbatim}
     	   BC
@@ -140,7 +149,17 @@ A & B & C & Y \\
 
 (in de praktijk: 1 (door te gebruiken van 2 XOR-poorten met 2 ingangen))
 
-Karnaug-kaart
+Karnaugh-kaart
+
+\begin{tabular}{c c | c | c | c | c |}
+  \_ & \_ & \_ & BC & \_ & \_\\
+  \_ & \_ & 00 & 01 & 11 & 10 \\
+   \hline
+   \_ & 0 &  0 & 1 & 1 & 1 \\
+   \hline
+   \_ & 1 &  1 & 0 & 0 & 1 \\
+   \hline
+\end{tabular}
 
 \begin{verbatim}
         BC
@@ -154,25 +173,12 @@ A  +--+--+--+--+
 
 Pulsdiagram:
 
-\begin{verbatim}
-A = _-_-_-_-
-B = __--__--
-C = ____----
-Y = _--_-___
-\end{verbatim}
-
-% \texttiming{HLHLHLHLHLHL}
-
-% \begin{tikztimingtable}
-%   Coarse Pulse                          & 3L 16H 6L \\
-%   Coarse Pulse - Delayed 1              & 4L 16H 5L \\
-%   Coarse Pulse - Delayed 2              & 5L 16H 4L \\
-%   Coarse Pulse - Delayed 3              & 6L 16H 3L \\
-%   \\ % Gives vertical space
-%   Final Pulse Set                       & 3L 16H 6L \\
-%   Final Pulse $\overline{\mbox{Reset}}$ & 6L 16H 3L \\
-%   Final Pulse                           & 3L 19H 3L \\
-% \end{tikztimingtable}
+\begin{tikztimingtable}
+  A   &  LHLHLHLH \\ % ends with edge
+  B   &  LLHHLLHH \\ % starts with edge
+  C   &  LLLLHHHH \\ % ends with edge
+  Y   &  LHHLHLLL \\
+\end{tikztimingtable}
 
 $$Y=AB+\overline{(AB) \oplus C}$$
 
@@ -185,6 +191,16 @@ B ----   |    |
            =1--------
 C ----------
 \end{verbatim}
+
+\begin{circuitikz} \draw
+(0,2) node[and port] (and) {}
+(2,1) node[or port] (or) {}
+(and.in 1) node[anchor=east] {A}
+(and.in 2) node[anchor=east] (bnode) {B}
+(and.out) -| (or.in 1)
+node[below=of bnode] (cnode) {C}
+(cnode) -| (or.in 2)
+;\end{circuitikz}
 
 \newpage
 
