@@ -1,7 +1,7 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage{tikz, tikz-timing, verbatim}
-\usepackage[american]{circuitikz}
-\usetikzlibrary{positioning}
+\usepackage{circuitikz}
+\usetikzlibrary{circuits.logic.IEC, positioning}
 \usepackage[dutch, english]{babel}
 \usepackage[linkcolor=black,urlcolor=blue,citecolor=black]{hyperref}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
@@ -29,7 +29,7 @@
 
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
-\emph{Door:}\\
+\emph{Door: }\\
 Haroen \textsc{Viaene}\\
 
 \end{flushleft}
@@ -155,7 +155,7 @@ Karnaugh-kaart
   \_ & \_ & \_ & BC & \_ & \_\\
   \_ & \_ & 00 & 01 & 11 & 10 \\
    \hline
-   \_ & 0 &  0 & 1 & 1 & 1 \\
+   \_ & 0 &  0 & 1 & 0 & 1 \\
    \hline
    \_ & 1 &  1 & 0 & 0 & 1 \\
    \hline
@@ -192,15 +192,6 @@ B ----   |    |
 C ----------
 \end{verbatim}
 
-\begin{circuitikz} \draw
-(0,2) node[and port] (and) {}
-(2,1) node[or port] (or) {}
-(and.in 1) node[anchor=east] {A}
-(and.in 2) node[anchor=east] (bnode) {B}
-(and.out) -| (or.in 1)
-node[below=of bnode] (cnode) {C}
-(cnode) -| (or.in 2)
-;\end{circuitikz}
 
 \newpage
 
