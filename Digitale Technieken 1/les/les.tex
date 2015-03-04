@@ -182,15 +182,21 @@ Pulsdiagram:
 
 $$Y=AB+\overline{(AB) \oplus C}$$
 
-\begin{verbatim}
-A ----
-      &--------
-B ----   |    |
-         |    -------
-         ---        ≤1\---Y
-           =1--------
-C ----------
-\end{verbatim}
+blabla
+
+\begin{circuitikz}
+  \draw
+    (0,0) node[european and port] (myand){}
+    (myand.in 1) node[anchor=east]{A}
+    (myand.in 2) node[anchor=east]{B}
+    (4,-0.265) node[european or port] (mynot){}
+    (mynot.out) node[anchor=west]{Y}
+    (myand.out) -- (mynot.in 1)
+    (2,-1) node[european xor port] (myxor){}
+    (myxor.out) -- (mynot.in 2)
+    (myxor.in 2) node[anchor=east]{C}
+    (myand.out) -- (myxor.in 1);
+\end{circuitikz}
 
 
 \newpage
