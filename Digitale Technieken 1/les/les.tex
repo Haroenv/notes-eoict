@@ -7,7 +7,7 @@
 \usepackage[usenames,dvipsnames]{pstricks}
 \usepackage[parfill]{parskip}
 \hypersetup{colorlinks=true}
-\usepackage{epsfig, amsmath, epic, eepic, float, subfig, amsfonts, color, amsthm, textcomp, microtype, fullpage}
+\usepackage{epsfig, amsmath, epic, eepic, float, subfig, amsfonts, color, amsthm, textcomp, microtype}
 \usepackage[all]{xy}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
@@ -87,7 +87,7 @@ een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is 
 
 \subsection{\dots}
 
-\subsection{Karnaud-kaart}
+\subsection{Karnaugh-kaart}
 
 
 \begin{verbatim}
@@ -161,7 +161,7 @@ C = ____----
 Y = _--_-___
 \end{verbatim}
 
-%\texttiming{HLHLHLHLHLHL}
+% \texttiming{HLHLHLHLHLHL}
 
 % \begin{tikztimingtable}
 %   Coarse Pulse                          & 3L 16H 6L \\
@@ -192,26 +192,29 @@ C ----------
 
 \subsection{Sum of Products}
 
-\begin{verbatim}
-A B X MINTERM
-0 0 0 \overline{A}.\overline{B}
-0 1 1 \overline{A}.B
-1 0 1 A.\overline{B}
-1 1 0 A.B
-\end{verbatim}
+\begin{tabular}{l l l || c}
+A & B & X  & MINTERM \\
+\hline
+0 & 0 & 0  & $\overline{A}\cdot \overline{B}$ \\
+0 & 1 & 1  & $\overline{A}\cdot B$ \\
+1 & 0 & 1  & $A\cdot \overline{B}$ \\
+1 & 1 & 0  & $A\cdot B$ \\
+\end{tabular}
 
-$$X = A.\overline{B} + \overline{A}.B = A  \oplus  B$$
+
+$$X = A\cdot \overline{B} + \overline{A}\cdot B = A  \oplus  B$$
 
 
 \subsection{Product of Sums}
 
-\begin{verbatim}
-A B X MAXTERM
-0 0 0 A+B
-0 1 1 A+\overline{B}
-1 0 1 \overline{A}+B
-1 1 0 \overline{A}+\overline{B}
-\end{verbatim}
+\begin{tabular}{l l l || c}
+A & B & X & MAXTERM \\
+\hline
+0 & 0 & 0 & $A+B$ \\
+0 & 1 & 1 & $A+\overline{B}$ \\
+1 & 0 & 1 & $\overline{A}+B $\\
+1 & 1 & 0 & $\overline{A}+\overline{B}$ \\
+\end{tabular}
 
 $$X = A+\overline{B} \cdot \overline{A}+B $$
 
