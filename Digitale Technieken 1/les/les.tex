@@ -99,17 +99,6 @@ een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is 
    \hline
 \end{tabular}
 
-\begin{verbatim}
-    	   BC
-     00 01 11 10
-    +--+--+--+--+
-  0 |0 |1 |1 |0 |
- A  +--+--+--+--+
-  1 |1 |0 |0 |1 |
-    +--+--+--+--+
-\end{verbatim}
-
-
 \newpage
 
 \section{Les 2}
@@ -161,16 +150,6 @@ Karnaugh-kaart
    \hline
 \end{tabular}
 
-\begin{verbatim}
-        BC
-    00 01 11 10
-   +--+--+--+--+
- 0 |0 |1 |0 |1 |
-A  +--+--+--+--+
- 1 |1 |0 |0 |1 |
-   +--+--+--+--+
-\end{verbatim}
-
 Pulsdiagram:
 
 \begin{tikztimingtable}
@@ -181,8 +160,6 @@ Pulsdiagram:
 \end{tikztimingtable}
 
 $$Y=AB+\overline{(AB) \oplus C}$$
-
-blabla
 
 \begin{circuitikz}
   \draw
@@ -197,7 +174,6 @@ blabla
     (myxor.in 2) node[anchor=east]{C}
     (myand.out) -- (myxor.in 1);
 \end{circuitikz}
-
 
 \newpage
 
@@ -231,7 +207,7 @@ A & B & X & MAXTERM \\
 
 $$X = A+\overline{B} \cdot \overline{A}+B $$
 
-%%$$X = {M \prod{\overline{(0,3)}} $$
+$$X = M \prod\overline{(0,3)} $$
 
 
 \subsection{Implementatie van logische functies}
