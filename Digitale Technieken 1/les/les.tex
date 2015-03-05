@@ -111,13 +111,39 @@ een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is 
 
 \subsection{Symbolen}
 
-haakje voor NOT
+NOT, AND, OR, XOR, XNOR
 
-$\& = AND$
+\begin{circuitikz}
+  \draw
+    (0,0) node[european not port] (mynot){}
+    (mynot.in) node[anchor=east]{A}
+    (mynot.out) node[anchor=west]{Y}
 
-$\le1 = OR$
+    (0,-1.5) node[european and port] (myand){}
+    (myand.in 1) node[anchor=east]{A}
+    (myand.in 2) node[anchor=east]{B}
+    (myand.out) node[anchor=west]{Y}
 
-$=1 = XOR$
+    (0,-3) node[european or port] (myor){}
+    (myor.in 1) node[anchor=east]{A}
+    (myor.in 2) node[anchor=east]{B}
+    (myor.out) node[anchor=west]{Y}
+
+    (0,-4.5) node[european xor port] (myxor){}
+    (myxor.in 1) node[anchor=east]{A}
+    (myxor.in 2) node[anchor=east]{B}
+    (myxor.out) node[anchor=west]{Y}
+
+    (0,-6) node[european xnor port] (myxnor){}
+    (myxnor.in 1) node[anchor=east]{A}
+    (myxnor.in 2) node[anchor=east]{B}
+    (myxnor.out) node[anchor=west]{Y};
+
+    % (0,-6) node[european even port] (myeven){}
+    % (myeven.in 1) node[anchor=east]{A}
+    % (myeven.in 2) node[anchor=east]{B}
+    % (myeven.out) node[anchor=west]{Y};
+\end{circuitikz}
 
 $2k = even$
 
@@ -125,9 +151,15 @@ $2k = even$
 
 \subsubsection{XOR}
 
-IEC = =1
+\begin{circuitikz}
+  \draw
+    (0,0) node[european xor port] (myxor){}
+    (myxor.in 1) node[anchor=east]{A}
+    (myxor.in 2) node[anchor=east]{B}
+    (myxor.out) node[anchor=west]{Y};
+\end{circuitikz}
 
-waarheidstabel:
+% \subsubsubsection{waarheidstabel}
 
 \begin{tabular}{c c c || r}
 A & B & C & Y \\
@@ -144,7 +176,7 @@ A & B & C & Y \\
 
 (in de praktijk: 1 (door te gebruiken van 2 XOR-poorten met 2 ingangen))
 
-Karnaugh-kaart
+% \subsubsubsection{Karnaugh-kaart}
 
 \begin{tabular}{c c | c | c | c | c |}
   \_ & \_ & \_ & B & BC & C\\
@@ -156,7 +188,7 @@ Karnaugh-kaart
    \hline
 \end{tabular}
 
-Pulsdiagram:
+% \subsubsubsection{Pulsdiagram}
 
 \begin{tikztimingtable}
   A   &  LHLHLHLH \\
@@ -164,6 +196,8 @@ Pulsdiagram:
   C   &  LLLLHHHH \\
   Y   &  LHHLHLLL \\
 \end{tikztimingtable}
+
+\subsubsection{Oefening}
 
 $$Y=AB+\overline{(AB) \oplus C}$$
 
