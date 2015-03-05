@@ -1,1 +1,0 @@
-In de andere bestanden kan je per oefenzitting plakken wat de "code" is om in te voeren in de [simulator](http://www.falstad.com/circuit/) die Bart Cardon gepost heeft op de Facebookgroep. Toevoegingen zijn hartelijk welkom!
