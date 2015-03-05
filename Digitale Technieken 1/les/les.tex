@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[11pt, a4paper]{report}
 \usepackage{tikz, tikz-timing, verbatim}
 \usepackage{circuitikz}
 \usetikzlibrary{circuits.logic.IEC, positioning}
@@ -55,7 +55,7 @@ Haroen \textsc{Viaene}\\
 
 \newpage
 
-\section{Inleiding}
+\chapter{Inleiding}
 
 De theorielessen zijn niet altijd even makkelijk om in te noteren in real-time, dus daarom kan het zijn dat bepaalde delen door mij niet ingevoegd worden. Volgens de normale regeling zou ik die dan wel op papier moeten hebben. Dit gebeurt echter zeker niet altijd, als ik een stuk van de les niet oplette, heb ik er dus waarschijnlijk ook geen notities van.
 
@@ -63,37 +63,37 @@ Het is zeker niet de bedoeling dat ik dit helemaal alleen maak, stuur als je erg
 
 Deze notities zijn open source, en de nieuwste versie is altijd te vinden op \url{https://github.com/haroenv/notes-1eoict}
 
-\section{Les 1}
+\chapter{Les 1}
 
-\subsection{evaluatie}
+\section{evaluatie}
 
 analoog aan ElekSign, maar 6 i.p.v. 8 SP
 
 volgend jaar wordt oefeningen en theorie samengevoegd.
 
-\subsection{inleiding}
+\section{inleiding}
 
-\subsubsection{analoge weergave}
+\subsection{analoge weergave}
 
 Analoog wil zeggen dat het continu, vloeiend is.
 
 Voorbeeld: analoge thermometer, draaispoelmeter (stroomsterkte), weeghaak\dots
 
-\subsubsection{digitale weergave}
+\subsection{digitale weergave}
 
 sprongsgewijs, discontinu.
 
 secondewijzer, verbreken van een contact\dots
 
-\subsubsection{digitale schakelingen}
+\subsection{digitale schakelingen}
 
 Digitale schakelingen maken gebruik van logische poorten.
 
 een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is hoog, 1 is laag), maar wordt niet gebruikt.
 
-\subsection{\dots}
+\section{\dots}
 
-\subsection{Karnaugh-kaart}
+\section{Karnaugh-kaart}
 
 \begin{tabular}{c c | c | c | c | c |}
   \_ & \_ & \_ & B & BC & C\\
@@ -107,9 +107,9 @@ een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is 
 
 \newpage
 
-\section{Les 2}
+\chapter{Les 2}
 
-\subsection{Symbolen}
+\section{Symbolen}
 
 NOT, AND, NAND, OR, NOR, XOR, XNOR
 
@@ -157,9 +157,9 @@ NOT, AND, NAND, OR, NOR, XOR, XNOR
 
 $2k = even$
 
-\subsection{Oefeningen}
+\section{Oefeningen}
 
-\subsubsection{XOR}
+\subsection{XOR}
 
 \begin{circuitikz}
   \draw
@@ -169,7 +169,7 @@ $2k = even$
     (myxor.out) node[anchor=west]{Y};
 \end{circuitikz}
 
-% \subsubsubsection{waarheidstabel}
+\subsubsection{waarheidstabel}
 
 \begin{tabular}{c c c || r}
 A & B & C & Y \\
@@ -186,7 +186,7 @@ A & B & C & Y \\
 
 (in de praktijk: 1 (door te gebruiken van 2 XOR-poorten met 2 ingangen))
 
-% \subsubsubsection{Karnaugh-kaart}
+\subsubsection{Karnaugh-kaart}
 
 \begin{tabular}{c c | c | c | c | c |}
   \_ & \_ & \_ & B & BC & C\\
@@ -198,7 +198,7 @@ A & B & C & Y \\
    \hline
 \end{tabular}
 
-% \subsubsubsection{Pulsdiagram}
+\subsubsection{Pulsdiagram}
 
 \begin{tikztimingtable}
   A   &  LHLHLHLH \\
@@ -207,7 +207,7 @@ A & B & C & Y \\
   Y   &  LHHLHLLL \\
 \end{tikztimingtable}
 
-\subsubsection{Oefening}
+\subsection{Oefening}
 
 $$Y=AB+\overline{(AB) \oplus C}$$
 
@@ -227,9 +227,9 @@ $$Y=AB+\overline{(AB) \oplus C}$$
 
 \newpage
 
-\section{Les 3}
+\chapter{Les 3}
 
-\subsection{Sum of Products}
+\section{Sum of Products}
 
 \begin{tabular}{l l l || c}
 A & B & X  & MINTERM \\
@@ -244,7 +244,7 @@ $$X = A\cdot \overline{B} + \overline{A}\cdot B = A  \oplus  B$$
 
 $$X = m \sum\overline{(0,3)} $$ (juist???)
 
-\subsection{Product of Sums}
+\section{Product of Sums}
 
 \begin{tabular}{l l l || c}
 A & B & X & MAXTERM \\
@@ -260,7 +260,7 @@ $$X = A+\overline{B} \cdot \overline{A}+B $$
 $$X = M \prod\overline{(0,3)} $$
 
 
-\subsection{Implementatie van logische functies}
+\section{Implementatie van logische functies}
 
 $$ X = \overline{A}BC + $$
 
