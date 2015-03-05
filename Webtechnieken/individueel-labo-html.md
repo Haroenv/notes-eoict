@@ -1,4 +1,4 @@
-- babisdocument html:5 en dan tab
+- basisdocument html:5 en dan tab
 	- meta charset
 	- title
 	- html - head - body
@@ -12,17 +12,17 @@
 	- andere elementen (blockquote, p, dl ...)
 	- geen <b> of <i> maaar <strong> en <em>
 - keuze afbeeldingen
-	- geen design in plaatsen wel vaste logo's 
+	- geen design in plaatsen wel vaste logo's
 - formu
 	- form|action
 	- structuur: fieldsets/dl, dt(labael), dd(controls)
 	- structuur: checkboxes en radiobuttons controls nesten in hun labels
 	- for-attribuut label linken aan id-attribuut control
 	- radiobuttongroep: allemaal dezelfde naam attribuut
--attributen
+- attributen
 	- img|src, alt
 	- a|href
 - layout
-	geen spaties 
+	geen spaties
 	let op inspringingen
--VALIDATIE!
+- VALIDATIE!
