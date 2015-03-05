@@ -83,7 +83,7 @@ Haroen Viaene
 2. <kbd>ctrl</kbd><kbd>u</kbd> verwijdert de input die nu gegeven wordt (voor de cursor)
 3. tijdens sleep kan je geen commando's invoeren. <kbd>ctrl</kbd><kbd>c</kbd> onderbreekt de slaap
 4. <kbd>ctrl</kbd><kbd>h</kbd> verwijdert het teken voor de cursor
-5. tab autocomplete je input cat `.X`<kbd>tab</kbd> geeft `cat .X`, want er is geen bestand dat `.X...` heet. 
+5. tab autocomplete je input cat `.X`<kbd>tab</kbd> geeft `cat .X`, want er is geen bestand dat `.X...` heet.
 
 ## Labo 3: Basisopdrachten 2
 
@@ -119,7 +119,7 @@ Haroen Viaene
 1. `less /etc/hosts | grep localhost`
 2. :
 
-	```
+	```sh
 	cat > boek.txt
 	David 09 3331375
 	Rachel 02 5454643
@@ -130,7 +130,7 @@ Haroen Viaene
 
 	<kbd>ctrl</kbd><kbd>d</kbd>
 
-	```
+	```sh
 	grep 'a' boek.txt
 	grep ^D boek.txt
 	grep 75$ boek.txt
@@ -139,7 +139,7 @@ Haroen Viaene
 	```
 
 3. :
-    ```
+    ```sh
     cp /etc/bash.bashrc ~
     grep ^[e-m] bash.bashrc
     grep "if" bash.bashrc | grep "then"
@@ -229,7 +229,7 @@ Haroen Viaene
 
 vi .exrc
 
-voeg toe: 
+voeg toe:
 
 * syntax on
 * set number
@@ -278,7 +278,7 @@ alternatieve oplossing door Nicolas Henrotte
 echo "Het bestand $1 verwijderen?"
 read jaofnee
 case $jaofnee in
-ja | Ja | JA) 
+ja | Ja | JA)
 	rm $1
 	echo "Bestand $1 verwijderd."
 	;;
@@ -317,7 +317,7 @@ do
     expr $i + 1
     exit
   fi
-done 
+done
 ```
 
 ## Labo 6: Gebruikersaccounts
@@ -335,7 +335,7 @@ done
         * er kunnen opties meegegeven worden om een wachtwoord, volledige naam etc. in te vullen.
     * `admintool`
 2. Bij het automatisch aanmaken van een bestand:
-    * in het `shadow`-bestand zit een input voor 
+    * in het `shadow`-bestand zit een input voor
         * `testerig`
             * wachtwoord geëncrypteerd
             * met 0/99999 voor lifetime
@@ -352,14 +352,14 @@ done
         * `testNogMeer`
             * `1002:1002`
             * geen volledige naam
-3. 
+3.
 4. Wordt aangepast in `/etc/passwd/` (hij heeft nu een c-shell ipv bash)
     * `apt-get install csh`
     * `su - piet`
     * `%`
 5. pas `/etc/passwd aan`, of `userdel`, `rmuser` ...
     * de input wordt verwijderd uit `/etc/passwd`
-6. de shadow-entry blijft bestaan. 
+6. de shadow-entry blijft bestaan.
 
 
 ### Groepen
