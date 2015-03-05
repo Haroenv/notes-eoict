@@ -111,7 +111,7 @@ een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is 
 
 \subsection{Symbolen}
 
-NOT, AND, OR, XOR, XNOR
+NOT, AND, NAND, OR, NOR, XOR, XNOR
 
 \begin{circuitikz}
   \draw
@@ -124,17 +124,27 @@ NOT, AND, OR, XOR, XNOR
     (myand.in 2) node[anchor=east]{B}
     (myand.out) node[anchor=west]{Y}
 
-    (0,-3) node[european or port] (myor){}
+    (0,-3) node[european nand port] (mynand){}
+    (mynand.in 1) node[anchor=east]{A}
+    (mynand.in 2) node[anchor=east]{B}
+    (mynand.out) node[anchor=west]{Y}
+
+    (0,-4.5) node[european or port] (myor){}
     (myor.in 1) node[anchor=east]{A}
     (myor.in 2) node[anchor=east]{B}
     (myor.out) node[anchor=west]{Y}
 
-    (0,-4.5) node[european xor port] (myxor){}
+    (0,-6) node[european nor port] (mynor){}
+    (mynor.in 1) node[anchor=east]{A}
+    (mynor.in 2) node[anchor=east]{B}
+    (mynor.out) node[anchor=west]{Y}
+
+    (0,-7.5) node[european xor port] (myxor){}
     (myxor.in 1) node[anchor=east]{A}
     (myxor.in 2) node[anchor=east]{B}
     (myxor.out) node[anchor=west]{Y}
 
-    (0,-6) node[european xnor port] (myxnor){}
+    (0,-9) node[european xnor port] (myxnor){}
     (myxnor.in 1) node[anchor=east]{A}
     (myxnor.in 2) node[anchor=east]{B}
     (myxnor.out) node[anchor=west]{Y};
