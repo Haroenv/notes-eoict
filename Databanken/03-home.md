@@ -5,8 +5,6 @@ Haroen Viaene
 
 1. Hoeveel artikelen zijn nooit besteld? Maak hiervoor gebruik van subqueries.
 
-	nog af te werken:
-
 	```SQL
 	SELECT COUNT(artikelen.artikel_id)
 	FROM artikelen
@@ -19,7 +17,7 @@ Haroen Viaene
 2. Wat is de totale waarde van de bestellingen die geplaatst zijn in de maand januari?
 
 	```SQL
-	SELECT SUM(prijs)
+	SELECT SUM(prijs*aantal) AS waarde
 	FROM artikelen
 	INNER JOIN items ON items.artikel_id = artikelen.artikel_id
 	INNER JOIN bestellingen ON bestellingen.bestelling_id = items.bestelling_id
@@ -27,8 +25,6 @@ Haroen Viaene
 	```
 
 3. Welke klanten hebben nog geen bestellingen gedaan? Schrijf op 2 manieren, d.w.z. met subquery en zonder subquery.
-
-	to finish:
 
 	met subquery:
 
@@ -46,19 +42,6 @@ Haroen Viaene
 	FROM klanten
 	LEFT JOIN bestellingen ON bestellingen.klant_id=klanten.klant_id
 	WHERE bestellingen.klant_id IS NULL;
-	```
-
-	alle klanten die iets besteld hebben:
-
-	```SQL
-	SELECT * FROM klanten
-	INNER JOIN bestellingen ON klanten.klant_id = bestellingen.klant_id;
-	```
-
-	alle klanten:
-
-	```SQL
-	SELECT * FROM klanten;
 	```
 
 4. Geef de top-3 van gemeenten berekend volgens aantal bestellingen door klanten uit die gemeente.
