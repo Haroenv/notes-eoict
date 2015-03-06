@@ -1,0 +1,271 @@
+\documentclass[11pt, a4paper]{report}
+\usepackage{tikz, tikz-timing, verbatim}
+\usepackage{circuitikz}
+\usetikzlibrary{circuits.logic.IEC, positioning}
+\usepackage[dutch, english]{babel}
+\usepackage[linkcolor=black,urlcolor=blue,citecolor=black]{hyperref}
+\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage[parfill]{parskip}
+\hypersetup{colorlinks=true}
+\usepackage{epsfig, amsmath, epic, eepic, float, subfig, amsfonts, color, amsthm, textcomp, microtype, graphicx}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+
+\selectlanguage{dutch}
+\begin{titlepage}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{./logo.pdf}~\\[1cm]
+
+
+\textsc{\Large Digitale Technieken 1}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ \LARGE \bfseries Lesnota's}\\[0.4cm]
+{\large \textit{gegeven door D.Claus}}\\[0.2cm]
+
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Door: }\\
+Haroen \textsc{Viaene}\\
+
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\large{1$^{\text{ste}}$ fase bachelor Elektronica-ICT}\\
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+{\large 2014-2015}
+
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\section*{Inhoud}
+
+\tableofcontents
+
+\newpage
+
+\chapter{Inleiding}
+
+De theorielessen zijn niet altijd even makkelijk om in te noteren in real-time, dus daarom kan het zijn dat bepaalde delen door mij niet ingevoegd worden. Volgens de normale regeling zou ik die dan wel op papier moeten hebben. Dit gebeurt echter zeker niet altijd, als ik een stuk van de les niet oplette, heb ik er dus waarschijnlijk ook geen notities van.
+
+Het is zeker niet de bedoeling dat ik dit helemaal alleen maak, stuur als je ergens een fout ziet staan een issue of een pull request als je weet hoe hem op te lossen.
+
+Deze notities zijn open source, en de nieuwste versie is altijd te vinden op \url{https://github.com/haroenv/notes-1eoict}
+
+\chapter{Les 1}
+
+\section{evaluatie}
+
+analoog aan ElekSign, maar 6 i.p.v. 8 SP
+
+volgend jaar wordt oefeningen en theorie samengevoegd.
+
+\section{inleiding}
+
+\subsection{analoge weergave}
+
+Analoog wil zeggen dat het continu, vloeiend is.
+
+Voorbeeld: analoge thermometer, draaispoelmeter (stroomsterkte), weeghaak\dots
+
+\subsection{digitale weergave}
+
+sprongsgewijs, discontinu.
+
+secondewijzer, verbreken van een contact\dots
+
+\subsection{digitale schakelingen}
+
+Digitale schakelingen maken gebruik van logische poorten.
+
+een spanning wordt omgezet naar 0 of 1 (0-5 bv), negatieve logica kan ook (0 is hoog, 1 is laag), maar wordt niet gebruikt.
+
+\section{\dots}
+
+\section{Karnaugh-kaart}
+
+\begin{tabular}{c c | c | c | c | c |}
+  \_ & \_ & \_ & B & BC & C\\
+  \_ & \_ & 00 & 01 & 11 & 10 \\
+   \hline
+   \_ & 0 &  0 & 1 & 1 & 0 \\
+   \hline
+   A & 1 &  1 & 0 & 0 & 1 \\
+   \hline
+\end{tabular}
+
+\newpage
+
+\chapter{Les 2}
+
+\section{Symbolen}
+
+NOT, AND, NAND, OR, NOR, XOR, XNOR
+
+\begin{circuitikz}
+  \draw
+    (0,0) node[european not port] (mynot){}
+    (mynot.in) node[anchor=east]{A}
+    (mynot.out) node[anchor=west]{Y}
+
+    (0,-1.5) node[european and port] (myand){}
+    (myand.in 1) node[anchor=east]{A}
+    (myand.in 2) node[anchor=east]{B}
+    (myand.out) node[anchor=west]{Y}
+
+    (0,-3) node[european nand port] (mynand){}
+    (mynand.in 1) node[anchor=east]{A}
+    (mynand.in 2) node[anchor=east]{B}
+    (mynand.out) node[anchor=west]{Y}
+
+    (0,-4.5) node[european or port] (myor){}
+    (myor.in 1) node[anchor=east]{A}
+    (myor.in 2) node[anchor=east]{B}
+    (myor.out) node[anchor=west]{Y}
+
+    (0,-6) node[european nor port] (mynor){}
+    (mynor.in 1) node[anchor=east]{A}
+    (mynor.in 2) node[anchor=east]{B}
+    (mynor.out) node[anchor=west]{Y}
+
+    (0,-7.5) node[european xor port] (myxor){}
+    (myxor.in 1) node[anchor=east]{A}
+    (myxor.in 2) node[anchor=east]{B}
+    (myxor.out) node[anchor=west]{Y}
+
+    (0,-9) node[european xnor port] (myxnor){}
+    (myxnor.in 1) node[anchor=east]{A}
+    (myxnor.in 2) node[anchor=east]{B}
+    (myxnor.out) node[anchor=west]{Y};
+
+    % (0,-6) node[european even port] (myeven){}
+    % (myeven.in 1) node[anchor=east]{A}
+    % (myeven.in 2) node[anchor=east]{B}
+    % (myeven.out) node[anchor=west]{Y};
+\end{circuitikz}
+
+$2k = even$
+
+\section{Oefeningen}
+
+\subsection{XOR}
+
+\begin{circuitikz}
+  \draw
+    (0,0) node[european xor port] (myxor){}
+    (myxor.in 1) node[anchor=east]{A}
+    (myxor.in 2) node[anchor=east]{B}
+    (myxor.out) node[anchor=west]{Y};
+\end{circuitikz}
+
+\subsubsection{waarheidstabel}
+
+\begin{tabular}{c c c || r}
+A & B & C & Y \\
+\hline
+0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 0 \\
+\end{tabular}
+
+(in de praktijk: 1 (door te gebruiken van 2 XOR-poorten met 2 ingangen))
+
+\subsubsection{Karnaugh-kaart}
+
+\begin{tabular}{c c | c | c | c | c |}
+  \_ & \_ & \_ & B & BC & C\\
+  \_ & \_ & 00 & 01 & 11 & 10 \\
+   \hline
+   \_ & 0 &  0 & 1 & 0 & 1 \\
+   \hline
+   1 & 1 &  1 & 0 & 0 & 1 \\
+   \hline
+\end{tabular}
+
+\subsubsection{Pulsdiagram}
+
+\begin{tikztimingtable}
+  A   &  LHLHLHLH \\
+  B   &  LLHHLLHH \\
+  C   &  LLLLHHHH \\
+  Y   &  LHHLHLLL \\
+\end{tikztimingtable}
+
+\subsection{Oefening}
+
+$$Y=AB+\overline{(AB) \oplus C}$$
+
+\begin{circuitikz}
+  \draw
+    (0,0) node[european and port] (myand){}
+    (myand.in 1) node[anchor=east]{A}
+    (myand.in 2) node[anchor=east]{B}
+    (4,-0.265) node[european or port] (mynot){}
+    (mynot.out) node[anchor=west]{Y}
+    (myand.out) -- (mynot.in 1)
+    (2,-1) node[european xor port] (myxor){}
+    (myxor.out) -- (mynot.in 2)
+    (myxor.in 2) node[anchor=east]{C}
+    (myand.out) -- (myxor.in 1);
+\end{circuitikz}
+
+\newpage
+
+\chapter{Les 3}
+
+\section{Sum of Products}
+
+\begin{tabular}{l l l || c}
+A & B & X  & MINTERM \\
+\hline
+0 & 0 & 0  & $\overline{A}\cdot \overline{B}$ \\
+0 & 1 & 1  & $\overline{A}\cdot B$ \\
+1 & 0 & 1  & $A\cdot \overline{B}$ \\
+1 & 1 & 0  & $A\cdot B$ \\
+\end{tabular}
+
+$$X = A\cdot \overline{B} + \overline{A}\cdot B = A  \oplus  B$$
+
+$$X = m \sum\overline{(0,3)} $$ (juist???)
+
+\section{Product of Sums}
+
+\begin{tabular}{l l l || c}
+A & B & X & MAXTERM \\
+\hline
+0 & 0 & 0 & $A+B$ \\
+0 & 1 & 1 & $A+\overline{B}$ \\
+1 & 0 & 1 & $\overline{A}+B $\\
+1 & 1 & 0 & $\overline{A}+\overline{B}$ \\
+\end{tabular}
+
+$$X = A+\overline{B} \cdot \overline{A}+B $$
+
+$$X = M \prod\overline{(0,3)} $$
+
+
+\section{Implementatie van logische functies}
+
+$$ X = \overline{A}BC + $$
+
+\dots
+
+\newpage
+
+\end{document}

@@ -1,0 +1,41 @@
+enable
+!
+configure terminal
+!
+service password-encryption
+!
+hostname Gateway
+!
+enable secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+no ip domain-lookup
+!
+interface GigabitEthernet0/0
+ ip address 192.168.1.254 255.255.255.0
+ ip nat inside
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address dhcp
+ ip nat outside
+ no shutdown
+ exit
+!
+ip nat inside source list 1 interface GigabitEthernet0/1 overload
+
+!
+access-list 1 permit any
+!
+!
+!
+!
+!
+line con 0
+ password 7 0822404F1A0A
+ login
+!
+line vty 0 4
+ password 7 0822404F1A0A
+ login
+!
+end

@@ -8,13 +8,19 @@ Gemaakt door Haroen Viaene. Geen garantie.
 2. Programmeren 1
 	* zie [Haroenv/JavaBasis](http://github.com/haroenv/JavaBasis) (sorry, Odisee policy)
 	* [oplossingen vraagjes einde hoofdstukken](JavaBasis)
-3. Elektronische Signalen 1:
-	* [circuit-diagrams](Elektronische%20Signalen%201/schema's)
-	* "samenvatting": zie [Haroenv/ElekSign](http://github.com/haroenv/eleksign)
-4. Computerarchitectuur
+3. Computerarchitectuur
 	* [Paper](Computerarchitectuur/paper)
 	* [formularium](Computerarchitectuur/formularium)
-5. ETC
+4. [Digitale Technieken]("Digitale Technieken 1")
+	* lesnota's
+	* oefeningennota's
+5. [µControllers](µControllers)
+6. [Databanken](Databanken)
+	* voorbereidingen
+	* labo
+7. [Webtechnieken](Webtechnieken)
+	* handige extra's
+8. ETC
 	* [.tex-template Odisee](ETC/template)
 
 ##License

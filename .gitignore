@@ -16,5 +16,8 @@ desktop.ini
 *.log
 *.aux
 *.fdb_latexmk
-*.pdf
+# *.pdf
 *.dvi
+*.pdf
+*.fls
+*.out

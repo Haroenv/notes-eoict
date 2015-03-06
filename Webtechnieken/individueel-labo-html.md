@@ -1,0 +1,28 @@
+- basisdocument html:5 en dan tab
+	- meta charset
+	- title
+	- html - head - body
+	- commentaar onder doctype
+- sectioning
+	- gegeneerde outline
+	- gebruik article aside nav; header footer
+- keuze elementen
+	- logo = h1/a/tekst
+	- menu's = ul/li/a/tekst
+	- andere elementen (blockquote, p, dl ...)
+	- geen <b> of <i> maaar <strong> en <em>
+- keuze afbeeldingen
+	- geen design in plaatsen wel vaste logo's
+- formu
+	- form|action
+	- structuur: fieldsets/dl, dt(labael), dd(controls)
+	- structuur: checkboxes en radiobuttons controls nesten in hun labels
+	- for-attribuut label linken aan id-attribuut control
+	- radiobuttongroep: allemaal dezelfde naam attribuut
+- attributen
+	- img|src, alt
+	- a|href
+- layout
+	geen spaties
+	let op inspringingen
+- VALIDATIE!
