@@ -10,9 +10,9 @@ Haroen Viaene
 	```SQL
 	SELECT COUNT(artikelen.artikel_id)
 	FROM artikelen
-	WHERE (
-	    SELECT COUNT(bestellingen.artikel_id)
-	    FROM bestellingen
+	WHERE artikel_id NOT IN (SELECT artikel_id
+				 FROM items);
+
 	);
 	```
 
@@ -33,18 +33,19 @@ Haroen Viaene
 	met subquery:
 
 	```SQL
-	SELECT naam, vnaam
-	FROM artikelen
-	WHERE (
-	    SELECT
-	);
+	SELECT naam,vnaam
+	FROM klanten
+	WHERE klant_id NOT IN 	(SELECT klant_id
+				FROM bestellingen);
 	```
 
 	zonder subquery:
 
 	```SQL
-	SELECT naam, voornaam
-	FROM klanten;
+	SELECT naam,vnaam
+	FROM klanten
+	LEFT JOIN bestellingen ON bestellingen.klant_id=klanten.klant_id
+	WHERE bestellingen.klant_id IS NULL;
 	```
 
 	alle klanten die iets besteld hebben:
