@@ -1,13 +1,13 @@
 ;******************************************************************************
-;	Dit bestand is een basis template om assembler code te schrijven voor de 
-; 	PIC18F4550. Het is speciaal aangepast om gebruik te kunnen maken van de
-; 	HID bootloader en toch simulatie toe te laten
+;   Dit bestand is een basis template om assembler code te schrijven voor de  *
+;   PIC18F4550. Het is speciaal aangepast om gebruik te kunnen maken van de   *
+;   HID bootloader en toch simulatie toe te laten                             *
 ;
 ;******************************************************************************
 ;                                                                             *
 ;    Files required:         P18F4550.INC                                     *
-;			     dwengo.LKR               			  						  *
-;									     									  *
+;			     dwengo.LKR                                       *
+;				                                              *
 ;                                                                             *
 ;                                                                             *
 ;******************************************************************************
@@ -20,7 +20,7 @@
 ; definitie variabelen
 		UDATA 0x300
 
-WREG_TEMP	RES	1	;variable in RAM for context saving 
+WREG_TEMP	RES	1	;variable in RAM for context saving
 STATUS_TEMP	RES	1	;variable in RAM for context saving
 BSR_TEMP	RES	1	;variable in RAM for context saving
 
@@ -36,7 +36,7 @@ quotient	RES 1
 
 voorbeeld 	RES 1	;op deze manier maak je een geheugenplaats van 1 byte die je kan gebruiken via de naam "voorbeeld"
 
-;hier eventueel extra variabelen toevoegen
+; hier eventueel extra variabelen toevoegen
 
 
 ; Access Bank
@@ -134,7 +134,7 @@ LCD_Init
 LCD_Lijn1
 
 movlw 0x01	; A is de eerste letter
-addlw 0x40	; naar een hoofdletter 
+addlw 0x40	; naar een hoofdletter
 addlw 0x20	; naar een kleine letter
 
 
@@ -143,7 +143,7 @@ call Epuls
 
 
 lus:
-                bra lus  ;
+	bra lus  ;
 
 ; ============
 ; SUBROUTINES
@@ -153,5 +153,5 @@ lus:
 
 ;******************************************************************************
 ;Einde programma
-	
+
 	END

@@ -21,3 +21,12 @@ desktop.ini
 *.pdf
 *.fls
 *.out
+
+# Assembled files #
+###################
+*.cof
+*.err
+*.hex
+*.mcs
+*.o
+*.map

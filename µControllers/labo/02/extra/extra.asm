@@ -1,5 +1,5 @@
 ;******************************************************************************
-;	Dit bestand is een basis template om assembler code te schrijven voor de 
+;	Dit bestand is een basis template om assembler code te schrijven voor de
 ; 	PIC18F4550. Het is speciaal aangepast om gebruik te kunnen maken van de
 ; 	HID bootloader en toch simulatie toe te laten
 ;
@@ -20,7 +20,7 @@
 ; definitie variabelen
 		UDATA 0x300
 
-WREG_TEMP	RES	1	;variable in RAM for context saving 
+WREG_TEMP	RES	1	;variable in RAM for context saving
 STATUS_TEMP	RES	1	;variable in RAM for context saving
 BSR_TEMP	RES	1	;variable in RAM for context saving
 
@@ -134,17 +134,23 @@ Main:
 	clrf getal1
 	clrf getal2
 	clrf som
-	
+
 	LCD_Init
 
 	LCD_Lijn1
 
-	movlw D'5'
+	movlw 0x05
 	movwf getal1
 
-	movlw D'3'
+	movlw 0x03
 	movwf getal2
-		
+
+	movlw 0x30	; 30 toevoegen om aan getallen te komen
+	addwf getal1
+
+	movlw 0x30	; 30 toevoegen om aan getallen te komen
+	addwf getal2
+
 	movf getal1,W
 	addwf som
 	movf getal2,W
@@ -152,24 +158,24 @@ Main:
 
 	movff getal1,LATD
 	call Epuls
-	
+
 	movlw "+"
 	movwf LATD
 	call Epuls
-	
+
 	movff getal2,LATD
 	call Epuls
-	
-	movlw "=" 
+
+	movlw "="
 	movwf LATD
 	call Epuls
-	
+
 	movff som,LATD
 	call Epuls
 
 
 lus:
-                bra lus  ;
+	bra lus	; lege lus om het programma draaiende te houden
 
 ; ============
 ; SUBROUTINES
@@ -179,5 +185,5 @@ lus:
 
 ;******************************************************************************
 ;Einde programma
-	
+
 	END
