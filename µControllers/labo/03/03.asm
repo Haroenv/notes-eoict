@@ -1,5 +1,5 @@
 ;******************************************************************************
-;	Dit bestand is een basis template om assembler code te schrijven voor de 
+;	Dit bestand is een basis template om assembler code te schrijven voor de
 ; 	PIC18F4550. Het is speciaal aangepast om gebruik te kunnen maken van de
 ; 	HID bootloader en toch simulatie toe te laten
 ;
@@ -20,7 +20,7 @@
 ; definitie variabelen
 		UDATA 0x300
 
-WREG_TEMP	RES	1	;variable in RAM for context saving 
+WREG_TEMP	RES	1	;variable in RAM for context saving
 STATUS_TEMP	RES	1	;variable in RAM for context saving
 BSR_TEMP	RES	1	;variable in RAM for context saving
 
@@ -34,7 +34,7 @@ eenheid		RES 1
 deeltal		RES 1
 quotient	RES 1
 
-voorbeeld 	RES 1	;op deze manier maak je een geheugenplaats van 1 byte die je kan gebruiken via de naam "voorbeeld"
+voorbeeld	RES 1	;op deze manier maak je een geheugenplaats van 1 byte die je kan gebruiken via de naam "voorbeeld"
 
 ;hier eventueel extra variabelen toevoegen
 
@@ -130,7 +130,7 @@ Main:
 ; HOOFDPROGRAMMA
 ; ===============
 
-flags: 
+flags:
 	movlw 0xF8
 	addlw 0x10
 
@@ -147,7 +147,7 @@ mult:
 	mullw 0x10
 
 	bra lus	; lege lus om het programma draaiende te houden
-	
+
 
 ports:
 	movlw 0x0F
@@ -172,5 +172,5 @@ lus:
 
 ;******************************************************************************
 ;Einde programma
-	
+
 	END
