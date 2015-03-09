@@ -10,7 +10,7 @@
 	- logo = h1/a/tekst
 	- menu's = ul/li/a/tekst
 	- andere elementen (blockquote, p, dl ...)
-	- geen <b> of <i> maaar <strong> en <em>
+	- geen \<b> of \<i> maar \<strong> en \<em>
 - keuze afbeeldingen
 	- geen design in plaatsen wel vaste logo's
 - forms
