@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+<form action="#" method="POST">
+	<fieldset>
+		<dl>
+			<dt><label for="email">email</label></dt>
+			<dd><input type="email" name="email" placeholder="ex@mail.com" /></dd>a
+			<dt><label for="password">password</label></dt>
+			<dd><input type="password" name="password" placeholder="password" /></dd>
+			<dd><input type="submit" value="Log in" /></dd>
+			$1
+		</dl>
+	</fieldset>
+</form>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>login</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>
