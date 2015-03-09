@@ -1,5 +1,5 @@
 ;******************************************************************************
-;	Dit bestand is een basis template om assembler code te schrijven voor de
+;	Dit bestand is een basis template om assembler code te schrijven voor de 
 ; 	PIC18F4550. Het is speciaal aangepast om gebruik te kunnen maken van de
 ; 	HID bootloader en toch simulatie toe te laten
 ;
@@ -20,7 +20,7 @@
 ; definitie variabelen
 		UDATA 0x300
 
-WREG_TEMP	RES	1	;variable in RAM for context saving
+WREG_TEMP	RES	1	;variable in RAM for context saving 
 STATUS_TEMP	RES	1	;variable in RAM for context saving
 BSR_TEMP	RES	1	;variable in RAM for context saving
 
@@ -37,10 +37,7 @@ quotient	RES 1
 voorbeeld 	RES 1	;op deze manier maak je een geheugenplaats van 1 byte die je kan gebruiken via de naam "voorbeeld"
 
 ;hier eventueel extra variabelen toevoegen
-
-getal1      RES 1
-getal2		RES 1
-som			RES 2
+teller	    RES 1
 
 ; Access Bank
 
@@ -73,7 +70,7 @@ DATA_EEPROM	CODE	0xf00000
 
 
 RESET_VECTOR	CODE	0x2000
-		movlb	0x03
+		movlb  0x03
 		goto	Main		;go to start of main code
 
 HI_INT_VECTOR	CODE	0x2008
@@ -119,6 +116,9 @@ LowInt:
 ; macro's bovenaan
 
 Main:
+	;bra opgave1
+	;bra opgave2
+	bra opgave3
 
 ; ===========
 ; MACRO's
@@ -129,19 +129,96 @@ Main:
 ; ===============
 ; HOOFDPROGRAMMA
 ; ===============
-
-	movlw D'30'
-	mullw D'4'
-
-	movlw 0x30
-	mullw 0x04
-
-	movlw 0xE6
-	mullw 0x10
-
+	clrf TRISD ; poort D als uitgang (LED ’s + LCD )	
+	LCD_Init
+	
+opgave1:
+	LCD_Lijn1
+    movlw 0x35  ;'5'
+    movwf teller
+	  
 lus:
-	bra lus	; lege lus om het programma draaiende te houden
+    movff teller,LATD
+    call Epuls
 
+    incf teller
+    movf teller,W
+    sublw 0x39  ;'9'
+    bnz lus
+
+	LCD_Lijn2
+    movlw 0x45  ;'E'
+    movwf teller
+
+lus2:
+    movff teller,LATD
+    call Epuls
+
+    incf teller
+    movf teller,W
+    sublw 0x49
+    bnz lus2
+
+	bra bezighouden
+	
+opgave2:
+	LCD_Lijn1
+    movlw 0x30
+    movwf teller
+	  
+lusje:
+    movff teller,LATD
+    call Epuls
+
+    incf teller
+    incf teller
+    movf teller,W
+    sublw 0x39
+    bnz lusje
+
+	LCD_Lijn2
+    movlw 0x31
+    movwf teller
+
+lusje2:
+    movff teller,LATD
+    call Epuls
+
+    incf teller
+    incf teller
+    movf teller,W
+    sublw 0x38
+    bnz lusje2
+
+	bra bezighouden	
+	
+opgave3:
+	LCD_Lijn1
+    movlw 'a'	;0x61
+    movwf teller
+	  
+loop:
+    movff teller,LATD
+    call Epuls
+
+    incf teller
+    movf teller,W
+    sublw 0x72	;letter na p
+    bz als
+    bra eindeals
+
+als:
+	LCD_Lijn2
+	bra eindeals
+
+eindeals:
+    movf teller,W  
+	sublw 0x7A	;z
+    bnz loop
+	bra bezighouden
+	
+bezighouden:
+	bra bezighouden
 ; ============
 ; SUBROUTINES
 ; ============
@@ -150,5 +227,5 @@ lus:
 
 ;******************************************************************************
 ;Einde programma
-
+	
 	END
