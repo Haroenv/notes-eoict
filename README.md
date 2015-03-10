@@ -18,6 +18,7 @@ Gemaakt door Haroen Viaene. Geen garantie.
 4. [Digitale Technieken]("Digitale Technieken 1")
 	* lesnota's
 	* oefeningennota's
+	* laboverslagen indien digitaal
 5. [µControllers](µControllers)
 6. [Databanken](Databanken)
 	* voorbereidingen
@@ -26,6 +27,8 @@ Gemaakt door Haroen Viaene. Geen garantie.
 	* handige extra's
 8. ETC
 	* [.tex-template Odisee](ETC/template)
+9. [Netwerken](Netwerken)
+	* nota's tijdens labo's (als die er zijn)
 
 ##License
 
