@@ -8,10 +8,9 @@ Haroen Viaene
 	```SQL
 	SELECT COUNT(artikelen.artikel_id)
 	FROM artikelen
-	WHERE artikel_id NOT IN (SELECT artikel_id
-				 FROM items);
-
-	);
+	WHERE artikel_id NOT IN (
+	SELECT artikel_id
+	FROM items);
 	```
 
 2. Wat is de totale waarde van de bestellingen die geplaatst zijn in de maand januari?
