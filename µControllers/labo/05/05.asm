@@ -116,10 +116,7 @@ LowInt:
 ; macro's bovenaan
 
 Main:
-	LCD_Init
-	;bra opgave1
-	;bra opgave2
-	bra opgave3
+
 
 ; ===========
 ; MACRO's
@@ -130,6 +127,10 @@ Main:
 ; ===============
 ; HOOFDPROGRAMMA
 ; ===============
+	LCD_Init
+	;bra opgave1
+	;bra opgave2
+	bra opgave3
 
 opgave1:
 	bsf TRISB,1 ; knop W als ingang
@@ -171,7 +172,9 @@ zuid:
 	bra loop
 
 opgave3:
-	
+
+lusje:
+	bra lusje
 ; ============
 ; SUBROUTINES
 ; ============
