@@ -149,7 +149,7 @@ lus:
 	
 opgave2:
 	bsf TRISB,4 ; knop N als ingang
-	bsf TRISB,5 ; know S als ingang
+	bsf TRISB,5 ; knop S als ingang
 	clrf LATD
 
 loop:
@@ -174,22 +174,46 @@ zuid:
 
 opgave3:
 	bsf TRISB,4 ; knop N als ingang
-	bsf TRISB,5 ; know S als ingang
-	movlw '0'
+	bsf TRISB,5 ; knop S als ingang
+	bsf TRISB,2 ; knop C als ingang
+	movlw 0x00
+	addlw 0x30
 	movwf teller
 	clrf LATD
 
 lusje:
 	LCD_Lijn1
-	movlw 1
+	movlw 0x01
 	btfss PORTB,4 ; N inlezen
-	addwf teller
+	bra north
+
 	btfss PORTB,5 ; S inlezen
-	subwf teller
-	movf teller,w
-	movwf LATD
+	bra south
+
+	btfss PORTB,2 ; C inlezen
+	bra center
+
+	movwf teller
+	movff teller,LATD
 	call Epuls
 	bra lusje
+
+center:
+	btfsc PORTB,2
+	call Delay
+	movlw 0x00
+	movf teller,W
+	bra lusje
+
+south:
+	btfsc PORTB,5
+	call Delay
+	subwf teller
+	
+north:
+	btfsc PORTB,4
+	call Delay
+	addwf teller
 ; ============
 ; SUBROUTINES
 ; ============
