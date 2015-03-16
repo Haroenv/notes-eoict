@@ -153,6 +153,7 @@ opgave2:
 	clrf LATD
 
 loop:
+	LCD_Lijn1
 	btfss PORTB,4 ; N inlezen
 	bra noord
 	btfss PORTB,5 ; S inlezen
@@ -172,8 +173,22 @@ zuid:
 	bra loop
 
 opgave3:
+	bsf TRISB,4 ; knop N als ingang
+	bsf TRISB,5 ; know S als ingang
+	movlw '0'
+	movwf teller
+	clrf LATD
 
 lusje:
+	LCD_Lijn1
+	movlw 1
+	btfss PORTB,4 ; N inlezen
+	addwf teller
+	btfss PORTB,5 ; S inlezen
+	subwf teller
+	movf teller,w
+	movwf LATD
+	call Epuls
 	bra lusje
 ; ============
 ; SUBROUTINES
