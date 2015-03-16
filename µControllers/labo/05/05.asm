@@ -116,7 +116,7 @@ LowInt:
 ; macro's bovenaan
 
 Main:
-	LCD_Lijn1
+	LCD_Init
 	;bra opgave1
 	;bra opgave2
 	bra opgave3
@@ -147,7 +147,6 @@ lus:
 	bra lus
 	
 opgave2:
-	LCD_Init
 	bsf TRISB,4 ; knop N als ingang
 	bsf TRISB,5 ; know S als ingang
 	clrf LATD
@@ -173,7 +172,6 @@ zuid:
 
 opgave3:
 	
-
 ; ============
 ; SUBROUTINES
 ; ============
