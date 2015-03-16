@@ -14,13 +14,140 @@
 \begin{document}
 
 \begin{center}
-\large Title of this document
+\large Voorbereiding Labo 4 digitale technieken
 
-\normalsize A. U. Thor
+\normalsize Haroen Viaene |
+\normalsize 1EO-ICT 10 | 
+\normalsize 17 maart 2015
 \end{center}
 
 \vspace{3\baselineskip}
 
-Here starts the text.
+\section*{4.3.1. Worst-case-waarde van de weerstand}
+
+\begin{tabular}{| l | l | l |}
+  \hline
+   & Actief Hoog & Actief laag \\
+  \hline
+  74LS & $R_{max} = 2.22 k\Omega \rightarrow 2.7 k\Omega$ & $R_{max} = 10 k\Omega$ \\
+  74HCT & $R_{max} = 10 k\Omega$ & $R_{max} = 10 k\Omega$ \\
+  74HC & $R_{max} = 10 k\Omega$ & $R_{max} = 10 k\Omega$ \\
+  40XXBC & $R_{max} = 10 k\Omega$ & $R_{max} = 10 k\Omega$ \\
+  \hline
+\end{tabular}
+
+\section*{4.3.2. $X = (A + B\cdot C)\cdot \overline{D} + E$}
+
+\subsection*{IEC Poortschema}
+
+\begin{circuitikz}
+  \draw
+    (2,0) node[european or port] (myor){}
+    (myor.in 1) node[anchor=east]{A}
+
+
+    (0,-1) node[european and port] (myand){}
+    (myand.in 1) node[anchor=east]{B}
+    (myand.in 2) node[anchor=east]{C}
+    (myand.out) -- (myor.in 2)
+
+    (0, -2.3) node[european not port] (mynot){}
+    (mynot.in) node[anchor=east]{D}
+
+    (4,-2) node[european and port] (otherand){}
+    (otherand.in 1) -- (myor.out)
+    (otherand.in 2) -- (mynot.out)
+
+    (6,-3) node[european or port] (otheror){}
+    (otheror.in 1) -- (otherand.out)
+    (otheror.in 2) node[anchor=east]{E}
+    (otheror.out) node[anchor=west]{X}
+    ;
+\end{circuitikz}
+
+\subsection*{Waarheidstabel}
+
+\begin{tabular}{| c c c c c | c |}
+\hline
+E & D & C & B & A & X \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 1 & 1 \\
+\hline
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 0 \\
+0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 & 0 \\
+\hline
+0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 & 0 & 1 \\
+0 & 1 & 0 & 1 & 1 & 1 \\
+\hline
+0 & 1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 1 & 0 \\
+0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 1 & 1 & 0 \\
+\hline
+1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 1 & 1 \\
+1 & 0 & 0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 1 & 1 & 1 \\
+\hline
+1 & 0 & 1 & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 & 1 \\
+1 & 0 & 1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 1 & 1 & 1 \\
+\hline
+1 & 1 & 0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 & 0 & 1 \\
+1 & 1 & 0 & 1 & 1 & 1 \\
+\hline
+1 & 1 & 1 & 0 & 0 & 0 \\
+1 & 1 & 1 & 0 & 1 & 1 \\
+1 & 1 & 1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+
+\subsection*{Logische vergelijking met $NEN$}
+
+\begin{equation*}
+  X = (A + B\cdot C)\cdot \overline{D} + E
+\end{equation*}
+\begin{equation*}
+  X = A \cdot \overline{D} + B \cdot C \cdot \overline{D} + E
+\end{equation*}
+\begin{equation*}
+  X = \overline{\overline{A \cdot \overline{D}}\cdot \overline{B \cdot C \cdot \overline{D}}}+ E
+\end{equation*}
+\begin{equation*}
+  X = \overline{\overline{\overline{\overline{A \cdot \overline{D}}\cdot \overline{B \cdot C \cdot \overline{D}}}} \cdot \overline{E}}
+\end{equation*}
+\begin{equation*}
+  X = \overline{\overline{A \cdot \overline{D}}\cdot \overline{B \cdot C \cdot \overline{D}} \cdot \overline{E}}
+\end{equation*}
+
+\subsection*{Logische vergelijking met $NOF$}
+\begin{equation*}
+  X = (A + B\cdot C)\cdot \overline{D} + E
+\end{equation*}
+\begin{equation*}
+  X = A \cdot \overline{D} + B \cdot C \cdot \overline{D} + E
+\end{equation*}
+\begin{equation*}
+  X = \overline{ \overline{A} + D } + \overline{ \overline{B} + \overline{C} + D} + E
+\end{equation*}
+
+\subsection*{IEC-poortschema met $NEN$}
+
+\vspace{10 cm}
+
+\subsection*{IEC-poortschema met $NOF$}
+
+\vspace{10 cm}
 
 \end{document}
