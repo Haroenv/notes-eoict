@@ -20,6 +20,11 @@
 -- Table structure for table `City`
 --
 
+#correct database
+DROP Database if exists world;
+CREATE Database world;
+use world;
+
 DROP TABLE IF EXISTS `City`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
