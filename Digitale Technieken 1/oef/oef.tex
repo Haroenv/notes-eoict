@@ -77,14 +77,63 @@ $0001\, 0010\, 0011\, 0100\, 0101 = 1234$
 
 \section{Les 2}
 
-\dots
+18 maart 2015. Combinatorische schakelingen
 
-\newpage
+\subsection{1-bit-comparator}
 
-\section{Les 3}
+\begin{tabular}{c c | c}
+	B & A & Y \\
+	\hline
+	0 & 0 & 1 \\
+	0 & 1 & 0 \\
+	1 & 0 & 0 \\
+	1 & 1 & 1 \\
+\end{tabular}
 
-\dots
+Voor een 1-bit-comparator gebruik je een $XNOR$-poort.
 
-\newpage
+Logische vergelijking:
+
+\begin{equation}
+	\overline{A \oplus B} = Y % make xor
+\end{equation}
+
+Geeft 1 terug als A het zelfde is als B.
+
+\subsection{Magnitude-comparator}
+
+\begin{tabular}{c c | c c c}
+	B & A & G & E & L \\
+	\hline
+	0 & 0 & 0 & 1 & 0 \\
+	0 & 1 & 1 & 0 & 0 \\
+	1 & 0 & 0 & 0 & 1 \\
+	1 & 1 & 0 & 1 & 0 \\
+\end{tabular}
+
+Bekijkt of A hoger, gelijk of lager is dan B.
+
+Logische vergelijkingen:
+
+\begin{equation}
+	G = A \cdot \overline{B}
+\end{equation}
+
+\begin{equation}
+	E = \overline{A} \cdot \overline{B} + A \cdot B = \overline{A \oplus B}
+\end{equation}
+
+% \begin{tabular}{c c c | c c c}
+	% C & B & A & G & E & L \\
+	% \hline
+	% 0 & 0 & 0 & 1 \\
+	% 0 & 0 & 1 & 0 \\
+	% 0 & 1 & 0 & 0 \\
+	% 0 & 1 & 1 & 1 \\
+	% 1 & 0 & 0 & 1 \\
+	% 1 & 0 & 1 & 0 \\
+	% 1 & 1 & 0 & 0 \\
+	% 1 & 1 & 1 & 1 \\
+% \end{tabular}
 
 \end{document}
