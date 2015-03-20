@@ -1,0 +1,295 @@
+\documentclass[11pt]{article}
+\usepackage[pdftex]{graphicx}
+\usepackage[dutch]{babel}
+\usepackage{amsthm, amsmath, enumitem, fullpage, helvet, color}
+\usepackage[parfill]{parskip}
+\let\originalitem\item
+\renewcommand{\item}{\originalitem[]}
+\renewcommand*{\familydefault}{\sfdefault}
+\renewcommand{\d}{\textrm{d}\,}
+\usepackage{mathtools}
+
+
+\usepackage[active,tightpage]{preview}
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\title{Samenvatting elektronische signalen}
+\author{Haroen Viaene}
+\date{10 november 2014}
+
+
+\begin{document}
+\begin{preview}
+
+\selectlanguage{dutch}
+
+\maketitle
+
+\tableofcontents
+
+\Newpage
+
+\section{Inleiding}
+
+\begin{itemize}
+\item Q
+	\begin{itemize}
+		\item{lading}
+		\item Coulomb
+		\item $6,35 * 10^{18}$ elektronen
+		\item (veranderlijk? q)
+	\end{itemize}
+\item I
+	\begin{itemize} 
+		\item stroom
+		\item Amp\`ere
+		\item $\frac{Q}{t}$
+		\item (veranderlijk? $\frac{\d q}{\d t}$)
+		\item teken
+			\begin{itemize}
+				\item afhankelijk van stroomzin
+				\item mee met stroomzin is positief
+				\item conventioneel: + naar -
+				\item elektronenstroom: - naar +
+			\end{itemize}
+	\end{itemize}
+\item U
+	\begin{itemize}
+		\item potentiaalverschil
+		\item Volt
+		\item spanning
+		\item $\frac{E}{Q}$
+		\item positief geladen: positief potentiaal
+	\end{itemize}
+\item R
+	\begin{itemize}
+		\item weerstand
+		\item $\Omega$
+		\item doorgang van elektronische stroom belemmerend
+		\item wet van Ohm
+		\begin{itemize}
+			\item $R=\frac{u}{i}$
+		\end{itemize}
+		\item wet van Pouillet
+		\begin{itemize}
+			\item $R = \rho * \frac{L}{A}$
+			\item $\rho$ is resistiviteit
+			\item A is doorsnede
+			\item L is lengte
+		\end{itemize}
+	\end{itemize}
+\item W
+	\begin{itemize}
+		\item arbeid
+		\item Joule (Wattseconde)
+		\item $W=U \cdot Q=U\cdot I \cdot t$
+		\begin{itemize}
+			\item maak ook gebruik van wet van Ohm
+		\end{itemize}
+	\end{itemize}
+\item P
+	\begin{itemize}
+		\item vermogen
+		\item Watt
+		\item $P=\frac{W}{t}=\frac{U \cdot I \cdot t}{t} = U \cdot I$
+		\item gebruik ook wet van Ohm 
+	\end{itemize}
+\end{itemize}
+
+\Newpage
+\section{weerstanden en 1 bron}
+
+\begin{itemize}
+\item serieschakeling
+	\begin{itemize}
+		\item pas wet van Ohm toe op elk van de weerstanden
+		\begin{itemize}
+			\item I constant
+			\item $E=I \cdot R_v$
+			\item Bewijs  %Hoe te kennen?
+			\item $R_v = \sum_i R_i$
+		\end{itemize}
+		\item spanningsdeler
+	\end{itemize}
+\item parallelschakeling
+	\begin{itemize}
+		\item pas wet van Ohm toe op elk van de weerstanden
+		\begin{itemize}
+			\item U constant
+			\item $I = \frac{U}{\sum_i R_i}$
+			\item $\frac{1}{R_v} = \sum_i \frac{1}{R_i}$
+		\end{itemize}
+		\item twee weerstanden? $R_v = \frac{R_1 \cdot R_2}{R_1 = R_2}$
+		\item stroomdeler
+		\item let op! vermogen! %wat?
+	\end{itemize}
+\item gemengde schakeling
+	\begin{itemize}
+		\item los op in deelstukjes
+	\end{itemize}
+\end{itemize}
+
+\Newpage
+\section{Bronnen}
+
+\begin{itemize}
+\item spanningsbron
+	\begin{itemize}
+		\item constante spanning, onafhankelijk stroom
+		\item inwendige weerstand in serie
+			\begin{itemize}
+				\item $U = E - R_i \cdot I$
+			\end{itemize}
+		\item randvoorwaarden
+		\begin{itemize}
+			\item $I = 0 \rightarrow U = E$
+			\item $U = 0 \rightarrow I = \frac{E}{R_i}$
+		\end{itemize}
+		\item belastingslijnen \textbf{huh? Wat is de boedoeling van die lijnen?}
+	\end{itemize}
+\item stroombron
+	\begin{itemize}
+		\item constante stroom, onafhankelijk van spanning
+		\item inwendige weerstand in parallel
+		\begin{itemize}
+			\item $I = 0 \rightarrow U = R_i \cdot I_0$
+			\item $U = 0 \rightarrow I = I_{R_b}$
+		\end{itemize}
+		\item Als $R_i$ constant is:
+		\begin{itemize}
+			\item $R_i = \frac{-I}{U}$
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\Newpage
+\section{Meerdere bronnen}
+
+\textit{Hier heb ik nog wat moeite mee, kan iemand dat eens in mensentermen uitleggen?}
+
+\begin{itemize}
+	\item Kirchoff
+	\begin{itemize}
+		\item De som van voltages in een gesloten kring moet 0 zijn.
+		\item De som van voltages op een knooppunt moet 0 zijn.
+	\end{itemize}
+	\item Superpositie
+	\begin{itemize}
+		\item Bekijk eerst 1 van de bronnen en laat de andere weg, dan omgekeerd. Tel op.
+	\end{itemize}
+	\item Th\'evenin
+	\begin{itemize}
+		\item Vervang het circuit door 1 weerstand en 1 bron
+	\end{itemize}
+\end{itemize}
+
+\Newpage
+\section{Weerstanden}
+
+\begin{itemize}
+	\item begrenst stroom
+	\item tolerantie
+	\begin{itemize}
+		\item zegt hoe veel verschil er op de verwachte waarde kan zijn (in procent)
+		\item vb: $100 \Omega, 5\% \rightarrow 100 \Omega \pm 5 \Omega (95 \Omega \textrm{ tot } 105 \Omega)$
+	\end{itemize}
+	\item dissipatievermogen
+	\begin{itemize}
+		\item vermogen dat verloren kan gaan aan warmte
+		\item als je boven dat vermogen gaat, komt er schade
+		\item $P = I^2 \cdot R = \frac{U^2}{R}$
+		\item maximale stroom: $I_{\textrm{max}} = \sqrt{\frac{P_d}{R}}$ (dankzij: $P=R \cdot I^2$)
+	\end{itemize}
+	\item lineaire weerstanden
+	\begin{itemize}
+		\item draadgewonden: draaad rond koper/ijzer/nikkellegering, glazuur afdeklaag (soms keramiek)
+		\item koollaag: laag koolstof
+		\item metaalfilm: laagje metaal
+		\item SMD: surface mounting devices (passen beter op PCB)
+	\end{itemize}
+	\item niet-lineaire weerstanden
+	\begin{itemize}
+		\item NTC: weerstand omgekeerd evenredig met temperatuur: onnauwkeurige temperatuurmeting
+		\item PTC: weerstand evenredig met temperatuur: gebruikt tegen oververhitting
+		\item LDR: lichtgevoelig, traag (50-200 ms)
+		\item VDR: minder weerstand als meer spanning
+	\end{itemize}
+	\item regelbare weerstanden
+	\begin{itemize}
+		\item potentiometer
+		\item uiterste klemmen: vaste waarde, middelste en buitenste: regelbaar
+		\item te zien als een weerstand die je opdeelt
+		\item lineair of logaritmisch
+	\end{itemize}
+\end{itemize}
+
+\Newpage
+\section{Condensatoren}
+
+\begin{itemize}
+	\item laat wisselspanning door, houdt gelijkspanning tegen
+	\item 2 geleiders gescheiden door een isolator (di\"electricum)
+	\item parameters
+	\begin{itemize}
+		\item capaciteit
+		\begin{itemize}
+			\item $C = \frac{\epsilon \cdot A}{d} $ ($\epsilon$ is de di\"electrische constante)
+			\item $C = \frac{\Delta Q}{\Delta V} $
+			\item soms worded de platen ge\"etst om meer oppervlak te hebben (elektrolytishce condensatoren)
+		\end{itemize} 
+		\item werkspanning %%TODO: verstaan
+		\begin{itemize}
+			\item als spanning te hoog is, komt er geleiding over de platen, en brandt het di\"electricum door.
+		\end{itemize}
+		\item Tolerantie
+	\end{itemize}
+	\item spanning over condensator
+	\begin{itemize}
+		\item $C = \frac{q}{u} = \frac{I \cdot t }{u} $
+	\end{itemize}
+	\item variabele stroom
+	\begin{itemize}
+		\item $C \cdot \frac{\Delta V}{\Delta t} = i $
+		\item stroom is de capaciteit $\cdot$ de afgeleide van het potentiaalverschil over de tijd
+	\end{itemize}
+	\item regelbare condensatoren
+	\begin{itemize}
+		\item afstand tussen platen wijzigbaar
+		\item di\"electricum meestal lucht
+		\item Capaciteit regelbaar
+	\end{itemize}
+	\item serie
+	\begin{itemize}
+		\item Q is constant
+		\item $\frac{1}{C_v} = \sum_i \frac{1}{\frac{1}{C_i}} $
+		\item maximale spanning wordt opgeteld
+	\end{itemize}
+	\item parallel
+	\begin{itemize}
+		\item $C_v = \sum_i C_i $
+	\end{itemize}
+\end{itemize}
+
+\Newpage
+\section{Spoelen}
+
+\begin{itemize}
+	\item grote weerstand aan wisselstroom, kleine aan gelijkstroom
+	\item afvlakkende pulserende gelijksstroom
+	\item magneten
+	\item filters
+	\begin{itemize}
+		\item Inductiviteit
+		\begin{itemize}
+			\item H
+		\end{itemize}
+		\item Werkspanning
+		\begin{itemize}
+			\item V
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\end{preview}
+\end{document}
