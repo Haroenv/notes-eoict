@@ -9,25 +9,55 @@
 ##############################################
 
 # kijken of de biblio database reeds bestaat - drop - aanmaken
-
+DROP DATABASE IF EXISTS biblio;
+CREATE DATABASE biblio;
 
 # de biblio database gebruiken
-
+USE biblio;
 
 # tabel bezoekers aanmaken
-
+CREATE TABLE bezoekers(
+  `bezoeker_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `naam` VARCHAR(40),
+  `leeftijd` SMALLINT(6),
+  PRIMARY KEY (`bezoeker_id`)
+) AUTO_INCREMENT=1;
 
 # tabel uitgeverijen aanmaken
-
+CREATE TABLE uitgeverijen(
+  `uitgeverij_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `naam` VARCHAR(30),
+  `website` VARCHAR(40),
+  PRIMARY KEY (`uitgeverij_id`)
+)AUTO_INCREMENT=1;
 
 # tabel boekinfo aanmaken
-
+CREATE TABLE boekinfo(
+  `isbn` CHAR(13) NOT NULL,
+  `titel` VARCHAR(50),
+  `jaar` YEAR,
+  `uitgeverij_id` INT(11),
+  PRIMARY KEY (`isbn`),
+  FOREIGN KEY (`uitgeverij_id`) REFERENCES uitgeverijen(`uitgeverij_id`)
+);
 
 # tabel boeken aanmaken
-
+CREATE TABLE boeken(
+  `boek_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `isbn` CHAR(13) NOT NULL,
+  PRIMARY KEY (`boek_id`),
+  FOREIGN KEY (`isbn`) REFERENCES boekinfo(`isbn`)
+) AUTO_INCREMENT=1;
 
 # tabel ontleningen aanmaken
-
+CREATE TABLE ontleningen(
+  `bezoeker_id` INT(11) NOT NULL,
+  `boek_id` INT(11) NOT NULL,
+  `ontleendatum` DATE,
+  FOREIGN KEY (`bezoeker_id`) REFERENCES bezoekers(`bezoeker_id`),
+  FOREIGN KEY (`boek_id`) REFERENCES boeken(`boek_id`),
+  PRIMARY KEY (`ontleendatum`,`boek_id`,`bezoeker_id`)
+);
 
 # data invoegen voor bezoekers
 insert into bezoekers(naam, leeftijd) values
@@ -57,7 +87,7 @@ insert into boekinfo(isbn, titel, jaar, uitgeverij_id) values
   ('1-56592-846-6', 'Practical PostgreSQL', '2002', 2),
   ('1-59059-332-4', 'Beginning MySQL Database Design and Optimization', '2004', 1),
   ('0-201-68419-5', 'An Introduction to Database Systems', '2000', 7),
-  ('90-430-0842-7', 'Databases', '2004', 8);
+  ('90-430-0842-7', 'Databases', '2004', 6);
 
 # data invoegen voor boeken
 insert into boeken(boek_id, isbn) values
@@ -69,7 +99,7 @@ insert into boeken(boek_id, isbn) values
   (null, '1-56592-846-6'),
   (null, '1-56592-846-6'),
   (null, '1-56592-846-6'),
-  (null, '1-59059-332-5'),
+  (null, '1-59059-332-4'),
   (null, '0-201-68419-5'),
   (null, '90-430-0842-7');
 
