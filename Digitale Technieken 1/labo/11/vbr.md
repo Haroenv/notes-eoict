@@ -38,12 +38,23 @@ bv: 1 - 4 - 5 - 7 - 10 - 5 - 0 - 3 - 1
 	...
 	```
 
-4. Zet om naar functie m.b.v. Karnaugh-kaart
+4. exitatietabel
+
+	| Qi | Qi+1 | J | K |
+	|----|------|---|---|
+	| 0  | 0    | 0 | X |
+	| 0  | 1    | 1 | X |
+	| 1  | 0    | X | 1 |
+	| 1  | 1    | X | 0 |
+
+5. Zet om naar functie m.b.v. Karnaugh-kaart
 	* gebruik [hulptabel](tabel.pdf)
+	* kijk wat Q1... is
 
 # Maak schema
 
 1. Kijk welk soort Latches je moet gebruiken
+	* MM74HC112 voor J/K Flip-Flop
 	* TODO: welke soorten bestaan er, hoe te bepalen welke je wil gebruiken
 
 2. Verbind
@@ -60,4 +71,5 @@ bv: 1 - 4 - 5 - 7 - 10 - 5 - 0 - 3 - 1
 3. Uitgangen gewoon aan LEDs
 
 4. Uitgangen naar LED display
-	* Encoding?
+	* 4 bit BCD ==> 7 segmentdisplay
+	* SN74LS47
