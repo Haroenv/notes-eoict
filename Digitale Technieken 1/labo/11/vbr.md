@@ -51,7 +51,11 @@ bv: 1 - 4 - 5 - 7 - 10 - 5 - 0 - 3 - 1
 	* Klok naar een functiegenerator (1MHz?)
 	* Vcc ==> +5V
 	* GND / ongebruikte ingangen ==> 0V
-	* TODO: SET/CLR volgens soort latch
+	* SET/CLR volgens soort latch
+		* kijk naar eerste staat
+		* zet bij die die 1 moeten zijn CLRB op 5V
+		* bij die die 0 zijn: PREB op 5V
+		* alle andere door een schakelaar naar 5V
 
 3. Uitgangen gewoon aan LEDs
 
