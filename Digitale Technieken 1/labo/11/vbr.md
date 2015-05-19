@@ -52,3 +52,8 @@ bv: 1 - 4 - 5 - 7 - 10 - 5 - 0 - 3 - 1
 	* Vcc ==> +5V
 	* GND / ongebruikte ingangen ==> 0V
 	* TODO: SET/CLR volgens soort latch
+
+3. Uitgangen gewoon aan LEDs
+
+4. Uitgangen naar LED display
+	* Encoding?
