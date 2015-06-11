@@ -49,11 +49,33 @@ year(datum), dayofmonth(datum);				# dag vd maand/jaar ve datum
 to_days(curdate()), to_days(datum);			# dagen verschil
 adddate(now(), interval 1 day);				# voeg een datum toe
 subdate(not(), interval 1 day);				# trek een datum afs
-select ...  from ... inner join ... on ... = ...;
+select ...  from ... inner join ... on ... = ...; #*
 select ...  from ... left join ... on ... = ...;
 group by;	# groepeer (gebruik bij aggregatiefunctie*)
-having; 	# voorwaarde bij gropu by
+having; 	# voorwaarde bij group by
+index (kolomnaam(n));	# index van een kolom aanmaken*
+alter tabelnaam add index(kolomnaam(n));
+create index ... on ... (kolomnaam(n));
+create index ... on ... (kolomnaam(n);anderenaam(m));
+drop index;	# verwijder index
+alter tabelnaam add unique(kolomnaam(n));
+create unique index ... on tabelnaam(kolomnaam(n)); # constraint voor index*
+foreign key (kolomnaam) references tabelnaam(originelekolom);
+alter tabel add foreign key (kolomnaam) references tabelnaam(originelekolom);
+on delete, on update	# wat gebeurt er als PK wijzigen de integriteit van FK schendt?
+	restrict	# actie wordt geweigerd (default)
+	cascade		# wordt uitgevoerd op tabel en gerelateerde tabel
+	set null	# gerelateerde velden worden null
+	no action;	# fout wordt genegeerd, integriteit wordt geschonden
+create view viewnaam as select ...;	# nieuwe view aanmaken die als een tabel in je db wordt opgeslagen
+create or replace / alter view;	# verander de definitie van een view*
+drop view viewnaam	# verwijder een view
 ```
+
+* aggregatiefunctie: TODO
+* index: TODO
+	* constraint: TODO
+* views: TODO
 
 #SQL Joins
 
