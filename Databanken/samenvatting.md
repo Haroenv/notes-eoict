@@ -1,22 +1,36 @@
-# Overzicht commando's
+#  Overzicht commando's
 
 Door: Hanne Goossens
 
 ```sql
-select table (...) engine=''; #tabel aanmaken
-drop table ...;	#tabel verwijderen
-unsigned; #enkel positieve getallen
-zerofill; #voorloopnullen toevoegen
-float;	#reeële getallen waarvoor grote precisie niet nodig is
-double(m,d); #m: aantal digits; d: aantal na de komma
-decimal(m,d); #idem, gebruik voor geld
+create table (...) engine='';	# tabel aanmaken
+drop table ...;		# tabel verwijderen
+unsigned;			# enkel positieve getallen
+zerofill;			# voorloopnullen toevoegen
+float;				# reeële getallen waarvoor grote precisie niet nodig is
+double(m,d);		# m: aantal digits; d: aantal na de komma
+decimal(m,d);		# idem, gebruik voor geld
+char(n);			# korte string met lengte n
+varchar(n);			# idem, max 255 chars
+text/blob;			# langere string, text is niet hoofdlettergevoelig
+date,time,datetime;	# YY-MM-DD; HH:MM:SS; YYYY-MM-DD; HH:MM:SS
+# zet tussen aanhalingstekens
+year;				# YYYY
+now();				# nu
+timestamp;			# wordt automatisch aangepast aan huidige tijd, YYYYMMDDHHMMSS
+unix-timestamp;		# epochtijd in s
+enum('bla','bla');	# verzameling van strings in hoofdletters
+is null/ is not null;	# niet '=' of 'like' gebruiken voor null
+auto_increment;		# automatisch +1 in combinatie met not null, pk, unique
+alter tabelnaam add kolomnaam;	# kolom toevoegen
+alter tabelnaam change kolomnaam;	# verander kolomdefinitie
+alter tabelnaam rename to nieuweTabelnaam;	# verander tabelnaam
+alter tabelnaam drop kolomnaam;	# drop een bepaalde kolom
+insert into tabelnaam values(...);	#nieuwe records toevoegen aan een tabel (in volgorde van de kolommen)
+update tabelnaam set ...
 ```
 
-#Examenantwoorden
-
-#2013-2014
-
-Door: Robin Maenhout
+# Niveaupeiling
 
 ```sql
 SELECT brandstof, COUNT(*) FROM autos INNER JOIN autoinfo ON autos.autoinfo_id=autoinfo.id GROUP BY brandstof ORDER BY Count(*) DESC LIMIT 1;
