@@ -47,8 +47,17 @@ select sum(waarde) from tabelnaam;			# de som (van numerieke waarden)
 select ... as iets from tabelnaam;			# verander de naam waarop het weergegeven wordt
 year(datum), dayofmonth(datum);				# dag vd maand/jaar ve datum
 to_days(curdate()), to_days(datum);			# dagen verschil
-
+adddate(now(), interval 1 day);				# voeg een datum toe
+subdate(not(), interval 1 day);				# trek een datum afs
+select ...  from ... inner join ... on ... = ...;
+select ...  from ... left join ... on ... = ...;
+group by;	# groepeer (gebruik bij aggregatiefunctie*)
+having; 	# voorwaarde bij gropu by
 ```
+
+#SQL Joins
+
+![](http://www.codeproject.com/KB/database/Visual_SQL_Joins/Visual_SQL_JOINS_orig.jpg)
 
 # Niveaupeiling
 
