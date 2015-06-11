@@ -27,7 +27,19 @@ alter tabelnaam change kolomnaam;	# verander kolomdefinitie
 alter tabelnaam rename to nieuweTabelnaam;	# verander tabelnaam
 alter tabelnaam drop kolomnaam;	# drop een bepaalde kolom
 insert into tabelnaam values(...);	#nieuwe records toevoegen aan een tabel (in volgorde van de kolommen)
-update tabelnaam set ...
+update tabelnaam set ... = ...;		# verander een bepaalde waarde
+delete from tabelnaam where ...;	# verwijder bepaalde records
+# tip: test deze eerst met select
+select kolomnaam from tabelnaam		# data opvragen
+	where ... = ...
+	where ... > ...
+	where ... < ...
+	where ... like '...%'
+	where ... between ... and ...
+	where ... in (...,...,...)
+	order by kolomnaan
+	desc
+	limit a b 			# a is de limit; b de offset
 ```
 
 # Niveaupeiling
