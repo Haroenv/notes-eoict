@@ -39,7 +39,15 @@ select kolomnaam from tabelnaam		# data opvragen
 	where ... in (...,...,...)
 	order by kolomnaan
 	desc
-	limit a b 			# a is de limit; b de offset
+	limit a b; 			# a is de limit; b de offset
+select distinct kolomnaam from tabelnaam;	# dubbels filteren
+select max(kolomnaam) from tabelnaam;		# maximum
+select count(waarde) from tabelnaam;		# tel het aantal
+select sum(waarde) from tabelnaam;			# de som (van numerieke waarden)
+select ... as iets from tabelnaam;			# verander de naam waarop het weergegeven wordt
+year(datum), dayofmonth(datum);				# dag vd maand/jaar ve datum
+to_days(curdate()), to_days(datum);			# dagen verschil
+
 ```
 
 # Niveaupeiling
