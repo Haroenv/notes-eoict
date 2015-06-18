@@ -67,7 +67,7 @@ on delete, on update	# wat gebeurt er als PK wijzigen de integriteit van FK sche
 	cascade		# wordt uitgevoerd op tabel en gerelateerde tabel
 	set null	# gerelateerde velden worden null
 	no action;	# fout wordt genegeerd, integriteit wordt geschonden
-create view viewnaam as select ...;	# nieuwe view aanmaken die als een tabel in je db wordt opgeslagen
+create view viewnaam as select ...;	# nieuwe view aanmaken*
 create or replace / alter view;	# verander de definitie van een view*
 drop view viewnaam	# verwijder een view
 ```
@@ -75,7 +75,7 @@ drop view viewnaam	# verwijder een view
 * aggregatiefunctie: TODO
 * index: TODO
 	* constraint: TODO
-* views: TODO
+* views: Een nieuwe tabel die gedefinieerd wordt door een bepaalde query
 
 #SQL Joins
 
