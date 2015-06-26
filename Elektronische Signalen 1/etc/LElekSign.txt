@@ -1,0 +1,30 @@
+Labo Elektronische Signalen — Haroen Viaene
+
+== Labo 2: 29 september 2014
+
+=== 2.8
+
+We meten de juistheid van drie verschillende weerstandjes met een multimeter in de stand "ohm/weerstandmeting". Dit gebeurt door de "COM" input met de weerstand te verbinden, en die dan met de multimeter in de rechtse "Ohm/V" input te verbinden. We komen tot de conclusie dat onze weerstanden (zowel 1 kOhm, 2,2 kOhm en 330 Ohm) binnen de verwachte 5% tolerantie liggen (die bepaald wordt door de gouden streep). Geen van de geteste materialen is dus defect.
+
+=== 2.9
+
+Nu wordt de voltmeter verbonden rechtstreeks aan de spanningsbron die op 12 V geregeld staat. Zoals verwacht met de negatieve pool aan de "COM"-poort en de positieve aan de "V/Ohm"-poort. Ook hier komen we tot de conclusie dat het voltage dat op de spanningsbron zelf staat zeer dicht bij het effectieve voltage aanligt. De werkelij
+Voor opdracht 2.11 wordt dezelfde opstelling als voor opstelling 2.10 gemaakt (namelijk een spanningsmeter parallel geschakeld met een serieschakeling van een weerstand en en stroommeter). Deze data wordt dan uitgelezen op ~0,2,4,6,8 en 10 V. Daarna wordt de 1 kOhm-weerstand respectievelijk vervangen door een 2,2 kOhm-weerstand en een serie- en parallelschakeling van die twee weerstanden. Alle data wordt genoteerd en ook geplot. Dankzij de wet van Ohm is het triviaal om het vermogen op die datapunten te berekenen (P=R*I^2). Ook die datapunten worden geplot. 
+
+Verder dan dit is niet geraakt dit labo.
+
+== Labo 3: 6 oktober 2014
+
+=== 2.12
+
+We meten eerst de weerstand van het lampje door een ohm-meter op enkel het ke spanning ligt echter iets lager dan die aangegeven op de spanningsbron zelf. Deze waarde werd met drie verschillende multimeters gecontroleerd, en juist bevonden. 
+
+=== 2.10
+
+In deze opdracht wordt een weerstand in serie met een stroommeter verbonden, en het geheel in parallel met een spanningsmeter geplaatst. Volgens de opdracht moest ook een zekering in serie geplaatst worden, maar dit werd niet gedaan omdat er geen nood voor was (aangezien alle componenten geen last van de stroom of spanning hebben). De metingen die gedaan werden, confirmeerden dat een weerstand van 998 Ohm, en een spanning van 11,97 V een stroom geven van 11,95 mA. Wij hebben een "groene" multimeter als stroommeter gebruikt. Hierop wordt echter het meetbereik niet duidelijk aangegeven, dus dit weten wij niet. 
+
+=== 2.11
+
+In deze opdracht wordt de stroom in functie van de spanning gemten van een temperatuursafhankelijke weerstand (hier een lampje). We meten eerst de weerstand van het lampje door een Ohmmeter op het lampje aan te sluiten. We komen hier een verwachtte 12.8 Ohm uit. Hierna werd de voorgestelde schakeling gemaakt. We krijgen hierdoor een schakeling met een lampje en een voltmeter in parallel, en dat gedeelte in serie met een ampèremeter. We komen uit dat de stroom over de lamp zich rechtlijnig tegenover de spanning verhoudt. Hierna wordt diezelfde opstelling gemaakt met twee lampjes in serie en daarna parallel. Van deze datapunten werd dankzij R=U/I en P=U*I de weerstand en het vermogen berekend op die punten. Dit werd ook geplot.
+
+=== 2.12
