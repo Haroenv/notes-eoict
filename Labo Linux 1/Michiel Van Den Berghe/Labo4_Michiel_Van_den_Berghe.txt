@@ -1,0 +1,94 @@
+LABO 4
+
+Oefening 1
+
+2.1 Folders hebben als eerste letter een d (bvb. drwxr-xr-x   2 student student  4096 okt 14 08:24 xml)
+2.2 Uitvoerbare bestanden hebben een x op de 4e plaats als ze uitvoerbaar zijn door de user, een x op de 7e plaats als ze uitvoerbaar zijn door de groep en een x op de 10e plaats als ze door iedereen uitvoerbaar zijn. (bvb. drwxr-xr-x   2 student student  4096 okt 14 08:24 xml is uitvoerbaar daar user, group en all)
+2.3 Schrijfrechten worden getoond door een w op de 3e plaats voor de user, een w op de 6e plaats voor de groep en een w op de 9e plaats voor iedereen. (bvb. lrwxrwxrwx   1 student student    12 okt 14 08:24 mtab -> /proc/mounts hier heeft iedereen schrijfrechten)
+2.4 Leesrechten worden getoond door een r op de 2e plaats voor de user, een d op de 5e plaats voor de groep en een d op de 8e plaats voor iedereen (bvb. drwxr-xr-x   2 student student  4096 okt 14 08:24 xml hier heeft iedereen leesrechten)
+2.5 De eigenaar van het bestand wordt weergegeven na de rechten en de grootte in bits (bvb.  drwxr-xr-x   2 student student  4096 okt 14 08:24 xml de 'student' achter 2 toont de eigenaar)
+2.6 De groep waartoe het bestand hoort staat achter de eigenaar ( drwxr-xr-x   2 student student  4096 okt 14 08:24 xml de 'student' achter 'student' toont de groep)
+2.7 De rechten van de groep worden getoond in letter 5-6-7 (read-write-execute) (bvb. drwxr-xr-x   2 student student  4096 okt 14 08:24 xml de rechten van de groep zijn hier r-x)
+2.8 De rechten van de andere users worden getoond in letter 8-9-10 (read-write-execute) (bvb. drwxr-xr-x   2 student student  4096 okt 14 08:24 xml de rechten van de groep zijn hier r-x)
+
+3.1 ls -l services
+	-rw-r--r-- 1 student student 19398 okt 14 08:24 services
+3.2 chmod o-r services
+	ls -l services
+    -rw-r----- 1 student student 19398 okt 14 08:24 services
+3.3 chmod ugo+wx services
+	ls -l services
+	-rwxrwx-wx 1 student student 19398 okt 14 08:24 services
+3.4 chmod g-x services
+	ls -l services
+	-rwxrw--wx 1 student student 19398 okt 14 08:24 services
+
+4. mkdir brieven
+   mkdir spelen
+   mkdir metalen
+   mkdir nonsens
+   touch brieven/brief1
+   touch spelen/leo
+   touch metalen/goud
+
+Oefening 2
+
+1.  ls -l metalen
+	-rw-r--r-- 1 student student 0 okt 14 08:46 goud
+	Dit wil zeggen dat het een bestand is met rechten: read-write-execute voor de user student, read voor de groep student en read voor de rest.
+2.  chmod -R g-r metalen
+3.  chmod u+x metalen/goud
+	ls -l metalen
+	De bestandsnaam staat in het groen
+4.  chmod u-r spelen
+	ls -l spelen
+	ls: kan map spelen niet openen: Toegang geweigerd (Kan de inhoud van de directory niet weergeven)
+	cd spelen
+	cat leo (Dit gaat wel nog)
+	cat spelen/leo (Dit gaat wel nog)
+5.  chmod u+r spelen
+	ls -l spelen
+
+Oefening 3
+
+1.  chmod u-w spelen
+	touch spelen/poging
+	touch: kan tijdsstempels van ‘spelen/poging’ niet wijzigen: Toegang geweigerd (Kan geen bestand maken in deze directory)
+2.  vi spelen/leo
+	'Leo is een spel'
+	<Esc> ZZ
+3.  rm spele/leo
+	rm: kan ‘spelen/leo’ niet verwijderen: Toegang geweigerd
+4.  Execute-permissia van een map wilt zeggen dat men bestanden mag lezen of uitvoeren in de directory.
+	Oefening:
+	touch nonsens/zever
+	chmod u-x nonsens
+	touch nonsens/blabla
+	touch: kan tijdsstempels van ‘/blabla’ niet wijzigen: Toegang geweigerd (Kan geen bestand maken)
+	cat nonsens/zever
+	cat: nonsens/zever: Toegang geweigerd (Kan geen bestand lezen of uitvoeren)
+5.  cd etc
+	chown root:root resolv.conf
+	chown: veranderen van de eigenaar van ‘resolv.conf’: Bewerking niet toegestaan
+	Dit lukt niet omdat enkel de superuser gebruik kan maken van chown.
+
+Oefening 4
+
+1.  vi test1.txt
+3.	<ESC> :w <Enter>
+4.  Op onderste lijn
+	<ESC> dd
+5.  Op de n
+	<ESC> x
+6.  <ESC> :wq test2.txt
+7.  cat test1.txt
+	cat test2.txt
+
+Optioneel
+
+1. cdhmod +s bestand Geeft het recht om het bestand uit te voeren met de rechten van de eigenaar
+2.  chmod +t bestand 
+
+
+
+

@@ -1,0 +1,66 @@
+﻿Michiel Van den Berghe
+
+Oefening 1
+
+date: Geeft datum en tijd weer
+pwd: Print work directory, print uit in welke map je momenteel werkt
+clear: Leegt het terminalscherm
+
+ls -a: Geeft een lijst van alle directories (ook verborgen bestanden)
+ls -al: Geeft een lijst van alle directories met alle info bij
+ls -R: Geeft een lijst van alle subdirectories recursief geschreven
+cat .bashrc: Toont inhoud van het bestand '.bashrc'
+mkdir werk: Maakt een directory 'werk'
+cd werk: Verandert de gebruikte directory naar 'werk'
+cd ..: Verandert de gebruikte directory terug naar 'dir'
+rm -r werk: verwijdert de directory 'werk' en ook zijn inhoud
+cp .bashrc test.txt: Kopieert de inhoud van '.bashrc' naar het bestand 'test.txt'
+mv test.txt test1.txt: Verandert de naam van 'test.txt' naar 'test1.txt'
+wc test1.txt: Print het aantal bytes, woorden en lijnen van 'test1.txt
+wc -l test1.txt:  Print het aantal lijnen van 'test1.txt'
+rm test1.txt: Verwijdert het bestand 'test1.txt'
+
+
+Oefening 2
+
+Meerdere commando's: Voert de commando's na mekaar uit
+
+ls *: Toont alle directories met de bestanden die er in zitten
+
+ls ????: Toont alle directories van 4 letters met de bestanden die er in zitten
+
+cal [[month(1-12)] year(1-9999)]
+cal 11 1995: 17/11/1995 was een zaterdag
+
+
+Oefening 3
+
+man ls: -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+              do not list implied . and ..
+
+       --author
+       		  toont de maker van het bestand
+
+man cp: -a, --archive
+              same as -dR --preserve=all
+
+       --attributes-only
+              don't copy the file data, just the attributes
+
+       --backup[=CONTROL]
+
+man rm: -f, --force
+              ignore nonexistent files, never prompt
+
+       -i     prompt before every removal
+
+       -I     prompt once before removing  more  than  three  files,  or  when
+              removing  recursively.  Less intrusive than -i, while still giv‐
+              ing protection against most mistakes
+
+       --interactive[=WHEN]
+              prompt according to WHEN: never,  once  (-I),  or  always  (-i).
+              Without WHEN, prompt always

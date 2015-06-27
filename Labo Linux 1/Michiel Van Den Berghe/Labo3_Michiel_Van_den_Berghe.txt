@@ -1,0 +1,48 @@
+LABO 3
+
+Oefening 1 - Redirection (1)
+
+1. cd /home/student
+   ls
+2. De uitvoer verschijnt in de console, dit kan gewijzigd worden met
+	COMMANDO > BESTAND zal het commando schrijven in BESTAND door het te maken als het niet bestond of door het te overschrijven als het reeds bestond
+	COMMANDO >> BESTAND zal het commando toevoegen aan BESTAND
+3. ls > lijst 
+4. cat lijst
+5. cp lijst oudelijst
+6. ls >> lijst | sort
+7. cat -n lijst oudelijst > samengesteld
+
+Oefening 2 - Redirection (2)
+
+1. cat samengesteld
+   De inhoud is wat we verwachten.
+   	 1	Desktop
+     2	lijst
+     3	Desktop
+     4	lijst
+     5	oudelijst
+     6	Desktop
+     7	lijst
+2. cat lijst onbestaand
+	Desktop
+	lijst
+	Desktop
+	lijst
+	oudelijst
+	cat: onbestaand: Bestand of map bestaat niet
+   Hij toont eerst de inhoud van het bestand lijst en daarna geeft hij de melding dat hij het bestand niet bestaat en dus niet getoond kan worden
+3. cat lijst > /dev/null | cat onbestaand
+4. cat lijst > alles | cat onbestaand 2>> alles
+5. cat alles
+	Dit bestand bevat de inhoud van lijst met daaronder de foutmelding uitgeschreven in het bestand.
+
+Oefening 3 - Zoeken
+
+1. find /home/student -name hosts
+2. find *rot -exec rm -rf {} \;
+3. find /home/student -name "*[az]*"
+
+Oefening 4 - Reguliere expressie
+
+1.

@@ -1,0 +1,74 @@
+LABO 6
+
+Gebruikers
+
+1.  MANUEEL
+	cd etc
+	vi passwd
+	Nieuwe regel toevoegen: test1:x:100:100:Tester:/home/tester:/bin/bash
+	Paswoord toevoegen: passwd test
+	mkdir /home/tester
+	Inloggen: su test1
+
+	AUTOMATISCH
+	su- adduser test2
+	su test2
+
+2.	Er wordt een nieuwe regel toegevoegd aan het passwd-bestand met de ingegeven waarden.
+
+3.	Volledige naam - Kamernummer - Telefoon werk - Telefoon thuis - Varia
+
+4.	In passwd-bestand bij test2: /bin/bash veranderen naar bvb /bin/sh
+	Als we dan su test2 doen werkt dit.
+
+5.	MANUEEL
+	vi /etc/passwd
+	commandomodus op de lijn met 'test2' dd (lijn wissen)
+	rm -rf /home/test2
+
+	AUTOMATISCH
+	su- userdel test1
+	Als we nu kijken in de passwd-file, dan zien we dat de regel van test1 ook verwijderd is.
+	rm -rf /home/tester (de home-map is nog niet verwijderd)
+
+6.	Ja, want er staat overal een 'x' op de 2e plaats in het passwd-bestand
+
+Groepen
+
+1.	su
+	addgroup gebruikers1
+	addgroup gebruikers2
+	addgroup gebruikers3
+
+2.	su- delgroup gebruikers3
+
+3.	su- adduser piet
+	su- adduser karel
+
+4.	usermod -a -G gebruikers1 karel
+	usermod -a -G gebruikers1 piet
+
+5.	usermod -a -G gebruikers2 karel
+
+6.	in /home/karel:
+	touch test1
+	chmod 750 test1
+	chgrp gebruikers2 test1
+
+	su piet
+	cat test1
+	-> cat: test1: Toegang geweigerd (Piet heeft geen toegang)
+
+	su karel
+	cat test1
+	-> Dit werkt (Karel heeft wel toegang)
+
+Extra
+
+1.  Pakket downloaden
+	tar -zxvf nutcracker-1.9.tar.gz
+	cd nutcracker-1.9
+	./nutcracker-1.9 /etc/shadow words
+	
+
+

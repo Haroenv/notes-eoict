@@ -1,0 +1,62 @@
+LABO 5
+
+Oefeningen - Shell scripts
+
+1.	#!/bin/sh
+	#
+	#Oef1.1
+	#
+	clear
+	echo $(date)
+	echo $PWD
+
+2.	#!/bin/bash
+	#
+	#Oef1.2
+	#
+	set foo bar test
+	for i
+	do
+		echo "$i "
+	done
+
+3.  #!/bin/bash
+	#
+	#Oef1.3
+	#
+	echo "Welk bestand wilt u wissen ?"
+	read bestandsnaam
+	echo "Wilt u het bestand $bestandsnaam wissen ? (Ja/Nee)"
+	read antwoord
+	if [ $antwoord = "Ja" ]
+	then
+		rm $bestandsnaam
+		echo "$bestandsnaam is gewist"
+	elif [ $antwoord = "Nee" ]
+	then
+		echo "$bestandsnaam niet verwijderd"
+	else
+		echo "Ongeldig antwoord (Ja/Nee)"
+	fi
+
+4.	#!/bin/bash
+	#
+	#Oef1.4
+	#
+	echo "Welk bestand wilt u aanpassen ?"
+	read bestandsnaam
+	chmod -rwr-xr-x $bestandsnaam
+	chown jan $bestandsnaam
+
+5.	#!/bin/bash
+	#
+	#Oef1.5
+	#
+	echo "Geef een getal in: "
+	read getal
+	while (0 <= $getal && $getal <= 9)
+	do
+		echo $getal
+		read getal
+	done
+
