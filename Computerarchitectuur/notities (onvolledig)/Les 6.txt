@@ -1,0 +1,190 @@
+CompArch
+Les 6
+
+_____
+
+Opslagmedia
+
+voorbeeld qua leessnelheid
+	256 bytes per sector
+		cluster
+			is altijd een veelvoud van een sector
+			wordt bepaald door OS
+		4k sectoren meestal nu
+			meer nuttige ruimte
+			minder verlies aan checksum
+	12 sectors per track
+		weinig
+		niet constant
+		tracks op de buitenkant hebben meer sectoren dan aan de binnenkant
+	20 tracks per surface
+		weinig
+	3 platters
+	seek time 9 ms
+		realistisch
+	rotatiesnelheid: 7200 RPM
+		realistisch
+	8 opeenvolgende sectoren lezen
+
+Disk Scheduling algorithms
+	FCFS
+		first come first serve
+		niet zo efficiënt
+		eerst de eerste opdracht
+	SSTF
+		shortest seek time first
+		eerst de opdracht die het dichtste bij de vorige ligt
+		probleem: data die niet dichtbij ligt word telkens overgeslagen
+	SCAN
+		Als het ergens passeert dan stopt het ook.
+		gebruikt het lift-algoritme
+	C-SCAN
+		bijna hetzelfde als SCAN
+		er zijn geen stops bij de terugweg
+	LOOK
+		Begint aan de buitenkant en gaat terug naar de bovenkant als het de laatst gelezen data uitgelezen is
+		lijkt nog meer op echte lift
+	C-LOOK
+		LOOK, maar zonder stoppen op terugweg
+SSD
+	bij toepassingen met veel data niet
+		duurder
+	SLC of MLC
+		cel die data bevat heeft specifieke opbouw om spanning bewaren
+		bij slc maar 1 level spanning, mij MLC meerdere.
+		SLC: 5V is 1, 0V is 0
+		MLC: 0V is 00, 1V is 01, 2V is 10 ...
+		MLC is trager dan SLC omdat preciezie hoger moet zijn
+			intensievere operatie
+		voordeel MLC
+			minder cellen nodig om data op te slaan
+				wordt kleiner en goedkoper
+		SLC enkel bij Enterprise
+			superduur
+		Samsung is goedkoper
+			maakt zelf chips (als enige)
+			meer bits per cel
+		MLC: TLC, QLC ...
+			drie, vier bits per cel
+	NAND is de technologie om de bits in de cel op te slaan.
+		blok verwijderen duurt heel lang (bv 3 ms, zo snel als HDD)
+			benchmarks in het begin (voordat de drive vol is) zijn veel beter dan eens het vol zit
+			soms is de opslag groter dan vernoemd om er voor te zorgen dat hij minder snel vol is dan vernoemd.
+			schijf een tweede keer beschrijven is veel minder efficiënt (-40%)
+Garbage collection
+	zoals in Java
+	pool is zelfde als sector
+	Als data niet meer relevant is (aangeduid als verwijderd)
+	duurdere schijven hebben grotere pools
+SSD parameters
+	reserve-space
+		garbage collection
+	controllertype
+		Jmicron, Sandforce, Intel...
+	TRIM
+		bijna altijd 
+
+	klonen van een HDD naar een SSD is niet slim
+		anders opgedeeld in sectoren dan pools
+		niet opgelijnd pools en sectoren
+		heel veel plaatsverlies
+FAT16
+	niet meer relevant (legacy) voor moderne besturingssystemen
+	Maar
+		breed ondersteund
+		snel
+		eenvoudig
+	toepassingen
+		USB-sticks
+		flash-kaartjes
+		smartphones
+		fototoestel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
