@@ -1,0 +1,3 @@
+2^{aantal bits} - kloksnelheid/4 * 1/prescaler * tijd = getal (dec)
+
+zet om naar hex H/L
