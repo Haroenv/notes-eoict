@@ -19,3 +19,7 @@ Nieuwe cursus (met oplossingen van de oefeningen, praktische schakelingen ...)
 
 * versterker die een heel grote versterking heeft
 * quasi-ideaal
+
+## niet-inverterende versterker
+
+bron zit voor de opamp aan de + klem, - hangt aan massa.
