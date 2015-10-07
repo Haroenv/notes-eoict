@@ -1,0 +1,1140 @@
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#no ip-dom
+Switch(config)#no ip dom
+Switch(config)#no ip domain-
+Switch(config)#no ip domain-l
+Switch(config)#no ip domain-lo
+Switch(config)#no ip domain-lookup
+Switch(config)#hostname seen
+seen(config)#enable secret class
+seen(config)#line vty 0 15
+seen(config-line)#user admin password cisco
+seen(config)#login
+% Incomplete command.
+
+seen(config)#line vty 0 15
+seen(config-line)#us
+seen(config-line)#user
+seen(config-line)#usern
+seen(config-line)#usern
+seen(config-line)#usern
+seen(config-line)#?
+Line configuration commands:
+  access-class            Filter connections based on an IP access list
+  autocommand             Automatically execute an EXEC command
+  autocommand-options     Autocommand options
+  data-character-bits     Size of characters being handled
+  databits                Set number of data bits per character
+  default                 Set a command to its defaults
+  domain-lookup           Enable domain lookups in show commands
+  editing                 Enable command line editing
+  escape-character        Change the current line's escape character
+  exec                    Configure EXEC
+  exec-banner             Enable the display of the EXEC banner
+  exec-character-bits     Size of characters to the command exec
+  exec-timeout            Set the EXEC timeout
+  exit                    Exit from line configuration mode
+  flowcontrol             Set the flow control
+  full-help               Provide help to unprivileged user
+  help                    Description of the interactive help system
+  history                 Enable and control the command history function
+  international           Enable international 8-bit character support
+  ip                      IP options
+  ipv6                    IPv6 options
+  length                  Set number of lines on a screen
+  location                Enter terminal location description
+  logging                 Modify message logging facilities
+  login                   Enable password checking
+  modem                   Configure the Modem Control Lines
+  monitor                 Copy debug output to the current terminal line
+  motd-banner             Enable the display of the MOTD banner
+  no                      Negate a command or set its defaults
+  notify                  Inform users of output from concurrent sessions
+  padding                 Set padding for a specified output character
+  parity                  Set terminal parity
+  password                Set a password
+  prc                     PRC commands
+  privilege               Change privilege level for line
+  refuse-message          Define a refuse banner
+  rotary                  Add line to a rotary group
+  rxspeed                 Set the receive speed
+  session-timeout         Set interval for closing connection when there is no
+                          input traffic
+  special-character-bits  Size of the escape (and other special) characters
+  speed                   Set the transmit and receive speeds
+  start-character         Define the start character
+  stop-character          Define the stop character
+  stopbits                Set async line stop bits
+  terminal-type           Set the terminal type
+  timeout                 Timeouts for the line
+  transport               Define transport protocols for line
+  txspeed                 Set the transmit speeds
+  vacant-message          Define a vacant banner
+  width                   Set width of the display terminal
+
+seen(config-line)#exit
+seen(config)#username admin password cisco
+seen(config)#line vty 0 15
+seen(config-line)#login local
+seen(config-line)#end
+seen#
+*Mar  1 00:08:35.228: %SYS-5-CONFIG_I: Configured from console by console
+seen#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+seen(config)#line con0
+                     ^
+% Invalid input detected at '^' marker.
+
+seen(config)#line con 0
+seen(config-line)#logging syn
+seen(config-line)#logging synchronous
+seen(config-line)#exit
+seen(config)#banne motd "hey losers, groetjes Bram"
+seen(config)#banner motd "hey losers, groetjes Bram"
+seen(config)#ip
+seen(config)#ip
+seen(config)#ip-ad
+seen(config)#ip-ad
+seen(config)#ip-ad?
+% Unrecognized command
+seen(config)#ip-?
+% Unrecognized command
+seen(config)#ip ?
+Global IP configuration subcommands:
+  access-list           Named access-list
+  accounting-list       Select hosts for which IP accounting information is
+                        kept
+  accounting-threshold  Sets the maximum number of accounting entries
+  accounting-transits   Sets the maximum number of transit entries
+  address-pool          Specify default IP address pooling mechanism
+  admission             Network Admission Control (NAC)
+  alias                 Alias an IP address to a TCP port
+  arp                   IP ARP global configuration
+  arp                   IP Arp features
+  auth-proxy            Authentication Proxy
+  default-gateway       Specify default gateway (if not routing IP)
+  device                Device tracking
+  dhcp                  Configure DHCP server and relay parameters
+  dhcp-client           Configure parameters for DHCP client operation
+  dhcp-server           Specify address of DHCP server to use
+  domain                IP DNS Resolver
+  domain-list           Domain name to complete unqualified host names.
+  domain-lookup         Enable IP Domain Name System hostname translation
+  domain-name           Define the default domain name
+  finger                finger server
+
+seen(config)#ip addr
+seen(config)#int vlan
+seen(config)#int vlan 1
+seen(config-if)#ip-a
+seen(config-if)#ip-ad
+seen(config-if)#?
+Interface configuration commands:
+  arp                     Set arp type (arpa, probe, snap) or timeout
+  bandwidth               Set bandwidth informational parameter
+  carrier-delay           Specify delay for interface transitions
+  cdp                     CDP interface subcommands
+  dampening               Enable event dampening
+  default                 Set a command to its defaults
+  delay                   Specify interface throughput delay
+  description             Interface specific description
+  exit                    Exit from interface configuration mode
+  help                    Description of the interactive help system
+  hold-queue              Set hold queue depth
+  ip                      Interface Internet Protocol config commands
+  link                    Configure Link
+  load-interval           Specify interval for load calculation for an
+                          interface
+  logging                 Configure logging for interface
+  loopback                Configure internal loopback on an interface
+  macro                   Command macro
+  max-reserved-bandwidth  Maximum Reservable Bandwidth on an Interface
+  neighbor                interface neighbor configuration mode commands
+  network-policy          Network Policy
+  nmsp                    NMSP interface configuration
+  no                      Negate a command or set its defaults
+  ntp                     Configure NTP
+  service-policy          Configure QoS Service Policy
+  shutdown                Shutdown the selected interface
+  snmp                    Modify SNMP interface parameters
+  source                  Get config from another source
+  spanning-tree           Spanning Tree Subsystem
+  standby                 HSRP interface configuration commands
+  timeout                 Define timeout values for this interface
+  vtp                     Enable VTP on this interface
+
+seen(config-if)#ip ?
+Interface IP configuration subcommands:
+  access-group        Specify access control for packets
+  accounting          Enable IP accounting on this interface
+  address             Set the IP address of an interface
+  admission           Apply Network Admission Control
+  auth-proxy          Apply authenticaton proxy
+  broadcast-address   Set the broadcast address of an interface
+  dhcp                Configure DHCP parameters for this interface
+  directed-broadcast  Enable forwarding of directed broadcasts
+  helper-address      Specify a destination address for UDP broadcasts
+  information-reply   Enable sending ICMP Information Reply messages
+  local-proxy-arp     Enable local-proxy ARP
+  mask-reply          Enable sending ICMP Mask Reply messages
+  mtu                 Set IP Maximum Transmission Unit
+  probe               Enable HP Probe support
+  proxy-arp           Enable proxy ARP
+  rarp-server         Enable RARP server for static arp entries
+  redirects           Enable sending ICMP Redirect messages
+  route-cache         Enable fast-switching cache for outgoing packets
+  security            DDN IP Security Option
+  sticky-arp          Allow the creation of sticky ARP entries
+  tcp                 TCP interface commands
+
+seen(config-if)#ip ad
+seen(config-if)#ip add
+seen(config-if)#ip address 192.168.1.11 255.255.255.0
+seen(config-if)#end
+seen#sh
+seen#sh
+*Mar  1 00:12:23.935: %SYS-5-CONFIG_I: Configured from console by console
+seen#sh ip
+seen#sh ip
+seen#sh ip?
+ip  ipv6
+
+seen#sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  192.168.1.11    YES manual up                    up
+FastEthernet0/1        unassigned      YES unset  up                    up
+FastEthernet0/2        unassigned      YES unset  down                  down
+FastEthernet0/3        unassigned      YES unset  down                  down
+FastEthernet0/4        unassigned      YES unset  down                  down
+FastEthernet0/5        unassigned      YES unset  down                  down
+FastEthernet0/6        unassigned      YES unset  down                  down
+FastEthernet0/7        unassigned      YES unset  down                  down
+FastEthernet0/8        unassigned      YES unset  down                  down
+FastEthernet0/9        unassigned      YES unset  down                  down
+FastEthernet0/10       unassigned      YES unset  down                  down
+FastEthernet0/11       unassigned      YES unset  up                    up
+FastEthernet0/12       unassigned      YES unset  down                  down
+FastEthernet0/13       unassigned      YES unset  down                  down
+FastEthernet0/14       unassigned      YES unset  down                  down
+FastEthernet0/15       unassigned      YES unset  down                  down
+FastEthernet0/16       unassigned      YES unset  down                  down
+FastEthernet0/17       unassigned      YES unset  down                  down
+FastEthernet0/18       unassigned      YES unset  up                    up
+FastEthernet0/19       unassigned      YES unset  down                  down
+FastEthernet0/20       unassigned      YES unset  down                  down
+FastEthernet0/21       unassigned      YES unset  down                  down
+FastEthernet0/22       unassigned      YES unset  down                  down
+FastEthernet0/23       unassigned      YES unset  down                  down
+FastEthernet0/24       unassigned      YES unset  down                  down
+GigabitEthernet0/1     unassigned      YES unset  down                  down
+GigabitEthernet0/2     unassigned      YES unset  down                  down
+seen#hostname S2
+      ^
+% Invalid input detected at '^' marker.
+
+seen#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+seen(config)#hostname S2
+S2(config)#int vl
+S2(config)#int vlan 1
+S2(config-if)#ip address 192.168.1.12 255.255.255.0
+S2(config-if)#end
+S2#sh
+*Mar  1 00:14:10.143: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  192.168.1.12    YES manual up                    up
+FastEthernet0/1        unassigned      YES unset  up                    up
+FastEthernet0/2        unassigned      YES unset  down                  down
+FastEthernet0/3        unassigned      YES unset  down                  down
+FastEthernet0/4        unassigned      YES unset  down                  down
+FastEthernet0/5        unassigned      YES unset  down                  down
+FastEthernet0/6        unassigned      YES unset  down                  down
+FastEthernet0/7        unassigned      YES unset  down                  down
+FastEthernet0/8        unassigned      YES unset  down                  down
+FastEthernet0/9        unassigned      YES unset  down                  down
+FastEthernet0/10       unassigned      YES unset  down                  down
+FastEthernet0/11       unassigned      YES unset  up                    up
+FastEthernet0/12       unassigned      YES unset  down                  down
+FastEthernet0/13       unassigned      YES unset  down                  down
+FastEthernet0/14       unassigned      YES unset  down                  down
+FastEthernet0/15       unassigned      YES unset  down                  down
+FastEthernet0/16       unassigned      YES unset  down                  down
+FastEthernet0/17       unassigned      YES unset  down                  down
+FastEthernet0/18       unassigned      YES unset  up                    up
+FastEthernet0/19       unassigned      YES unset  down                  down
+FastEthernet0/20       unassigned      YES unset  down                  down
+FastEthernet0/21       unassigned      YES unset  down                  down
+FastEthernet0/22       unassigned      YES unset  down                  down
+FastEthernet0/23       unassigned      YES unset  down                  down
+FastEthernet0/24       unassigned      YES unset  down                  down
+GigabitEthernet0/1     unassigned      YES unset  down                  down
+GigabitEthernet0/2     unassigned      YES unset  down                  down
+S2#
+*Mar  1 00:16:05.344: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1,                                                                                           changed state to down
+S2#
+*Mar  1 00:16:06.359: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to down
+S2#
+*Mar  1 00:16:14.764: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+*Mar  1 00:16:15.771: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1,                                                                                           changed state to up
+S2#interface range f0/2-10
+    ^
+% Invalid input detected at '^' marker.
+
+S2#interface range f0/2 - 10
+    ^
+% Invalid input detected at '^' marker.
+
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#int
+S2(config)#int range f0/2 - 10
+S2(config-if-range)#shutdown
+S2(config-if-range)#i
+*Mar  1 00:20:04.159: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to admi                                                                                          nistratively down
+*Mar  1 00:20:04.184: %LINK-5-CHANGED: Interface FastEthernet0/3, changed state to admi                                                                                          nistratively down
+*Mar  1 00:20:04.201: %LINK-5-CHANGED: Interface FastEthernet0/4, changed state to admi                                                                                          nistratively down
+*Mar  1 00:20:04.218: %LINK-5-CHANGED: Interface FastEthernet0/5, changed state to admi                                                                                          nistratively down
+*Mar  1 00:20:04.234: %LINK-5-CHANGED: Interface FastEthernet0/6, changed state to ad
+S2(config-if-range)#intministratively down
+*Mar  1 00:20:04.260: %LINK-5-CHANGED: Interface FastEthernet0/7, changed state to admi                                                                                          nistratively down
+*Mar  1 00:20:04.276: %LINK-5-CHANGED: Interface FastEthernet0/8, changed state to admi                                                                                          nistratively down
+*Mar  1 00:20:04.293: %LINK-5-CHANGED: Interface FastEthernet0/9, changed state to admi                                                                                          nistratively down
+*Mar  1 00:20:04.310: %LINK-5-CHANGED: Interface FastEthernet0/10, changed state to adm                                                                                          inistratively down
+S2(config-if-range)#int range f0/12 - 17
+S2(config-if-range)#shutdown
+S2(config-if-range)#
+*Mar  1 00:20:35.188: %LINK-5-CHANGED: Interface FastEthernet0/12, changed state to adm                                                                                          inistratively down
+*Mar  1 00:20:35.205: %LINK-5-CHANGED: Interface FastEthernet0/13, changed state to adm                                                                                          inistratively down
+*Mar  1 00:20:35.222: %LINK-5-CHANGED: Interface FastEthernet0/14, changed state to adm                                                                                          inistratively down
+*Mar  1 00:20:35.239: %LINK-5-CHANGED: Interface FastEthernet0/15, changed state to adm                                                                                          inistratively down
+*Mar  1 00:20:35.264: %LINK-5-CHANGED: Interface FastEthernet0/16, changed state
+S2(config-if-range)#to administratively down
+*Mar  1 00:20:35.281: %LINK-5-CHANGED: Interface FastEthernet0/17, changed state to adm                                                                                          inistratively down
+S2(config-if-range)#int range f0/19 - 24
+S2(config-if-range)#shutdown
+S2(config-if-range)#int range
+*Mar  1 00:21:05.161: %LINK-5-CHANGED: Interface FastEthernet0/19, changed state to adm                                                                                          inistratively down
+*Mar  1 00:21:05.178: %LINK-5-CHANGED: Interface FastEthernet0/20, changed state to adm                                                                                          inistratively down
+*Mar  1 00:21:05.203: %LINK-5-CHANGED: Interface FastEthernet0/21, changed state to adm                                                                                          inistratively down
+*Mar  1 00:21:05.220: %LINK-5-CHANGED: Interface FastEthernet0/22, changed state to adm                                                                                          inistratively down
+*Mar  1 00:21:05.236: %LINK-5-CHANGED: Interface FastEthernet0/23, changed state
+S2(config-if-range)#int range to administratively down
+*Mar  1 00:21:05.262: %LINK-5-CHANGED: Interface FastEthernet0/24, changed state to adm                                                                                          inistratively down
+S2(config-if-range)#int range g0/1 - 2
+S2(config-if-range)#shutdown
+S2(config-if-range)#end
+S2#
+*Mar  1 00:21:23.389: %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to a                                                                                          dministratively down
+*Mar  1 00:21:23.406: %LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to a                                                                                          dministratively down
+*Mar  1 00:21:24.052: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  192.168.1.12    YES manual up                    up
+FastEthernet0/1        unassigned      YES unset  up                    up
+FastEthernet0/2        unassigned      YES unset  administratively down down
+FastEthernet0/3        unassigned      YES unset  administratively down down
+FastEthernet0/4        unassigned      YES unset  administratively down down
+FastEthernet0/5        unassigned      YES unset  administratively down down
+FastEthernet0/6        unassigned      YES unset  administratively down down
+FastEthernet0/7        unassigned      YES unset  administratively down down
+FastEthernet0/8        unassigned      YES unset  administratively down down
+FastEthernet0/9        unassigned      YES unset  administratively down down
+FastEthernet0/10       unassigned      YES unset  administratively down down
+FastEthernet0/11       unassigned      YES unset  up                    up
+FastEthernet0/12       unassigned      YES unset  administratively down down
+FastEthernet0/13       unassigned      YES unset  administratively down down
+FastEthernet0/14       unassigned      YES unset  administratively down down
+FastEthernet0/15       unassigned      YES unset  administratively down down
+FastEthernet0/16       unassigned      YES unset  administratively down down
+FastEthernet0/17       unassigned      YES unset  administratively down down
+FastEthernet0/18       unassigned      YES unset  up                    up
+FastEthernet0/19       unassigned      YES unset  administratively down down
+FastEthernet0/20       unassigned      YES unset  administratively down down
+FastEthernet0/21       unassigned      YES unset  administratively down down
+FastEthernet0/22       unassigned      YES unset  administratively down down
+FastEthernet0/23       unassigned      YES unset  administratively down down
+FastEthernet0/24       unassigned      YES unset  administratively down down
+GigabitEthernet0/1     unassigned      YES unset  administratively down down
+GigabitEthernet0/2     unassigned      YES unset  administratively down down
+S2#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gi0/1, Gi0/2
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#vlan 10
+S2(config-vlan)#name Student
+S2(config-vlan)#vlan 20
+S2(config-vlan)#name Faculty
+S2(config-vlan)#vlan 99
+S2(config-vlan)#name Management
+S2(config-vlan)#end
+S2#sh
+*Mar  1 00:32:27.885: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gi0/1, Gi0/2
+10   Student                          active
+20   Faculty                          active
+99   Management                       active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+20   enet  100020     1500  -      -      -        -    -        0      0
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+99   enet  100099     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0
+1003 tr    101003     1500  -      -      -        -    -        0      0
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+S2#int f0/11
+    ^
+% Invalid input detected at '^' marker.
+
+S2#conf
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#int f0/11
+S2(config-if)#sw
+S2(config-if)#switchport m
+S2(config-if)#switchport mode acc
+S2(config-if)#switchport mode access
+S2(config-if)#sw
+S2(config-if)#switchport acc
+S2(config-if)#switchport access vl
+S2(config-if)#switchport access vlan 10
+S2(config-if)#end
+S2#
+*Mar  1 00:33:44.850: %SYS-5-CONFIG_I: Configured from console by console
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#sh vlan
+              ^
+% Invalid input detected at '^' marker.
+
+S2(config)#end
+S2#sh v
+*Mar  1 00:34:00.352: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/19, Fa0/20, Fa0/21
+                                                Fa0/22, Fa0/23, Fa0/24, Gi0/1
+                                                Gi0/2
+10   Student                          active    Fa0/11
+20   Faculty                          active
+99   Management                       active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+20   enet  100020     1500  -      -      -        -    -        0      0
+
+S2#conf
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#int vlan 1
+S2(config-if)#end
+S2#f
+*Mar  1 00:34:21.978: %SYS-5-CONFIG_I: Configured from console by console
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#int f0/18
+S2(config-if)#switchport mode access
+S2(config-if)#switchport access vlan 20
+S2(config-if)#int vlan 1
+S2(config-if)#no ip address
+S2(config-if)#int vlan 99
+S2(config-if)#vla
+*Mar  1 00:35:25.950: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan99, changed s                                                                                          tate to down
+S2(config-if)#ip address 192.168.1.12 255.255.255.0
+S2(config-if)#ne
+% Incomplete command.
+
+S2(config-if)#end
+S2#
+*Mar  1 00:35:45.831: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh vlan br
+S2#sh vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gi0/1, Gi0/2
+10   Student                          active    Fa0/11
+20   Faculty                          active    Fa0/18
+99   Management                       active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+S2# sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES manual up                    up
+Vlan99                 192.168.1.12    YES manual up                    down
+FastEthernet0/1        unassigned      YES unset  up                    up
+FastEthernet0/2        unassigned      YES unset  administratively down down
+FastEthernet0/3        unassigned      YES unset  administratively down down
+FastEthernet0/4        unassigned      YES unset  administratively down down
+FastEthernet0/5        unassigned      YES unset  administratively down down
+FastEthernet0/6        unassigned      YES unset  administratively down down
+FastEthernet0/7        unassigned      YES unset  administratively down down
+FastEthernet0/8        unassigned      YES unset  administratively down down
+FastEthernet0/9        unassigned      YES unset  administratively down down
+FastEthernet0/10       unassigned      YES unset  administratively down down
+FastEthernet0/11       unassigned      YES unset  up                    up
+FastEthernet0/12       unassigned      YES unset  administratively down down
+FastEthernet0/13       unassigned      YES unset  administratively down down
+FastEthernet0/14       unassigned      YES unset  administratively down down
+FastEthernet0/15       unassigned      YES unset  administratively down down
+FastEthernet0/16       unassigned      YES unset  administratively down down
+FastEthernet0/17       unassigned      YES unset  administratively down down
+FastEthernet0/18       unassigned      YES unset  up                    up
+FastEthernet0/19       unassigned      YES unset  administratively down down
+FastEthernet0/20       unassigned      YES unset  administratively down down
+FastEthernet0/21       unassigned      YES unset  administratively down down
+FastEthernet0/22       unassigned      YES unset  administratively down down
+FastEthernet0/23       unassigned      YES unset  administratively down down
+FastEthernet0/24       unassigned      YES unset  administratively down down
+GigabitEthernet0/1     unassigned      YES unset  administratively down down
+GigabitEthernet0/2     unassigned      YES unset  administratively down down
+S2#int vlan 1
+    ^
+% Invalid input detected at '^' marker.
+
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#int vlan 1
+S2(config-if)#shutdown
+S2(config-if)#end
+*Mar  1 00:39:53.555: %LINK-5-CHANGED: Interface Vlan1, changed state to administrative                                                                                          ly down
+*Mar  1 00:39:53.563: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed st                                                                                          ate to down
+S2(config-if)#end
+S2#
+*Mar  1 00:39:54.922: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES manual administratively down down
+Vlan99                 192.168.1.12    YES manual up                    down
+FastEthernet0/1        unassigned      YES unset  up                    up
+FastEthernet0/2        unassigned      YES unset  administratively down down
+FastEthernet0/3        unassigned      YES unset  administratively down down
+FastEthernet0/4        unassigned      YES unset  administratively down down
+FastEthernet0/5        unassigned      YES unset  administratively down down
+FastEthernet0/6        unassigned      YES unset  administratively down down
+FastEthernet0/7        unassigned      YES unset  administratively down down
+FastEthernet0/8        unassigned      YES unset  administratively down down
+FastEthernet0/9        unassigned      YES unset  administratively down down
+FastEthernet0/10       unassigned      YES unset  administratively down down
+FastEthernet0/11       unassigned      YES unset  up                    up
+FastEthernet0/12       unassigned      YES unset  administratively down down
+FastEthernet0/13       unassigned      YES unset  administratively down down
+FastEthernet0/14       unassigned      YES unset  administratively down down
+FastEthernet0/15       unassigned      YES unset  administratively down down
+FastEthernet0/16       unassigned      YES unset  administratively down down
+FastEthernet0/17       unassigned      YES unset  administratively down down
+FastEthernet0/18       unassigned      YES unset  up                    up
+FastEthernet0/19       unassigned      YES unset  administratively down down
+FastEthernet0/20       unassigned      YES unset  administratively down down
+
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#int vlan 99
+S2(config-if)#no shutdown
+S2(config-if)#sh ip int br
+                 ^
+% Invalid input detected at '^' marker.
+
+S2(config-if)#end
+S2#sh ip i
+*Mar  1 00:40:41.839: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES manual administratively down down
+Vlan99                 192.168.1.12    YES manual up                    down
+FastEthernet0/1        unassigned      YES unset  up                    up
+FastEthernet0/2        unassigned      YES unset  administratively down down
+FastEthernet0/3        unassigned      YES unset  administratively down down
+FastEthernet0/4        unassigned      YES unset  administratively down down
+FastEthernet0/5        unassigned      YES unset  administratively down down
+FastEthernet0/6        unassigned      YES unset  administratively down down
+FastEthernet0/7        unassigned      YES unset  administratively down down
+FastEthernet0/8        unassigned      YES unset  administratively down down
+FastEthernet0/9        unassigned      YES unset  administratively down down
+FastEthernet0/10       unassigned      YES unset  administratively down down
+FastEthernet0/11       unassigned      YES unset  up                    up
+FastEthernet0/12       unassigned      YES unset  administratively down down
+FastEthernet0/13       unassigned      YES unset  administratively down down
+FastEthernet0/14       unassigned      YES unset  administratively down down
+FastEthernet0/15       unassigned      YES unset  administratively down down
+FastEthernet0/16       unassigned      YES unset  administratively down down
+FastEthernet0/17       unassigned      YES unset  administratively down down
+FastEthernet0/18       unassigned      YES unset  up                    up
+FastEthernet0/19       unassigned      YES unset  administratively down down
+FastEthernet0/20       unassigned      YES unset  administratively down down
+
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#banner motd "hey ther loooosers xDDDDDDD - Bram Van den Bulcke"
+S2(config)#end
+S2#co
+*Mar  1 00:42:34.104: %SYS-5-CONFIG_I: Configured from console by console
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#sh ip int
+               ^
+% Invalid input detected at '^' marker.
+
+S2(config)#end
+S2#sh ip
+*Mar  1 00:42:45.915: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES manual administratively down down
+Vlan99                 192.168.1.12    YES manual up                    down
+FastEthernet0/1        unassigned      YES unset  up                    up
+FastEthernet0/2        unassigned      YES unset  administratively down down
+FastEthernet0/3        unassigned      YES unset  administratively down down
+FastEthernet0/4        unassigned      YES unset  administratively down down
+FastEthernet0/5        unassigned      YES unset  administratively down down
+FastEthernet0/6        unassigned      YES unset  administratively down down
+FastEthernet0/7        unassigned      YES unset  administratively down down
+FastEthernet0/8        unassigned      YES unset  administratively down down
+FastEthernet0/9        unassigned      YES unset  administratively down down
+FastEthernet0/10       unassigned      YES unset  administratively down down
+FastEthernet0/11       unassigned      YES unset  up                    up
+FastEthernet0/12       unassigned      YES unset  administratively down down
+FastEthernet0/13       unassigned      YES unset  administratively down down
+FastEthernet0/14       unassigned      YES unset  administratively down down
+FastEthernet0/15       unassigned      YES unset  administratively down down
+FastEthernet0/16       unassigned      YES unset  administratively down down
+FastEthernet0/17       unassigned      YES unset  administratively down down
+FastEthernet0/18       unassigned      YES unset  up                    up
+FastEthernet0/19       unassigned      YES unset  administratively down down
+FastEthernet0/20       unassigned      YES unset  administratively down down
+FastEthernet0/21       unassigned      YES unset  administratively down down
+FastEthernet0/22       unassigned      YES unset  administratively down down
+FastEthernet0/23       unassigned      YES unset  administratively down down
+FastEthernet0/24       unassigned      YES unset  administratively down down
+GigabitEthernet0/1     unassigned      YES unset  administratively down down
+GigabitEthernet0/2     unassigned      YES unset  administratively down down
+S2#sh vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gi0/1, Gi0/2
+10   Student                          active    Fa0/11
+20   Faculty                          active    Fa0/18
+99   Management                       active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+20   enet  100020     1500  -      -      -        -    -        0      0
+99   enet  100099     1500  -      -      -        -    -        0      0
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1002 fddi  101002     1500  -      -      -        -    -        0      0
+1003 tr    101003     1500  -      -      -        -    -        0      0
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+S2#sh vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gi0/1, Gi0/2
+10   Student                          active    Fa0/11
+20   Faculty                          active    Fa0/18
+99   Management                       active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+20   enet  100020     1500  -      -      -        -    -        0      0
+99   enet  100099     1500  -      -      -        -    -        0      0
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1002 fddi  101002     1500  -      -      -        -    -        0      0
+1003 tr    101003     1500  -      -      -        -    -        0      0
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+S2#sw trun
+S2#sw trun
+    ^
+% Invalid input detected at '^' marker.
+
+S2#sh trunk
+       ^
+% Invalid input detected at '^' marker.
+
+S2#sh swit
+S2#sh switch
+S2#sh switch
+S2#sh switch
+S2#sh switch?
+% Unrecognized command
+S2#sh switch
+*Mar  1 00:44:55.310: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11,                                                                                           changed state to down
+S2#sh switc
+*Mar  1 00:44:57.323: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11,                                                                                           changed state to up
+S2#sh swi
+       ^
+% Invalid input detected at '^' marker.
+
+S2#
+*Mar  1 00:44:59.521: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11,                                                                                           changed state to down
+S2#
+S2#
+*Mar  1 00:45:01.534: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11,                                                                                           changed state to up
+S2#show ?
+  aaa                Show AAA values
+  access-lists       List access lists
+  accounting         Accounting data for active sessions
+  aliases            Display alias commands
+  archive            Archive functions
+  arp                ARP table
+  authentication     Shows Auth Manager registrations or sessions
+  auto               Show Automation Template
+  beep               Show BEEP information
+  boot               show boot attributes
+  buffers            Buffer pool statistics
+  cable-diagnostics  Show Cable Diagnostics Results
+  cca                CCA information
+  cdp                CDP information
+  cisp               Shows CISP information
+  class-map          Show QoS Class Map
+  clock              Display the system clock
+  cluster            Cluster information
+  cns                CNS agents
+  configuration      Configuration details
+  controllers        Interface controller status
+  crypto             Encryption module
+  dampening          Display dampening information
+  data-corruption    Show data errors
+  debugging          State of each debugging option
+  derived-config     Derived operating configuration
+  dhcp               Dynamic Host Configuration Protocol status
+  dot1x              Dot1x information
+  dtp                DTP information
+  eap                Shows EAP registration/session information
+  energywise         EnergyWise show commands
+  env                Environmental facilities
+  epm                EPM information
+  errdisable         Error disable
+  etherchannel       EtherChannel information
+  exception          exception informations
+  fallback           Display Fallback configuration
+  file               Show filesystem information
+  flash:             display information about flash: file system
+  flowcontrol        show flow control information
+  format             Show format information
+  history            Display the session command history
+  hosts              IP domain-name, lookup style, nameservers, and host table
+  html               HTML helper commands
+  idb                List of Interface Descriptor Blocks
+  identity           Identity profiles and policies
+  idprom             show IDPROMs for interfaces
+  if-mgr             if-mgr information
+  interfaces         Interface status and configuration
+  inventory          Show the physical inventory
+  ip                 IP information
+  ipv6               IPv6 information
+  key                Key information
+  kron               Kron Subsystem
+  l2                 Layer 2
+  lacp               Port channel information
+  line               TTY line information
+  link               Show Link
+  lldp               LLDP information
+  location           Display the system location
+  logging            Show the contents of logging buffers
+  login              Display Secure Login Configurations and State
+  mab                MAB information
+  mac                MAC configuration
+  macro              Show command macros
+  memory             Memory statistics
+  mls                mls global commands
+  monitor            Monitoring different system events
+  mvr                Show mvr global parameters
+  netconf            Show NETCONF information
+  network-policy     Network Policy profile information
+  nmsp               nmsp show commands
+  ntp                Network time protocol
+  odm-format         Show the schema used for ODM input file
+  pagp               Port channel information
+  parser             Display parser information
+  persistent         Show persistent information
+  platform           platform specific show commands
+  pm                 Show Port Manager commands
+  policy-manager     Policy Manager
+  policy-map         Show QoS Policy Map
+  port-security      Show secure port information
+  post               Show the results of the system POST
+  power              Switch Power
+  privilege          Show current privilege level
+  processes          Active process statistics
+  queue              Show queue contents
+  queueing           Show queueing configuration
+  radius             Shows radius information
+  region             Region Manager Status
+  registry           Function registry information
+  reload             Scheduled reload information
+  resource           Resource group statistics
+  rhosts             Remote-host+user equivalences
+  rmon               rmon statistics
+  running-config     Current operating configuration
+  sasl               show SASL information
+  sdm                Switch database management
+  sessions           Information about Telnet connections
+  setup              Show express setup settings
+  shell              Display shell information
+  snmp               snmp statistics
+  spanning-tree      Spanning tree topology
+  ssh                Status of SSH server connections
+  ssl                Show SSL command
+  stacks             Process stack utilization
+  standby            Hot Standby Router Protocol (HSRP) information
+  startup-config     Contents of startup configuration
+  storm-control      Show storm control configuration
+  subsys             Show subsystem information
+  system             Show the system configuration
+  table-map          Show Table Map
+  tacacs             Shows tacacs+ server statistics
+  tcp                Status of TCP connections
+  tech-support       Show system information for Tech-Support
+  template           Template information
+  terminal           Display terminal configuration parameters
+  time-range         Time range
+  udld               UDLD information
+  users              Display information about terminal lines
+  version            System hardware and software status
+  vlan               VTP VLAN status
+  vmps               VMPS version information
+  vstack             Vstack show commands
+  vtp                VTP information
+  xsd-format         Show the ODM XSD for the command
+
+S2#show version
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 12.2(55)SE7, RELEASE SO                                                                                          FTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Mon 28-Jan-13 10:22 by prod_rel_team
+Image text-base: 0x00003000, data-base: 0x01900000
+
+ROM: Bootstrap program is C2960 boot loader
+BOOTLDR: C2960 Boot Loader (C2960-HBOOT-M) Version 12.2(53r)SEY3, RELEASE SOFTWARE (fc1                                                                                          )
+
+S2 uptime is 45 minutes
+System returned to ROM by power-on
+System image file is "flash:/c2960-lanbasek9-mz.122-55.SE7/c2960-lanbasek9-mz.122-55.SE                                                                                          7.bin"
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+
+S2#sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  unassigned      YES manual administratively down down
+Vlan99                 192.168.1.12    YES manual up                    down
+FastEthernet0/1        unassigned      YES unset  up                    up
+FastEthernet0/2        unassigned      YES unset  administratively down down
+FastEthernet0/3        unassigned      YES unset  administratively down down
+FastEthernet0/4        unassigned      YES unset  administratively down down
+FastEthernet0/5        unassigned      YES unset  administratively down down
+FastEthernet0/6        unassigned      YES unset  administratively down down
+FastEthernet0/7        unassigned      YES unset  administratively down down
+FastEthernet0/8        unassigned      YES unset  administratively down down
+FastEthernet0/9        unassigned      YES unset  administratively down down
+FastEthernet0/10       unassigned      YES unset  administratively down down
+FastEthernet0/11       unassigned      YES unset  up                    up
+FastEthernet0/12       unassigned      YES unset  administratively down down
+FastEthernet0/13       unassigned      YES unset  administratively down down
+FastEthernet0/14       unassigned      YES unset  administratively down down
+FastEthernet0/15       unassigned      YES unset  administratively down down
+FastEthernet0/16       unassigned      YES unset  administratively down down
+FastEthernet0/17       unassigned      YES unset  administratively down down
+FastEthernet0/18       unassigned      YES unset  up                    up
+FastEthernet0/19       unassigned      YES unset  administratively down down
+FastEthernet0/20       unassigned      YES unset  administratively down down
+FastEthernet0/21       unassigned      YES unset  administratively down down
+FastEthernet0/22       unassigned      YES unset  administratively down down
+FastEthernet0/23       unassigned      YES unset  administratively down down
+FastEthernet0/24       unassigned      YES unset  administratively down down
+GigabitEthernet0/1     unassigned      YES unset  administratively down down
+GigabitEthernet0/2     unassigned      YES unset  administratively down down
+S2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S2(config)#int ga0/1
+                ^
+% Invalid input detected at '^' marker.
+
+S2(config)#int fa0/1
+S2(config-if)#sw mo trunk
+S2(config-if)#sw mo trunk
+S2(config-if)#
+*Mar  1 00:46:13.064: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1,                                                                                           changed state to down
+S2(config-if)#
+*Mar  1 00:46:16.092: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1,                                                                                           changed state to up
+S2(config-if)#end
+S2#sh
+*Mar  1 00:46:40.779: %SYS-5-CONFIG_I: Configured from console by console
+S2#sh tr
+S2#sh tr
+S2#sh tr
+S2#sh tr?
+% Unrecognized command
+S2#
+*Mar  1 00:46:45.108: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan99, changed s                                                                                          tate to up
+S2#show int tr
+S2#show int tr?
+transceiver  trunk
+
+S2#show int trun
+S2#show int trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Fa0/1       on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Fa0/1       1-4094
+
+Port        Vlans allowed and active in management domain
+Fa0/1       1,10,20,99
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Fa0/1       1,10,20,99
+S2#sh run
+Building configuration...
+
+Current configuration : 1856 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname S2
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$1bI.$9EU.erjiIfn6ijy.w4MTB.
+!
+username admin password 0 cisco
+!
+!
+no aaa new-model
+system mtu routing 1500
+!
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+interface FastEthernet0/1
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ shutdown
+!
+interface FastEthernet0/3
+ shutdown
+!
+interface FastEthernet0/4
+ shutdown
+!
+interface FastEthernet0/5
+ shutdown
+!
+interface FastEthernet0/6
+ shutdown
+!
+interface FastEthernet0/7
+ shutdown
+!
+interface FastEthernet0/8
+ shutdown
+!
+interface FastEthernet0/9
+ shutdown
+!
+interface FastEthernet0/10
+ shutdown
+!
+interface FastEthernet0/11
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/12
+ shutdown
+!
+interface FastEthernet0/13
+ shutdown
+!
+interface FastEthernet0/14
+ shutdown
+!
+interface FastEthernet0/15
+ shutdown
+!
+interface FastEthernet0/16
+ shutdown
+!
+interface FastEthernet0/17
+ shutdown
+!
+interface FastEthernet0/18
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/19
+ shutdown
+!
+interface FastEthernet0/20
+ shutdown
+!
+interface FastEthernet0/21
+ shutdown
+!
+interface FastEthernet0/22
+ shutdown
+!
+interface FastEthernet0/23
+ shutdown
+!
+interface FastEthernet0/24
+ shutdown
+!
+interface GigabitEthernet0/1
+ shutdown
+!
+interface GigabitEthernet0/2
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan99
+ ip address 192.168.1.12 255.255.255.0
+!
+ip http server
+ip http secure-server
+banner motd ^Chey ther loooosers xDDDDDDD - Bram Van den Bulcke^C
+!
+line con 0
+ logging synchronous
+line vty 0 4
+ login local
+line vty 5 15
+ login local
+!
+end
+
+S2#
+*Mar  1 00:51:21.538: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/18,                                                                                           changed state to down
+*Mar  1 00:51:22.544: %LINK-3-UPDOWN: Interface FastEthernet0/18, changed state to down
+S2#
