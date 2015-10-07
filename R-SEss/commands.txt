@@ -271,7 +271,7 @@
 
 
 	-- MISCELLANEOUS STUFF: --
-	-> Upload ecsisting config (flat text): > (User exec)
+	-> Upload existing config (flat text): > (User exec)
 											paste code
 	-> Password recovery: ROMMON interface: startup-config negeren
 	-> Telnet sessie router/switch of console: Hyperterminal > transfer/capture text
