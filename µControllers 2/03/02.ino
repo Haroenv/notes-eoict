@@ -15,7 +15,6 @@ void setup() {
 }
 
 void loop() {
-  int k1,k2,k3;
   if (digitalRead(K1) == LOW) {
     delay(20);
     if (digitalRead(K1) == HIGH) {
