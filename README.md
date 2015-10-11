@@ -19,7 +19,7 @@ Gemaakt door Haroen Viaene. Geen garantie.
 	* oefeningennota's
 	* laboverslagen indien digitaal
 	* samenvattingetje Labo 11 (tellers)
-5. [µControllers](µControllers)
+5. [µControllers](µControllers) (1 en 2)
 6. [Databanken](Databanken)
 	* voorbereidingen
 	* labo
