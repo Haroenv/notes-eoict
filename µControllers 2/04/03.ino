@@ -2,6 +2,7 @@
 #define K2 10
 #define K3 11
 byte led = 5;
+byte brt;
 
 void pciSetup(byte pin) {
   * digitalPinToPCMSK(pin) |= bit (digitalPinToPCMSKbit(pin));
@@ -17,22 +18,28 @@ void setup() {
   pciSetup(K1);
   pciSetup(K2);
   pciSetup(K3);
-  digitalWrite(led,HIGH);
+  analogWrite(led,255);
 }
 
 ISR (PCINT0_vect) {
-  if (digitalRead(K1) == LOW) {
-  	// vermindert helderheid met 10%
-  }
+  unsigned long previousInt = 0;
+  unsigned long now = millis();
+  if(now - previousInt >  20){
+    if (digitalRead(K1) == LOW) {
+      if(brt <= 230) brt += 25;
+    }
 
-  if (digitalRead(K2) == LOW) {
-  	digitalWrite(led,LOW);
-  }
+    if (digitalRead(K2) == LOW) {
+      brt = 0;
+    }
 
-  if (digitalRead(K3) == LOW) {
-  	// vermeerdert de helderheid
+    if (digitalRead(K3) == LOW) {
+      if(brt >= 25) brt -= 25;
+    }
   }
+  previousInt = now;
 }
 
 void loop() {
+  analogWrite(led,brt);
 }

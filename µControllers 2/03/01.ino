@@ -13,7 +13,7 @@ void loop() {
   int k1 = digitalRead(K1);
   int k2 = digitalRead(K2);
   int k3 = digitalRead(K3);
-  if (k1 == LOW || k2 == LOW || k2 == LOW ) {
+  if (k1 == LOW || k2 == LOW || k3 == LOW ) {
     Serial.println("a button is pressed.");
     delay(1000);
   }
