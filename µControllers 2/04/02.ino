@@ -10,16 +10,10 @@ void setup() {
 }
 
 void loop() {
-  //minute < 10 ? Serial.print("0"):;
-  if ( minute < 10 ) {
-    Serial.print("0");
-  }
+  minute < 10 ? Serial.print("0"):false;
   Serial.print(minute);
   Serial.print(":");
-  //second < 10 ? Serial.print("0"):;
-  if ( second < 10 ) {
-    Serial.print("0");
-  }
+  second < 10 ? Serial.print("0"):false;
   Serial.println(second);
   delay(1000);
 }
