@@ -32,7 +32,7 @@ Gemaakt door Haroen Viaene. Geen garantie.
 
 ## Other repositories
 
-[haroenv/prog](https://github.com/haroenv/prog) is private, and contains all exercises.
+[haroenv/prog](https://github.com/haroenv/prog) is private, and contains all exercises. Visibility can be requested. 
 
 ## License
 
