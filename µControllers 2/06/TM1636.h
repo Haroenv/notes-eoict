@@ -27,7 +27,7 @@
 #define ADDR_AUTO  0x40
 #define ADDR_FIXED 0x44
 
-#define STARTADDR  0xc0 
+#define STARTADDR  0xc0
 /**** definitions for the clock point of the digit tube *******/
 #define POINT_ON   1
 #define POINT_OFF  0
@@ -58,8 +58,8 @@ public:
   void clearDisplay(void);
   void set(uint8_t = BRIGHT_TYPICAL,uint8_t = 0x40,uint8_t = 0xc0);//To take effect the next time it displays.
   void point(boolean PointFlag);//whether to light the clock point ":".To take effect the next time it displays.
-  void coding(int8_t DispData[]); 
-  int8_t coding(int8_t DispData); 
+  void coding(int8_t DispData[]);
+  int8_t coding(int8_t DispData);
   inline uint8_t getBrightness(){
     return _brightness;
   }
