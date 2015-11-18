@@ -17,30 +17,27 @@ void setup() {
 void loop() {
   input = Serial.read();
   if (input == 'a') {
-    Serial.println("geef me een aight");
     for (byte i = 0; i < sizeof(leds) / sizeof(byte); i++) {
       digitalWrite(leds[i], HIGH);
     }
   } else if (input == 'b') {
-    Serial.println("geef me een baight");
     for (byte i = 0; i < sizeof(leds) / sizeof(byte); i++) {
       digitalWrite(leds[i], LOW);
     }
   } else if (input == 'c') {
     Serial.println("geef het nummer van de LED gevolgd door A (aan) of U (uit), bv. 2A:");
     while (Serial.available() == 0) {}
-    Serial.println("in c");
     number = (byte)Serial.read() - 49;
-    Serial.println(number);
-    if (number > 0 && number < 5) {
-      Serial.println("in number");
-      Serial.println(number);
+    if (number >= 0 && number < 4) {
+      Serial.print(number+1);
       while (Serial.available() == 0) {}
       mode = Serial.read();
       Serial.println(mode);
       if (mode == 'U' || mode == 'A') {
         digitalWrite(leds[number], mode == 'U' ? LOW : HIGH);
       }
+    } else {
+      Serial.println("Deze LED bestaat niet");
     }
   }
 }
