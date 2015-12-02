@@ -36,15 +36,30 @@ void pciSetup(byte pin) {
 
 ISR (PCINT0_vect) {
   if (digitalRead(K1) == LOW) {
-    second < 59 ? second++ : second = 0;
+    if (second < 59) {
+      second++;     
+    } else {
+      second = 0;
+      minute++; 
+    }
     edited = true;
   }
   if (digitalRead(K2) == LOW) {
-    minute < 59 ? minute++ : minute = 0;
+    if (minute < 59) {
+      minute++;
+    } else {
+      minute = 0;
+      hour++;
+    }
     edited = true;
   }
   if (digitalRead(K3) == LOW) {
-    hour < 23 ? hour++ : hour = 0;
+    if (hour < 23) {
+      hour++;
+    } else {
+      hour = 0;
+      day++;
+    }
     edited = true;
   }
 }
