@@ -3,9 +3,9 @@
 #define K1 9
 #define K2 10
 #define K3 11
-uint8_t second =      00; //0-59
-uint8_t minute =      41; //0-59
-uint8_t hour =        20; //0-23
+uint8_t second =      58; //0-59
+uint8_t minute =      59; //0-59
+uint8_t hour =        11; //0-23
 uint8_t dow =          3; //1-7
 uint8_t day =          2; //1-31
 uint8_t month =       12; //1-12
@@ -66,13 +66,16 @@ ISR (PCINT0_vect) {
 }
 
 void setTime(){
-
+  hour = dec2bcd(hour);
+  bitSet(hour,6);
+  bitClear(hour,5);
+  
   Wire.beginTransmission(DS1307_ID);
   Wire.write(0x00); //stop Oscillator
 
   Wire.write(dec2bcd(second));
   Wire.write(dec2bcd(minute));
-  Wire.write(dec2bcd(hour));
+  Wire.write(hour);
   Wire.write(dec2bcd(dow));
   Wire.write(dec2bcd(day));
   Wire.write(dec2bcd(month));
@@ -80,7 +83,7 @@ void setTime(){
   Wire.write(0x00); //start 
 
   Wire.endTransmission();
-
+  hour = bcd2dec(hour);
 }
 
 void getTime() {
@@ -91,6 +94,8 @@ void getTime() {
   second = bcd2dec(Wire.read() & 0x7f);// aquire seconds...
   minute = bcd2dec(Wire.read());     // aquire minutes
   hour = bcd2dec(Wire.read());       // aquire hours
+  ampm = hour < 52;
+  hour = bcd2dec(dec2bcd(hour) & 0x1f);
   dow = bcd2dec(Wire.read());        // aquire dow (Day Of Week)
   dow--;  //  correction from RTC format (1..7) to lib format (0..6). Useless, because it will be overwritten
   day = bcd2dec(Wire.read());       // aquire day
@@ -104,10 +109,10 @@ void startClock() {
   Wire.write((uint8_t)0x00);  // Register 0x00 holds the oscillator start/stop bit
   Wire.endTransmission();
   Wire.requestFrom(DS1307_ID, 1);
-  second = Wire.read() & 0x7f;  // save actual seconds and AND sec with bit 7 (start/stop bit) = clock started
+ // second = Wire.read() & 0x7f;  // save actual seconds and AND sec with bit 7 (start/stop bit) = clock started
   Wire.beginTransmission(DS1307_ID);
   Wire.write((uint8_t)0x00);
-  Wire.write((uint8_t)second);   // write seconds back and start the clock
+//  Wire.write((uint8_t)second);   // write seconds back and start the clock
   Wire.endTransmission();
 }
 
@@ -118,7 +123,7 @@ uint8_t bcd2dec(uint8_t val)  {
 
 uint8_t dec2bcd(uint8_t num){
 // Convert normal decimal numbers to binary coded decimal
-  return ((num/10 * 16) + (num % 10));
+  return ((num/10*16) + (num%10));
 }
 
 void loop() {
@@ -127,18 +132,24 @@ void loop() {
     edited = false;
   }
   getTime();
+  if (day < 10) Serial.print("0");
   Serial.print(day);
   Serial.print("/");
+  if (month < 10) Serial.print("0");
   Serial.print(month);
   Serial.print("/");
+  if (year < 10) Serial.print("0");
   Serial.print(year);
   Serial.print(" ");
+  if (hour < 10) Serial.print("0");
   Serial.print(hour);
   Serial.print(":");
+  if (minute < 10) Serial.print("0");
   Serial.print(minute);
   Serial.print(":");
+  if (second < 10) Serial.print("0");
   Serial.print(second);
   Serial.print(" ");
-  Serial.print(ampm == 0 ? "AM" : "PM");
+  Serial.println(ampm == 0 ? "PM" : "AM");
   delay(1000);
 }
