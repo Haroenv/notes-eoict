@@ -1,4 +1,3 @@
-#include <avr/pgmspace.h>
 const char progmemString[] PROGMEM  = {"TEKST HIER ;) ;)"};
 char myChar;
 
