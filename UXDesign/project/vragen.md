@@ -1,4 +1,4 @@
-# Vragen
+# Interviews
 
 1. Wanneer en waarom heb je de laatste paar keer beroep gedaan op een babysit?
 
@@ -33,18 +33,18 @@
 1. Hoe goed ken je de mensen die al gebabysit hebben voor je kroost?
 
     * Voor ze bij ons babysitte kenden we ze niet erg, maar haar ouders wel goed
-    * Lisa is al jaren
-    *
+    * Lisa is al jaren onze buurvrouw, we wonen hier al een paar jaar langer dan we kinderen hadden.
+    * Meestal is het niet verschillende keren dezelfde persoon die komt babysitten, maar de bond heeft ons bijna altijd bekwame babysitters gestuurd
 
 1. Heb jij soms gebabysit op kinderen van familie, vrienden … Zou je dat nog doen?
 
-    *
-    *
-    *
+    * Ikzelf heb nog nooit gebabysit, maar mijn vrouw wel toen ze een tiener was. Ik denk niet dat ik daar makkelijk tijd voor zou vinden.
+    * Nog niemand heeft het aan mij gevraagd, omdat ik niet veel anderen ken met kinderen. Moest het me gevraagd worden zou ik waarschijnlijk het wel leuk vinden.
+    * Ons neefje kwam vroeger enkele keren bij ons wanneer mijn broer op werkreis moest, en zijn vrouw ook moest werken, maar dat is ondertussen al weer een paar jaar geleden.
 
 1. Wat doe je als je geen babysit gevonden hebt op de dag dat je weg wil?
 
-    *
+    * Moesten we weten dat het echt niet lukt zouden we misschien mijn ouders of schoonouders bellen, en ook proberen shifts om te wisselen.
     *
     *
 
@@ -54,7 +54,7 @@
     *
     *
 
-1. Welke dingen zijn veranderd in je zoektocht sinds je kinderen hebt?
+1. Wat doe je nu anders dan toen je net kinderen had?
 
     *
     *
