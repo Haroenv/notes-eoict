@@ -28,12 +28,12 @@
 
     * Moet een vrouw zijn, iemand die we liefst via-via kennen, iemand die vaak vrij is
     * Dat ze niet te ver onderweg zou moeten zijn, dat ze bij ons komt terwijl we weggaan,dat ze vriendelijk is
-    * Dat het niet overdreven veel geld kost,
+    * Dat het niet overdreven veel geld kost, op korte tijd beschikbaar
 
 1. Hoe goed ken je de mensen die al gebabysit hebben voor je kroost?
 
-    *
-    *
+    * Voor ze bij ons babysitte kenden we ze niet erg, maar haar ouders wel goed
+    * Lisa is al jaren
     *
 
 1. Heb jij soms gebabysit op kinderen van familie, vrienden … Zou je dat nog doen?
