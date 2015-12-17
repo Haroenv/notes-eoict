@@ -45,17 +45,17 @@
 1. Wat doe je als je geen babysit gevonden hebt op de dag dat je weg wil?
 
     * Moesten we weten dat het echt niet lukt zouden we misschien mijn ouders of schoonouders bellen, en ook proberen shifts om te wisselen.
-    *
-    *
+    * We zouden dan opteren om de plannen te laten vallen, dat gebeurt nu en dan wel.
+    * We hebben dat eigenlijk bijna nooit voor, maar als dat het geval is, dan lassen we ons idee waarschijnlijk af.
 
 1. Compenseer je de persoon die babysit voor je? Zo ja, hoeveel?
 
-    *
-    *
-    *
+    * We betalen haar €5 voor elk uur dat we weg zijn
+    * Lisa vindt het leuk om voor onze kinderen te zorgen, en slaat bedankingen altijd af. We nodigen haar wel nu en dan uit voor eens te komen eten of zo.
+    * Wij betalen de vaste prijs van €3 die door de bond opgesteld is
 
 1. Wat doe je nu anders dan toen je net kinderen had?
 
-    *
-    *
-    *
+    * Vroeger bleven de kinderen vaker bij mijn of haar ouders, maar een babysit is toch wel makkelijker volgens ons, zo voelen we ons minder schuldig dat we dat vaak vragen ook.
+    * We hebben eigenlijk nooit echt een andere babysit dan Lisa gebruikt, we zijn blij dat we haar als buurvrouw hebben
+    * Wij zijn altijd lid geweest van de oppasdienst van de gezinsbond
