@@ -59,3 +59,10 @@
     * Vroeger bleven de kinderen vaker bij mijn of haar ouders, maar een babysit is toch wel makkelijker volgens ons, zo voelen we ons minder schuldig dat we dat vaak vragen ook.
     * We hebben eigenlijk nooit echt een andere babysit dan Lisa gebruikt, we zijn blij dat we haar als buurvrouw hebben
     * Wij zijn altijd lid geweest van de oppasdienst van de gezinsbond
+
+# Monetisatie
+
+* combinatie met verzekering
+* subscription voor meer dan 1/maand bijv.
+* je mag maar 1 babysit aanvragen voor elke die je zelf doet, meer betalend
+* profielen met verificatie zijn zichtbaar met een 'pro membership'
