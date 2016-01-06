@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery oefenblad</title>
+	<meta charset="utf-8" />
+	<style>
+
+		* {
+			font-family: Arial, sans-serif;
+		}
+		p {
+			font-size: 12px;
+		}
+		h4 {
+			font-style: italic;
+		}
+		h3 {
+			margin-top: 40px;
+			background-color: #ccc;
+		}
+		.error {
+			font-size: smaller;
+			color: #900;
+		}
+		p.opdracht {
+			font-weight: bold;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<form action="#">
+
+		<h2>jQuery oefenblad</h2>
+
+
+		<h3>1. CSS</h3>
+
+		<p id="txtCss1">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+		</p>
+		<p>
+			<input type="button" id="btnCss1a" value="geef de paragraaf de class 'error'" /><br />
+			<input type="button" id="btnCss1b" value="verwijder de class 'error' weer" /><br />
+			<input type="button" id="btnCss1c" value="maak de tekst blauw" /><br />
+			<input type="button" id="btnCss1d" value="maak de tekst groen en schuin (gebruik chaining)" /><br />
+			<input type="button" id="btnCss1e" value="toon de breedte van de paragraaf in een alert" /><br />
+			<input type="button" id="btnCss1f" value="stel de breedte in op 600px" /><br />
+			<input type="button" id="btnCss1g" value="stel de tekst in op 'blablabla'" /><br />
+		</p>
+		<hr />
+
+
+		<h3>2. Selectors</h3>
+
+		<div id="targetSel1">
+			<ul>
+				<li><a href="http://www.google.be">link1</a></li>
+				<li><a href="http://www.google.be">link2</a></li>
+				<li><a title="ga naar google" class="removeMe" href="http://www.google.be">link3</a></li>
+				<li><a class="removeMe" href="http://www.google.be">link4</a></li>
+				<li><a title="tip van de dag: het leven is een grap voor degenen die alleen meelachen" href="http://www.google.be">link5</a></li>
+				<li><a title="tip van de dag: de gelukkigste mens is degene die het denkt te zijn" class="removeMe" href="http://www.google.be">link6</a></li>
+				<li><a href="http://www.google.be">link7</a></li>
+				<li><a href="http://www.google.be">link8</a></li>
+			</ul>
+		</div>
+		<p>
+			<input type="button" id="btnSel1a" value="geef het aantal links in een alert" /><br />
+			<input type="button" id="btnSel1b" value="toon de tekst van de eerste link in een alert" /><br />
+			<input type="button" id="btnSel1c" value="geef de oneven links een lichtgrijze achtergrondkleur" /><br />
+			<input type="button" id="btnSel1d" value="verwijder de li's waarin links zitten met class 'removeMe'" /><br />
+			<input type="button" id="btnSel1e" value="zet de derde link in het vet" /><br />
+			<input type="button" id="btnSel1f" value="zet link met de tekst 'link7' in het schuin" /><br />
+			<input type="button" id="btnSel1g" value="toon de tekst van de tweede link met een title attribuut die begint met 'tip van de dag'" /><br />
+		</p>
+		<hr />
+
+
+		<h3>3. Events</h3>
+
+		<h4>oefening 1</h4>
+		<input type="button" id="btnEvents1a" value="toon een alert('ok') bij een mouse over" /><br />
+		<hr />
+
+		<h4>oefening 2</h4>
+		<p class="opdracht">
+			- toon een alert als je op de eerste link klikt; vermijd dat naar google gegaan wordt<br />
+		</p>
+		<div id="targetEvents1">
+			<ul>
+				<li><a href="http://www.google.be">link1</a></li>
+				<li><a href="http://www.google.be">link2</a></li>
+			</ul>
+		</div>
+		<p>
+			<input type="button" id="btnEvents2a" value="vermijd dat de eerste links nog alerts toont (gebruik off())" /><br />
+		</p>
+
+		<h4>oefening 3</h4>
+		<p class="opdracht">
+			- toon in een alert het volgnummer van een link als je erop klikt<br />
+		</p>
+		<div id="targetEvents2">
+			<ul>
+				<li><a href="http://www.google.be">link</a></li>
+				<li><a href="http://www.google.be">link</a></li>
+				<li><a href="http://www.google.be">link</a></li>
+				<li><a href="http://www.google.be">link</a></li>
+				<li><a href="http://www.google.be">link</a></li>
+			</ul>
+		</div>
+
+		<h4>oefening 4</h4>
+		<p class="opdracht">
+			- de tekst 'Je commentaar hier...' moet verdwijnen als je in de textarea focust; gebruik de off() methode om te vermijden dat dit bij de volgede focus weer gebeurt<br />
+			- bij Ctrl-S moet de tekst in de div er onder komen
+		</p>
+		<div id="targetEvents3">
+			<p> Druk Ctrl-S om de commentaar te bewaren </p>
+			<textarea id="tarEvents1">Je commentaar hier...</textarea>
+			<div id="msgEvents1"></div>
+		</div>
+
+
+		<h3>4. Animaties</h3>
+
+		<h4>oefening 1</h4>
+		<p id="txtAnim0">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+		</p>
+		<p>
+			<input type="button" id="btnAnim0" value="toggle de tekst (tonen/verbergen)" /><br />
+		</p>
+		<hr />
+
+		<h4>oefening 2</h4>
+		<p id="txtAnim1">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+		</p>
+		<p>
+			<input type="button" id="btnAnim1" value="verberg de tekst; gebruik een trage fadeout" /><br />
+		</p>
+		<hr />
+
+		<h4>oefening 3</h4>
+		<p id="txtAnim2">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+		</p>
+		<p>
+			<input type="button" id="btnAnim2a" value="klap de tekst in" /><br />
+			<input type="button" id="btnAnim2b" value="klap de tekst uit" /><br />
+		</p>
+		<hr />
+
+		<h4>oefening 4</h4>
+		<p id="txtAnim3">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+		</p>
+		<p>
+			<input type="button" id="btnAnim3" value="klap de tekst uit en dan meteen weer in" /><br />
+		</p>
+		<hr />
+
+	</form>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>

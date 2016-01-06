@@ -1,0 +1,47 @@
+form, form dl {
+  width: 660px;
+}
+fieldset {
+  border: 0;
+}
+label input {
+  margin-right: 5px;
+}
+form dt {
+  float: left;
+  width: 150px;
+  padding: 0 0 10px 10px;
+  height: 24px;
+  line-height: 24px;
+}
+form dd {
+  float: left;
+  padding-bottom: 10px;
+  width: 500px;
+  min-height: 24px;
+  _height: 24px; /* fake min-height in IE6 */
+  line-height: 24px;
+}
+form label {
+  display: block;
+  line-height: 24px;
+}
+form dd.buttons {
+  padding-top: 10px;
+}
+form span.error {
+  color: #900;
+  font-style: italic;
+}
+form #lastrow {
+  width: 640px;
+  padding: 0 10px;
+  height: 24px;
+  line-height: 24px;
+  margin-left: 150px;
+}
+
+form #lastrow input {
+  margin-right: 10px;
+}
+

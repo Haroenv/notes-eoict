@@ -1,0 +1,176 @@
+/**
+ *
+ * Common styles
+ *
+ * @author Rogier van der Linde
+ *
+ */
+
+/*********************************************
+ * CLEARFIX
+ *********************************************/
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	zoom: 1; /* trigger hasLayout (for IE7) */
+	_display: inline-block; /* IE6 ONLY */
+}
+
+/*********************************************
+ * GENERAL
+ *********************************************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: .75em "Trebuchet MS" , Arial, Sans-Serif;
+	color: #444;
+}
+
+a {
+	color:#335577;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a.active {
+	text-decoration: none;
+}
+
+img {
+	border: 0;
+}
+
+h2:first-letter {
+	text-transform: uppercase;
+}
+
+a.active {
+	text-decoration: none;
+}
+
+/*********************************************
+ * MAIN STRUCTURE
+ *********************************************/
+
+header {
+	background: url(../Images/bgmenubar.png) repeat-x;
+	padding: 15px;
+	padding-left: 200px;
+	color: #c7e3ee;
+}
+
+header h2 {
+	font-size: 2em;
+	color: #fff2b3;
+	font-weight: normal;
+}
+
+#filters {
+	background-color: #efefef;
+	padding: 15px;
+	padding-left: 200px;
+	height: 60px;
+}
+
+#content {
+	width: 900px;
+	margin-top: 0;
+	margin-left: 200px;  
+	padding-top: 20px;
+}
+
+footer {
+	width: 900px;
+	margin-left: 200px;
+	padding: 5px;
+	border-top: 1px solid #e0e0e0;
+	text-align: right;
+	font-size: 0.8em;
+	margin-top: 30px;
+}
+
+/*********************************************
+ * CONTACTS PAGE
+ *********************************************/
+
+.add {
+	margin: 10px 0;
+}
+
+.contact {
+	margin: 10px;
+	width: 255px;
+	height: 105px;
+	border: 1px dotted black;
+	float: left;
+	padding: 5px 10px;
+	position: relative;
+	background: #fff;
+}
+
+.contact img.thumb {
+	float: left;
+	margin: 10px 10px 10px 0;
+}
+
+.contact li {
+	list-style-type: none;
+	margin: 4px 0;
+}
+
+.contact h1 {
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.contact .menu {
+		float: left;
+}
+
+.contact .toolbar {
+	position: absolute;
+	text-align: right;
+	right: 10px;
+	bottom: 10px;
+}
+
+.contact .toolbar a {
+	margin: 0 5px;
+}
+
+.contact a.comments img {
+	position: relative;
+	top: 3px;
+	left: 3px;
+}
+
+.contact .searchstring, .contact a.tooltip span {
+	display: none;
+}
+
+
+/* ADDED FOR SOLUTION */
+
+.contact.busy {
+	box-shadow: 0px 0px 5px #f99;
+	background-color: #fee;
+}
+
+.contact {
+	overflow: visible;
+	transition: background-color 1s, box-shadow 1s;
+}

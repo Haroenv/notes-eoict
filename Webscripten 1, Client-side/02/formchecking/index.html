@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formchecking</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/screen.css" />
+</head>
+<body>
+
+	<h1>Betalingsformulier</h1>
+
+	<form action="#" method="post" id="form1">
+		<fieldset>
+			<legend>Persoonlijk</legend>
+			<dl class="clearfix">
+				<dt><label for="title">Titel:</label></dt>
+				<dd>
+					<select id="title" name="title">
+						<option selected="selected" value="-1">kies...</option>
+						<option value="dhr">Dhr.</option>
+						<option value="mvr">Mvr.</option>
+						<option value="juff">Juff.</option>
+					</select>
+					<span class="message error" id="errTitle">&nbsp;</span>
+				</dd>
+				<dt><label for="name">Naam:</label></dt>
+				<dd>
+					<input type="text" name="name" id="name" value="" />
+					<span class="message error" id="errName">&nbsp;</span>
+				</dd>
+			</dl>
+		</fieldset>
+		<fieldset>
+			<legend>Adres</legend>
+			<dl class="clearfix">
+				<dt><label for="street">Straat:</label></dt>
+				<dd>
+					<input type="text" name="street" id="street" value="" />
+					<span class="message error" id="errStreet">&nbsp;</span>
+				</dd>
+				<dt><label for="city">Stad:</label></dt>
+				<dd>
+					<input type="text" name="city" id="city" value="" />
+					<span class="message error" id="errCity">&nbsp;</span>
+				</dd>
+				<dt><label for="zipcode">Postcode:</label></dt>
+				<dd>
+					<input type="text" name="zipcode" id="zipcode" value="" />
+					<span class="message error" id="errZipcode">&nbsp;</span>
+				</dd>
+			</dl>
+		</fieldset>
+		<fieldset>
+			<legend>Betalingsgegevens</legend>
+			<dl class="clearfix">
+				<dt><label>Kredietkaart:</label></dt>
+				<dd>
+					<label for="amex"><input type="radio" name="card" id="amex" value="amex" /> American Express</label>
+					<label for="mc"><input type="radio" name="card" id="mc" value="mc" /> Mastercard</label>
+					<label for="visa"><input type="radio" name="card" id="visa" value="visa" /> Visa</label>
+					<span class="message error" id="errCard">&nbsp;</span>
+				</dd>
+				<dt><label for="cardnumber">Kaartnummer:</label></dt>
+				<dd>
+					<input type="text" name="cardnumber" id="cardnumber" value="" maxlength="19" />
+					<span class="message" id="msgCardnumber">formaat XXXX-XXXX-XXXX-XXXX</span>
+					<span class="message error" id="errCardnumber">&nbsp;</span>
+				</dd>
+				<dt><label for="expirationdate">Vervaldatum:</label></dt>
+				<dd>
+					<input type="text" name="expirationdate" id="expirationdate" value="" maxlength="15" />
+					<span class="message" id="msgExpirationdate">formaat dd-mm-jjjj</span>
+					<span class="message error" id="errExpirationdate">&nbsp;</span>
+				</dd>
+			</dl>
+		</fieldset>
+		<fieldset>
+			<dl class="clearfix">
+				<dt class="full" id="lastrow">
+					<input type="submit" id="btnSubmit" name="btnSubmit" value="Betaling uitvoeren" />
+					<input type="submit" id="btnCancel" name="btnCancel" value="Annuleren" />
+				</dt>
+				<dd></dd>
+			</dl>
+		</fieldset>
+	</form>
+	<script src="js/main.js"></script>
+</body>
+</html>

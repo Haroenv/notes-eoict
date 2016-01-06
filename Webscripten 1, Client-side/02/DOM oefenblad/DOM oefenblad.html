@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> DOM oefenblad </title>
+	<meta charset="utf-8" />
+	<script src="js/scripts.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<h1>DOM oefenblad</h1>
+
+	<h2>Reeks 1</h2>
+	<form id="form1" action="#">
+		<div class="targets">
+			<input type="text" name="textfield1" id="textfield1" value="dit is een testtekst" />
+		</div>
+		<div class="activators">
+			<input type="button" name="buttonA" id="buttonA" value="toon de tekst in een alert" /> <span>A</span><br />
+			<input type="button" name="buttonB" id="buttonB" value="verander tekst naar 'hallo'" /> <span>A</span><br />
+		</div>
+		<div class="targets">
+			<input type="button" name="button1" id="button1" value="Klik me" onclick="alert('er werd op me geklikt!')"/>
+		</div>
+		<div class="activators">
+			<input type="button" name="buttonE" id="buttonE" value="disable de button hiernaast" /> <span>B</span><br />
+			<input type="button" name="buttonF" id="buttonF" value="klik op de button hiernaast" /> <span>B</span><br />
+		</div>
+		<div class="targets">
+			<input type="checkbox" name="checkbox1" id="checkbox1" />Optie 1<br />
+			<input type="checkbox" name="checkbox2" id="checkbox2" />Optie 2
+		</div>
+		<div class="activators">
+			<input type="button" name="buttonG" id="buttonG" value="schakel de eerste optie aan" /> <span>B</span><br />
+			<input type="button" name="buttonH" id="buttonH" value="verander de tweede" /> <span>C</span><br />
+		</div>
+		<div class="targets">
+			<select name="select1" id="select1">
+				<option value="-1"> selecteer... </option>
+				<option value="val1"> keuze 1 </option>
+				<option value="val2"> keuze 2 </option>
+				<option value="val3"> keuze 3 </option>
+			</select>
+		</div>
+		<div class="activators">
+			<input type="button" name="buttonI" id="buttonI" value="selecteer de tweede keuze" /> <span>B</span><br />
+			<input type="button" name="buttonJ" id="buttonJ" value="geef de weergegeven keuze in een alert" /> <span>B</span><br />
+		</div>
+	</form>
+
+	<h2>Reeks 2</h2>
+	<form id="form2" action="#">
+		<div class="targets">
+			<img src="img/cursus1.jpg" id="cursus1" width="320" height="240" alt="cursus1" /><br /><br />
+			<img src="img/cursus2.jpg" id="cursus2" width="320" height="240" alt="cursus2" />
+		</div>
+		<div class="activators">
+			<input type="button" name="buttonK" id="buttonK" value="stel de alt van de 1e afbeelding in op 'cursus rietdekken'" /> <span>A</span><br />
+			<input type="button" name="buttonL" id="buttonL" value="verwissel de twee afbeeldingen van plaats" /> <span>C</span><br />
+			<input type="button" name="buttonM" id="buttonM" value="stel de breedte van de 2e afbeelding in op 160" /> <span>A</span><br />
+		</div>
+	</form>
+
+	<h2>Reeks 3</h2>
+	<form id="form3" action="#">
+		<div class="targets">
+			<div id="place1">dit is de DIV</div><br /><br />
+			<span id="place2">dit is de SPAN</span><br /><br /><br />
+			<div id="layers">
+				<div id="layer1">1&nbsp;</div>
+				<div id="layer2">2&nbsp;</div>
+				<div id="layer3">3&nbsp;</div>
+			</div><br /><br />
+		</div>
+		<div class="activators">
+			<input type="button" name="buttonN" id="buttonN" value="verander de tekst van de div in 'dit is plaats1'" /> <span>B</span><br />
+			<input type="button" name="buttonO" id="buttonO" value="verander de kleur van de span in blauw" /> <span>C</span><br />
+			<input type="button" name="buttonP" id="buttonP" value="verander de css-class van de div in 'errorMsg'" /> <span>B</span><br />
+			<input type="button" name="buttonQ" id="buttonQ" value="verberg de groene laag" /> <span>B</span><br />
+			<input type="button" name="buttonR" id="buttonR" value="verwissel de stapelvolgorde" /> <span>C</span><br />
+			<input type="button" name="buttonS" id="buttonS" value="breng de lagen op gelijke hoogte" /> <span>B</span><br />
+		</div>
+	</form>
+
+	<h2>Reeks 4</h2>
+	<form id="testForm4" action="#">
+		<div class="targets">
+		</div>
+		<div class="activators">
+			<input type="button" name="buttonT" id="buttonT" value="verander de achtergrondkleur van deze pagina naar grijs" /> <span>A</span><br />
+			<input type="button" name="buttonU" id="buttonU" value="ga naar Google" /> <span>B</span><br />
+			<input type="button" name="buttonV" id="buttonV" value="stel de titel van dit document in op 'testpagina'" /> <span>A</span><br />
+			<input type="button" name="buttonW" id="buttonW" value="verklein het browservenster tot 800x600 (werkt niet in alle browsers)" /> <span>B</span><br />
+			<input type="button" name="buttonX" id="buttonX" value="verplaats het browservenster 50 pixels naar rechts (werkt niet in alle browsers)" /> <span>B</span><br />
+			<input type="button" name="buttonY" id="buttonY" value="verander de achtergrondkleur naar blauw, maar vraag eerst om een bevestiging" /> <span>C</span><br />
+			<input type="button" name="buttonZ" id="buttonZ" value="verander de achtergrondkleur, maar vraag eerst een kleur" /> <span>C</span><br />
+		</div>
+	</form>
+
+	<h2>Reeks 5</h2>
+	<form id="testForm5" action="#">
+		<div class="targets">
+		</div>
+		<div class="activators">
+			<input type="button" name="buttonAA" id="buttonAA" value="zet alle h2's in het groen" /> <span>A</span><br />
+			<input type="button" name="buttonAB" id="buttonAB" value="geef het aantal buttons van het eerste formulier in een alert" /> <span>B</span><br />
+			<input type="button" name="buttonAC" id="buttonAC" value="vraag bij de eerste klik een tekst; alert vanaf de volgende kliks die tekst" /> <span>C</span><br />
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+/* tooltip */
+a.tooltip {
+    position: relative;
+}
+a.tooltip span {
+    display: none;
+    position: absolute;
+    top: 8px; 
+    left: 10px;
+    padding: 5px; margin: 10px; z-index: 100;
+    background: #333; border: 1px solid #c0c0c0;
+    opacity: 0.8; 
+    width: 300px;
+    color: White;
+    text-align: left;
+}
+a.tooltip:hover span {
+    display: block;
+}

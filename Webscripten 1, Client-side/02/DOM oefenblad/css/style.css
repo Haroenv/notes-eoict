@@ -1,0 +1,108 @@
+/*
+ * Page-specific styles
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@kahosl.be>
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial;
+	width: 1000px;
+	padding: 10px;
+}
+
+textarea {
+	width: 300px;
+	height: 50px;
+}
+
+.activators input {
+	border: 1px solid;
+	padding: 1px 4px;
+	width: 550px;
+}
+
+textarea {
+	padding: 1px 4px;
+	height: 50px;
+	width: 300px;
+}
+
+div.targets {
+	border-top: 2px solid #999;
+	width: 350px;
+	float: left;
+	padding: 5px;
+	padding-bottom: 15px;
+}
+
+div.activators {
+	border-top: 2px solid #999;
+	width: 600px;
+	float: left;
+	padding: 5px;
+	padding-bottom: 15px;
+}
+
+h1, h2 {
+	clear: both;
+}
+
+h2 {
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+div.activators input {
+	margin: 5px;
+}
+
+div.activators span {
+	margin: 5px;
+}
+
+#layers {
+	position: relative;
+	width: 120px;
+	height: 120px;
+}
+#layer1 {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #FFFFCC;
+	border-style: double;
+	border-color: #660000;
+}
+#layer2 {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background-color: #CCFFFF;
+	border-style: double;
+	border-color: #006600;
+}
+#layer3 {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background-color: #CCCCFF;
+	border-style: double;
+	border-color: #006600;
+}
+
+.errorMsg {
+	font-style: italic;
+	color: red;
+	font-size: 10px;
+}
