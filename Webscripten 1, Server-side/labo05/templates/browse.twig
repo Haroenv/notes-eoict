@@ -1,0 +1,56 @@
+{% extends 'layout.twig' %}
+{% set title = 'Todolist' %}
+
+{% block javascript %}
+    <script src="js/browse.js"></script>
+{% endblock %}
+{% block content %}
+      <div class="box" id="boxAddTodo">
+
+        <h2>Add new todo</h2>
+
+        <div class="boxInner">
+          <form action="{{url}}" method="post">
+            <fieldset>
+              <dl class="clearfix columns">
+                <dd class="column column-46"><input type="text" name="what" id="what" value="{{what}}" /></dd>
+                <dd class="column column-16" id="col-priority">
+                  <select name="priority" id="priority">
+{% for prio in priorities %}
+<option value="{{prio}}"{% if priority == prio %} selected{% endif %}>{{prio}}</option>
+{% endfor %}
+                  </select>
+                </dd>
+                <dd class="column column-16" id="col-submit">
+                  <label for="btnSubmit"><input type="submit" id="btnSubmit" name="btnSubmit" value="Add" /></label>
+                  <input type="hidden" name="moduleAction" id="moduleAction" value="add" />
+                </dd>
+              </dl>
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+{% include 'partials/formerrors.twig'%}
+      <div class="box" id="boxYourTodos">
+
+        <h2>Your todos</h2>
+
+        <div class="boxInner">
+{% if items|length > 0 %}
+<ul>
+  {% for item in items %}
+<li id="item-{{item.id}}" class="item {{item.priority}} clearfix">
+  <a href="delete.php?id={{item.id}}" class="delete" title="Delete/Complete this item">delete/complete</a>
+  <a href="edit.php?id={{item.id}}" class="edit" title="Edit this item">edit</a>
+  <span>{{item.what}}</span>
+</li>
+  {% endfor %}
+</ul>
+{% else %}
+    <p>No todos, it must be your lucky day!</p>
+{% endif %}
+        </div>
+
+      </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'layout.twig' %}
+{% set title = 'Todolist - Edit' %}
+
+{% block javascript %}
+    <script src="js/browse.js"></script>
+{% endblock %}
+{% block content %}
+      <div class="box" id="boxAddTodo">
+
+        <h2>Edit existing todo</h2>
+
+        <div class="boxInner">
+          <form action="{{ url }}" method="post">
+            <fieldset>
+              <dl class="clearfix columns">
+                <dd class="column column-46"><input type="text" name="what" id="what" value="{{what}}" /></dd>
+                <dd class="column column-16" id="col-priority">
+                  <select name="priority" id="priority">
+{% for prio in priorities %}
+<option value="{{prio}}"{% if priority == prio %} selected{% endif %}>{{prio}}</option>
+{% endfor %}
+                  </select>
+                </dd>
+                <dd class="column column-16" id="col-submit">
+                  <label for="btnSubmit"><input type="submit" id="btnSubmit" name="btnSubmit" value="Edit" /></label>
+                  <input type="hidden" name="id" value="{{id}}" />
+                  <input type="hidden" name="moduleAction" id="moduleAction" value="edit" />
+                </dd>
+              </dl>
+            </fieldset>
+          </form>
+          <p class="cancel">or <a href="index.php" title="Cancel and go back">Cancel and go back</a></p>
+        </div>
+
+      </div>
+{% include 'partials/formerrors.twig'%}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layout.twig' %}
+{% set title = 'Todolist - Complete' %}
+
+{% block javascript %}
+    <script src="js/delete.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="box" id="boxCompleteTodo">
+    <h2>Complete todo</h2>
+    <div class="boxInner">
+        <p>Are you sure you want to complete the todo <strong>{{ what }}</strong>?</p>
+        <form action="{{ url }}" method="post">
+            <fieldset class="columns">
+                <label class="column column-12 cancel alignLeft"><a href="index.php" title="Cancel and go back">Cancel and go back</a></label>
+                <label for="btnSubmit" class="column column-12 alignRight"><input type="submit" id="btnSubmit" name="btnSubmit" value="Complete" /></label>
+                <input type="hidden" name="id" value="{{ id }}" />
+                <input type="hidden" name="moduleAction" id="moduleAction" value="delete" />
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}

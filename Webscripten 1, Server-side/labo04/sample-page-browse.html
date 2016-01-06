@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="oldie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="oldie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="oldie ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+
+	<title>Todolist</title>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=520" />
+	<meta http-equiv="cleartype" content="on" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+	<link rel="stylesheet" media="screen" href="css/reset.css" />
+	<link rel="stylesheet" media="screen" href="css/screen.css" />
+
+	<script src="js/browse.js"></script>
+
+</head>
+<body>
+
+	<div id="siteWrapper">
+
+		<!-- header -->
+		<header>
+			<h1><a href="index.php">Todolist</a></h1>
+		</header>
+
+		<!-- content -->
+		<section>
+
+			<div class="box" id="boxAddTodo">
+
+				<h2>Add new todo</h2>
+
+				<div class="boxInner">
+					<form action="/ws1-sws-course-materials/temp/modeloplossing4/browse.php" method="post">
+						<fieldset>
+							<dl class="clearfix columns">
+								<dd class="column column-46"><input type="text" name="what" id="what" value="" /></dd>
+								<dd class="column column-16" id="col-priority">
+									<select name="priority" id="priority">
+<option value="low" selected="selected">low</option>
+<option value="normal">normal</option>
+<option value="high">high</option>
+									</select>
+								</dd>
+								<dd class="column column-16" id="col-submit">
+									<label for="btnSubmit"><input type="submit" id="btnSubmit" name="btnSubmit" value="Add" /></label>
+									<input type="hidden" name="moduleAction" id="moduleAction" value="add" />
+								</dd>
+							</dl>
+						</fieldset>
+					</form>
+				</div>
+
+			</div>
+
+<div class="box" id="boxError"><p>One or more errors were encountered:</p><ul class="errors">
+<li>Please enter a name/description for your todo</li></ul></div>
+
+			<div class="box" id="boxYourTodos">
+
+				<h2>Your todos</h2>
+
+				<div class="boxInner">
+
+<ul>
+<li id="item-1" class="item high clearfix">
+	<a href="delete.php?id=1" class="delete" title="Delete/Complete this item">delete/complete</a>
+	<a href="edit.php?id=1" class="edit" title="Edit this item">edit</a>
+	<span>A very urgent task</span>
+</li>
+<li id="item-5" class="item normal clearfix">
+	<a href="delete.php?id=5" class="delete" title="Delete/Complete this item">delete/complete</a>
+	<a href="edit.php?id=5" class="edit" title="Edit this item">edit</a>
+	<span>betere omschrijving</span>
+</li>
+<li id="item-3" class="item low clearfix">
+	<a href="delete.php?id=3" class="delete" title="Delete/Complete this item">delete/complete</a>
+	<a href="edit.php?id=3" class="edit" title="Edit this item">edit</a>
+	<span>A non-important task</span>
+</li>
+</ul>
+				</div>
+
+			</div>
+
+		</section>
+
+		<!-- footer -->
+		<footer>
+			<p>&copy; 2014, <a href="http://www.ikdoeict.be/" title="IkDoeICT.be">IkDoeICT.be</a></p>
+		</footer>
+
+	</div>
+
+</body>
+</html>
