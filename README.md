@@ -3,7 +3,7 @@ Gemaakt door Haroen Viaene. Geen garantie.
 
 ## Bedankingen
 
-[Arnaud Weyts](https://github.com/FlackBury), [Mike Lauwers](https://github.com/Mike1401), [Maliek Meerschaert](https://github.com/Maliek), [Elias Meire](https://github.com/eliasmeire), [Wietse Vluymans](https://github.com/wietsevluymans), [Andreas Backx](https://github.com/AndreasBackx), [Bram Van den Bulcke](https://github.com/Bram-Vdb), [Polli162](https://github.com/polli162), [Dwight Van der Velpen](https://github.com/Dwight-Fr34k), [Louis Devreese](https://github.com/LouisDevreese), Robin Maenhout, Hanne Goossens
+[Arnaud Weyts](https://github.com/FlackBury), [Mike Lauwers](https://github.com/Mike1401), [Maliek Meerschaert](https://github.com/Maliek), [Elias Meire](https://github.com/eliasmeire), [Wietse Vluymans](https://github.com/wietsevluymans), [Andreas Backx](https://github.com/AndreasBackx), [Bram Van den Bulcke](https://github.com/Bram-Vdb), [Polli162](https://github.com/polli162), [Dwight Van der Velpen](https://github.com/Dwight-Fr34k), [Louis Devreese](https://github.com/LouisDevreese), Robin Maenhout, Hanne Goossens, Brecht Van Eeckhoudt, Umut Saglam, Lode Allaert
 
 ## Vakken
 1. Systeembeheer 1:
@@ -32,7 +32,7 @@ Gemaakt door Haroen Viaene. Geen garantie.
 
 ## Other repositories
 
-[haroenv/prog](https://github.com/haroenv/prog) is private, and contains all exercises. Visibility can be requested. 
+[haroenv/prog](https://github.com/haroenv/prog) is private, and contains all exercises. Visibility can be requested.
 
 ## License
 
