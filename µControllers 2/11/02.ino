@@ -1,174 +1,258 @@
-// By Umut Saglam
+// veen beetje uitleg hierbij, de klok en de temperatuur zullen om de 4 seconden afwisselen,
+// van het ogenblik dat K2 of K3 wordt ingedrukt stopt die lus, dan kan je de tijd aanpassen.
+// Als je de tijd hebt aangepast druk je op K1, dan gaat de lus weer verder. De reden hiervoor is
+// dat een interrupt geen delay kan onderbreken. Er is zal waarschijnlijk wel een betere manier zijn om
+// dit te doen.
+// By Lode Allaert
 
-#include "TM1636.h"
+#include <TM1636.h>
 #include <TimerOne.h>
 #include <Wire.h>
+
+#define DS1307_ID 0x68
 
 #define K1 9
 #define K2 10
 #define K3 11
-TM1636 tm1636(7,8);
-#define DS1307_ADDRESS 0x68
 
+TM1636 scherm(7, 8);
+int8_t pr [] = {0, 0, 0, 0};
 
-int8_t waarde[4];
-float sensorReading;//analog pin reading
-float weerstandNTC;
-float temp;
+byte seconds;
+byte minutes;
+byte hours;
 
+// dubbelpunt
+boolean dp;
 
-int8_t val[4];
-int s, m, u;
-int u1,u2,m1,m2;
-int change;
+// aangepaste uur/min
+byte nieuwUur;
+byte nieuweMinuten;
 
-int mode; //0 = time 1 = temperature
-int secondsMode;
+// anti dender
+int vlag = 0;
 
-void setup()
-{
-  tm1636.init();
-  change = 0;
-  secondsMode = 4;
-  mode = 0; //0 = time
-  u = 6;
-  m = 5;
-  s = 55;
+int temperatuurOfTijd = 1;       // 0 = tijd, 1 = temperatuur
+int knopingedrukt = 0;           // 0 = neen, 1 = ja (voor onmiddelijk naar de tijd over te gaan)
+
+int lode = 0;                    // dit is voor K1, als die wordt ingedrukt gaat de lus weer verder
+
+void setup() {
+
+  Serial.begin(9600);
   Wire.begin();
-  setTime(u,m,s);
- // Wire.endTransmission();
 
-  // initialize the button pin as a input and enable the internal pull-up resistor:
+  pinMode(2, INPUT);
+  digitalWrite(2, HIGH);
+
+  // tijd instellen
+  setTime(17, 41, 00);
+
+  pinMode(14, INPUT);
+  scherm.init();
+  scherm.display(pr);
+
   pinMode(K1, INPUT_PULLUP);
   pinMode(K2, INPUT_PULLUP);
   pinMode(K3, INPUT_PULLUP);
-  // interrupt init
-  pciSetup(K1); // interrupt op K1
-  pciSetup(K2); // interrupt op K2
-  pciSetup(K3); // interrupt op K3
-}
-void loop()
-{
-  if(mode == 1 && (secondsMode > 0)){
-    sensorReading = analogRead(A0);  //get analog reading
-    weerstandNTC = ((1023 - sensorReading) * 10000)/sensorReading;
-    temp = (1/((log((weerstandNTC/10000))/3975)+(1/298.15)))-273.15;
-    waarde[0] = (int) temp/10;
-    waarde[1] = (int) temp%10;
-    waarde[2] = 0;
-    waarde[3] = 0;
-    tm1636.display(waarde);
-    secondsMode--;
-    if (secondsMode == 0){
-      mode = 0;
-      secondsMode = 4;
-    }
-  }
 
-  if(mode == 0 && (secondsMode > 0)){
-    if (change == 1){
-        setTime(u,m,s);
-        change = 0;
-    }
-
-    getTime();
-    if(u%10 > 0){
-      u1 = u/10;
-      u2 = u%10;
-    } else{
-      u1 = 0;
-      u2 = u;
-    }
-
-    if(m%10 > 0){
-      m1 = m/10;
-      m2 = m%10;
-    } else{
-      m1 = 0;
-      m2 = m;
-    }
-    val[0] = u1;
-    val[1] = u2;
-    val[2] = m1;
-    val[3] = m2;
-    tm1636.display(val);
-    secondsMode--;
-    if (secondsMode == 0){
-      mode = 1;
-      secondsMode = 4;
-    }
-  }
-  delay (1000);
+  pciSetup(K1);
+  pciSetup(K2);
+  pciSetup(K3);
 }
 
+void loop() {
+  getTime();
 
-void pciSetup (byte pin)
-{
-  *digitalPinToPCMSK(pin) |= bit (digitalPinToPCMSKbit(pin)); // enable pin
-  PCIFR |= bit(digitalPinToPCICRbit(pin));  // clear any outstanding interrupt
-  PCICR |= bit (digitalPinToPCICRbit(pin)); // enable interrupt for the group
+  Serial.print("lode");
+  Serial.println(lode);
+
+  Serial.print("knop");
+  Serial.println(knopingedrukt);
+
+  Serial.print("temperatuurOfTijd");
+  Serial.println(temperatuurOfTijd);
+
+  Serial.println("");
+
+  // als er een knop wordt ingedrukt...
+  if (knopingedrukt == 1 && lode == 1) {
+    Serial.println("knop ingedrukt");
+    temperatuurOfTijd = 0;
+    toonTijdOpDisplay();
+    delay(4000);
+    temperatuurOfTijd = 1;
+    knopingedrukt = 0;
+  }
+
+  if (temperatuurOfTijd == 0) {
+    toonTijdOpDisplay();
+
+    if (lode == 1) {
+      delay(250);
+    } else {
+      delay(4000);
+    }
+
+  } else {
+    berekenTemperatuur();
+    delay(4000);
+  }
+
+  // dubbelpunt aan/uit
+  scherm.point(dp);
+
+  if (lode == 0) {
+    if (temperatuurOfTijd == 1) {
+      temperatuurOfTijd = 0;
+    } else {
+      temperatuurOfTijd = 1;
+    }
+  }
+
+  if (lode == 1){
+    toonTijdOpDisplay();
+    temperatuurOfTijd = 0;
+  }
+
+  // enkel tijd veranderen als er een knop is ingedrukt
+  if (vlag == 1) {
+    hours = nieuwUur;
+    minutes = nieuweMinuten;
+
+    setTime(hours, minutes, seconds);
+
+  } else {
+    nieuwUur = hours;
+    nieuweMinuten = minutes;
+  }
+
+  // anti dender
+  vlag = 0;
 }
 
-ISR (PCINT0_vect){
- // handle pin change
- // interrupt for D8 - D13 here
-  while(digitalRead(K1) == LOW){
-    if(digitalRead(K1) == HIGH){
-      u++;
-      change = 1;
-      mode = 0;
-      secondsMode = 4;
-    }
-  }
+// functie setTime
+void setTime(byte hours, byte minutes, byte seconds) {
 
-  while(digitalRead(K2) == LOW){
-    if(digitalRead(K2) == HIGH){
-      u--;
-      change = 1;
-      mode = 0;
-      secondsMode = 4;
-    }
-  }
+  Wire.beginTransmission(DS1307_ID);
+  Wire.write(0x00);
+  Wire.write(decToBcd(seconds));
+  Wire.write(decToBcd(minutes));
+  Wire.write(decToBcd(hours));
 
-  while(digitalRead(K3) == LOW){
-    if(digitalRead(K3) == HIGH){
-      m++;
-      change = 1;
-      mode = 0;
-      secondsMode = 4;
-    }
-  }
-}
-
-
-void setTime(byte uur, byte minuut, byte second){
-  Wire.beginTransmission(DS1307_ADDRESS);
-  Wire.write(0);
-  Wire.write(decToBcd(second));
-  Wire.write(decToBcd(minuut));
-  Wire.write(decToBcd(uur));
   Wire.endTransmission();
 }
 
+// functie getTime
+void getTime() {
 
-void getTime(){
-  Wire.beginTransmission(0x68);
+  Wire.beginTransmission(DS1307_ID);
   Wire.write((byte)0x00);
   Wire.endTransmission();
-  Wire.requestFrom(DS1307_ADDRESS, 3);
-  // 7 bytes opvragen
-  s = bcdToDec(Wire.read() & 0x7f);
+  Wire.requestFrom(DS1307_ID, 7);
+
   // bit 7 skippen
-  m = bcdToDec(Wire.read());
-  u = bcdToDec(Wire.read() & 0x3f);
-  // am/pm
+  seconds = bcdToDec(Wire.read() & 0x7f);
+  minutes = bcdToDec(Wire.read());
+  hours = bcdToDec(Wire.read() & 0x3f);
 }
 
-byte decToBcd ( byte val ){
-  return ( ( val /10*16) + ( val %10) ) ;
+byte decToBcd ( byte val )
+{
+  return ( ( val / 10 * 16) + ( val % 10) ) ;
 }
 
-byte bcdToDec ( byte val ){
-  return ( ( val /16*10) + ( val %16) ) ;
+byte bcdToDec ( byte val )
+{
+  return ( ( val / 16 * 10) + ( val % 16) ) ;
 }
 
+void toonTijdOpDisplay() {
+  getTime();
+
+  byte uren = 0;
+  byte minuten = 0;
+  byte rest = 0;
+
+  //De eerste 2 cijfers van het uur opsplitsen
+  if (hours > 9) {
+    uren = hours / 10;      // eerste getal
+    rest = hours % 10;      // tweede getal (de rest)
+
+    pr[0] = uren;
+    pr[1] = rest;
+  } else {
+    pr[0] = 0;
+    pr[1] = hours;
+  }
+
+  if (minutes > 9) {
+    minuten = minutes / 10;
+    rest = minutes % 10;
+
+    pr[2] = minuten;
+    pr[3] = rest;
+  } else {
+    pr[2] = 0;
+    pr[3] = minutes;
+  }
+  scherm.display(pr);
+}
+
+void pciSetup(byte pin) {
+  * digitalPinToPCMSK(pin) |= bit (digitalPinToPCMSKbit(pin));
+  PCIFR |= bit (digitalPinToPCICRbit(pin));
+  PCICR |= bit (digitalPinToPCICRbit(pin));
+}
+
+ISR (PCINT0_vect) {
+
+  // uren aanpassen
+  if (digitalRead(K3) == LOW) {
+    if (vlag == 0) {
+      nieuwUur++;
+
+      if (nieuwUur > 23) {
+        nieuwUur = 0;
+      }
+    }
+    vlag = 1;
+    lode = 1;
+  }
+
+  // minuten aanpassen
+  if (digitalRead(K2) == LOW) {
+    if (vlag == 0) {
+      nieuweMinuten++;
+
+      if (nieuweMinuten > 59) {
+        nieuweMinuten = 0;
+        nieuwUur++;
+      }
+    }
+    vlag = 1;     // om aan te tonen dat er een knop is ingedrukt. (anti dender)
+    lode = 1;     // lus stoppen
+  }
+
+  // lus weer starten na het aanpassen
+  if (digitalRead(K1) == LOW) {
+    lode = 0;
+  }
+}
+
+void berekenTemperatuur() {
+  float temperatuurSensor = analogRead(A0);
+  float weerstandNTC = ((1023 - temperatuurSensor) * 10000) / temperatuurSensor;
+  float temperatuur = (1 / ((log(weerstandNTC / 10000) / 3975) + (1 / 298.15))) - 273.15;
+
+  int temp = (int)temperatuur;
+  int eersteGetal = temp / 10;
+  int tweedeGetal = temp % 10;
+
+  pr[0] = 'leeg';        // zal niets op het scherm tonen
+  pr[1] = eersteGetal;
+  pr[2] = tweedeGetal;
+  pr[3] = 12;            // 12 hex = C
+
+  scherm.display(pr);
+}
