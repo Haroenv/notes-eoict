@@ -1,5 +1,7 @@
-# Notities 1 EO-ICT 2014-2015
+# Notities EO-ICT 2014-2017
 Gemaakt door Haroen Viaene. Geen garantie.
+
+DIT IS VERPLAATST NAAR [ikdoeict-notes](https://github.com/ikdoeict-notes) ([site](https://ikdoeict-notes.github.io)).
 
 ## Bedankingen
 
